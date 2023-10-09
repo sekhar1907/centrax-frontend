@@ -1,0 +1,614 @@
+<div class=" py-5 py-lg-3 h-100 accordion-content container-fluid registration-main-div">
+  <div class="d-flex form-title">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3">Dental History</h2>
+    </div>
+  </div>
+  <!-- patient info start -->
+  <div class="form-section-container">
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Reason for today’s visit'"
+          [control]="dentalHistoryFormGroup?.get('reasonOfVisit')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5 medical-history-block-responsive">
+      <div class="col-lg-8  col-sm-12 col-md-6">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Former dental provider'"
+          [control]="dentalHistoryFormGroup?.get('dentalProvider')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-4  col-sm-12 col-md-6 text-field-responsive">
+        <app-form-masked-input-field
+        appearance="flat"
+          labelText="Date of last dental visit"
+          [control]="dentalHistoryFormGroup?.get('dateOfLastVisit')"
+          mask="99/99/9999"
+          slotChar="mm/dd/yyyy"
+          placeholder="00/00/0000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Address'" [control]="dentalHistoryFormGroup?.get('officePhone')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6">
+        <app-form-input-field appearance="appearance-1" [labelText]="'City'" [control]="dentalHistoryFormGroup?.get('city')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-md-6 ">
+        <div class="row">
+          <div class="col-lg-5 col-12 d-flex align-items-center col-md-6 state-responsive">
+            <app-form-dropdown-field appearance="flat"  [dropdownItems]="states" [control]="dentalHistoryFormGroup?.get('state')"
+              [textField]="'abbreviation'" [valueField]="'abbreviation'" [labelText]="'State'">
+            </app-form-dropdown-field>
+          </div>
+          <div class="col-lg-7 col-12 col-md-6 zip-responsive">
+            <app-form-input-field appearance="appearance-1" [labelText]="'Zip'" [control]="dentalHistoryFormGroup?.get('zip')">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4">
+        <app-form-masked-input-field
+          appearance="flat"
+          labelText="Office Phone"
+          [control]="dentalHistoryFormGroup?.get('officePhone')"
+          mask="(999) 999-999"
+          slotChar="(999) 999-999"
+          placeholder="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container mb-5">
+    <div class="d-flex form-title">
+      <div class="title-container ms-0">
+        <h3 class="fw-mediumi fs-4">Have you had any of the following:</h3>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Bad breath" [control]="dentalHistoryFormGroup?.get('badBreathing')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Grinding your teeth" [control]="dentalHistoryFormGroup?.get('grindingTeeth')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Sensitivity to heat" [control]="dentalHistoryFormGroup?.get('sensitivityToHeat')"></app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Bleeding gums" [control]="dentalHistoryFormGroup?.get('bleedingGuns')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Loose teeth or broken fillings" [control]="dentalHistoryFormGroup?.get('looseTeeth')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Sensitivity to sweets" [control]="dentalHistoryFormGroup?.get('sensitivityToSweets')"></app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Clicking or popping jaw" [control]="dentalHistoryFormGroup?.get('clickingJaw')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Periodontal treatment" [control]="dentalHistoryFormGroup?.get('periodontalTreatment')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Sensitivity when biting" [control]="dentalHistoryFormGroup?.get('sensitivityWhenBiting')"></app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Cold sores/Fever blisters" [control]="dentalHistoryFormGroup?.get('coldSores')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Radiation treatment" [control]="dentalHistoryFormGroup?.get('radiationalTreatment')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Sores of growths in your mouth" [control]="dentalHistoryFormGroup?.get('soresOfGrowthsInMouth')"></app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Food collection between teeth" [control]="dentalHistoryFormGroup?.get('foodCollection')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Sensitivity to cold" [control]="dentalHistoryFormGroup?.get('sensitivityToCold')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-form-checkbox-field labelText="Surgery to mouth or gums" [control]="dentalHistoryFormGroup?.get('surgeryToMouthOrGums')"></app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-6">
+        <app-form-input-field appearance="appearance-1"  [labelText]="'How often do you floss?'"
+          [control]="dentalHistoryFormGroup?.get('floss')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-form-input-field appearance="appearance-1"  [labelText]="'How often do you brush?'"
+          [control]="dentalHistoryFormGroup?.get('brush')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-auto">
+        <label class="long-text-responsive">Have you ever had any serious complications relating to dental work?</label>
+      </div>
+      <div class="col-auto col-lg-3">
+        <app-form-radio-field [checkboxAppearance]="true" [items]="yesNoRadioItems" [control]="dentalHistoryFormGroup?.get('seriousComplication')" inputIDPrefix="MHcomplications"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'If yes, please explain'"
+          [control]="dentalHistoryFormGroup?.get('complicationExplain')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-auto">
+        <label class="long-text-responsive">How would you describe your current dental health?</label>
+      </div>
+      <div class="col-auto col-lg-4">
+        <app-form-radio-field [checkboxAppearance]="true" [items]="goodFairPoorRadioItems" [control]="dentalHistoryFormGroup?.get('currentDentalHealth')" inputIDPrefix="MHcurrentDentalHealth"></app-form-radio-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex form-title pt-5">
+    <div class="title-container mt-5">
+      <h2 class="fw-mediumi fs-3">Medical History</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container mb-5">
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Name of Primary Care Provider'"
+          [control]="medicalHistoryFormGroup?.get('primaryCareProvider')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Address'"
+          [control]="medicalHistoryFormGroup?.get('address')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-lg-6 col-md-6">
+        <app-form-input-field appearance="appearance-1" [labelText]="'City'" [control]="medicalHistoryFormGroup?.get('city')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-lg-6 ">
+        <div class="row">
+          <div class="col-12 col-xl-5 d-flex align-items-center col-md-6 state-responsive">
+            <app-form-dropdown-field appearance="flat"  [dropdownItems]="states"
+              [control]="medicalHistoryFormGroup?.get('state')" [textField]="'abbreviation'"
+              [valueField]="'abbreviation'" [labelText]="'State'">
+            </app-form-dropdown-field>
+          </div>
+          <div class="col-12 col-xl-7 col-md-6 zip-responsive">
+            <app-form-input-field appearance="appearance-1" [labelText]="'Zip'" [control]="medicalHistoryFormGroup?.get('zip')">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-md-10 col-lg-4">
+        <app-form-masked-input-field
+          appearance="flat"
+          labelText="Office Phone"
+          [control]="medicalHistoryFormGroup?.get('officePhone')"
+          mask="(999) 999-999"
+          slotChar="(999) 999-999"
+          placeholder="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container mb-5">
+    <div class="d-flex form-title">
+      <div class="title-container ms-0">
+        <h3 class="fw-mediumi fs-4">Please list all of the medication, herbal remedies and over the counter medications
+          you are taking and indicate what they are for.</h3>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <div *ngFor="let medication of medicationsFormArray.controls; let medicationIndex = index">
+          <div class="row mb-3">
+            <div class="col-12 col-lg-6">
+              <app-form-input-field appearance="appearance-1" [labelText]="'Medication:'"
+                [control]="medicationsFormArray.controls[medicationIndex].get('medication')">
+              </app-form-input-field>
+            </div>
+            <div class="col-12 col-lg-6 d-flex align-items-center">
+              <div class="flex-grow-1">
+                <app-form-input-field appearance="appearance-1" [labelText]="'Reason:'"
+                  [control]="medicationsFormArray.controls[medicationIndex].get('reason')">
+                </app-form-input-field>
+              </div>
+              <div class="flex-grow-0">
+                <i class="fa-solid fa-circle-minus fs-3 cursor-pointer" style="position: relative; right: 25px"
+                  (click)="onRemoveMedication(medicationIndex, medication.value)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <i class="fa-solid fa-circle-plus fs-3" (click)="onAddMedication()"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container mb-5">
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Are you pregnant or nursing?'"
+          [control]="medicalHistoryFormGroup?.get('pregnantOrNursing')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-auto">
+        <label>Do you use alcohol of any kind?</label>
+      </div>
+      <div class="col-auto col-lg-3">
+        <app-form-radio-field [checkboxAppearance]="true" [items]="yesNoRadioItems" [control]="medicalHistoryFormGroup?.get('useAlcohol')" inputIDPrefix="MHuseAlchohol"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="row mb-5 ps-4">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'What kind?'" [placeholder]="'Ex. chew/cigarettes'"
+          [control]="medicalHistoryFormGroup?.get('alcoholType')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-auto">
+        <label class="long-text-responsive">Have you been hospitalized or had a serious illness?</label>
+      </div>
+      <div class="col-auto col-lg-3">
+        <app-form-radio-field [checkboxAppearance]="true" [items]="yesNoRadioItems" [control]="medicalHistoryFormGroup?.get('hospitalized')" inputIDPrefix="MHhospitalized"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="row mb-5 ps-4">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Please explain:'"
+          [control]="medicalHistoryFormGroup?.get('explanationOfIllness')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-auto">
+        <label class="long-text-responsive">Are you allergic to any medications or other things (such as latex, <br> disinfectants, metals or
+          plastic)?</label>
+      </div>
+      <div class="col-auto col-lg-3">
+        <app-form-radio-field [checkboxAppearance]="true" [items]="yesNoRadioItems" [control]="medicalHistoryFormGroup?.get('allergic')" inputIDPrefix="MHallergic"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="row mb-5 ps-4">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Please explain:'"
+          [control]="medicalHistoryFormGroup?.get('allergicExplanation')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="d-flex form-title">
+      <div class="title-container ms-0">
+        <h3 class="fw-mediumi fs-4">Have you had any of the following:</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">SKIN</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Skin Condition" [control]="medicalHistoryFormGroup?.get('skinCondition')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Changes in skin color" [control]="medicalHistoryFormGroup?.get('changesOnSkinColor')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">EYES</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Visual change" [control]="medicalHistoryFormGroup?.get('visualChange')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Glaucoma" [control]="medicalHistoryFormGroup?.get('glaucoma')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Eye Surgery" [control]="medicalHistoryFormGroup?.get('eyeSurgery')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">EARS</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Loss of hearing" [control]="medicalHistoryFormGroup?.get('lossOfHearing')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Tinnitus (ringing in ears)" [control]="medicalHistoryFormGroup?.get('tinnitus')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">NOSE</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Frequent Nosebleeds" [control]="medicalHistoryFormGroup?.get('frequentNoseBleeds')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Sinus problems" [control]="medicalHistoryFormGroup?.get('sinusProblem')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">DIGESTIVE SYSTEM</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Hepatitis" [control]="medicalHistoryFormGroup?.get('hepatities')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Jaundice" [control]="medicalHistoryFormGroup?.get('jaundice')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Ulcers" [control]="medicalHistoryFormGroup?.get('ulcers')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Heartburn/acid reflux" [control]="medicalHistoryFormGroup?.get('heartburn')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Dry mouth" [control]="medicalHistoryFormGroup?.get('dryMouth')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Difficulty swallowing" [control]="medicalHistoryFormGroup?.get('difficulty_swallowing')"></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">HEART/BLOOD VESSEL</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Elevated Cholesterol" [control]="medicalHistoryFormGroup?.get('elevatedCholesterol')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Chest pain/discomfort" [control]="medicalHistoryFormGroup?.get('chestPain')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Heart attack" [control]="medicalHistoryFormGroup?.get('heart_attack')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Shortness of breath" [control]="medicalHistoryFormGroup?.get('shortnessOfBreath')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Stroke" [control]="medicalHistoryFormGroup?.get('stroke')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Swelling of ankles" [control]="medicalHistoryFormGroup?.get('swellingOfAnkles')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="High blood pressure" [control]="medicalHistoryFormGroup?.get('highBloodPressure')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Congenital heart disease" [control]="medicalHistoryFormGroup?.get('congenitalHeartDisease')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Artificial heart valve" [control]="medicalHistoryFormGroup?.get('atrificialHeartValve')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Pacemaker" [control]="medicalHistoryFormGroup?.get('pacemaker')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Heart Surgery" [control]="medicalHistoryFormGroup?.get('heartSurgery')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Other" [control]="medicalHistoryFormGroup?.get('other')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">RESPIRATORY</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Tuberculosis" [control]="medicalHistoryFormGroup?.get('tuberculosis')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Difficulty breathing" [control]="medicalHistoryFormGroup?.get('difficultyBreathing')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Emphysema" [control]="medicalHistoryFormGroup?.get('emphysema')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Asthma/hay fever" [control]="medicalHistoryFormGroup?.get('asthma')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Persistent cough" [control]="medicalHistoryFormGroup?.get('presistentCough')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">URINARY</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Kidney disease" [control]="medicalHistoryFormGroup?.get('kidneyDisease')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Increase urination" [control]="medicalHistoryFormGroup?.get('increaseUrination')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Venereal disease" [control]="medicalHistoryFormGroup?.get('venerealDisease')"></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">BONE/MUSCLES</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Arthritis/rheumatism" [control]="medicalHistoryFormGroup?.get('arthritis')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Artificial joints" [control]="medicalHistoryFormGroup?.get('artificialJoints')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="History of back problems" [control]="medicalHistoryFormGroup?.get('backProblems')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Taken bisphosphonates" [control]="medicalHistoryFormGroup?.get('taken_bisphosphonates')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">NERVOUS SYSTEM</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Headaches" [control]="medicalHistoryFormGroup?.get('headaches')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Convulsions/epilepsy" [control]="medicalHistoryFormGroup?.get('convulsions')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Numbness/tingling" [control]="medicalHistoryFormGroup?.get('numbness')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Dizziness/fainting" [control]="medicalHistoryFormGroup?.get('dizziness')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Psychiatric treatment" [control]="medicalHistoryFormGroup?.get('psychiatricTreatement')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Dementia/Alzheimers" [control]="medicalHistoryFormGroup?.get('dementia')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">BLOOD</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Tendency to bruise" [control]="medicalHistoryFormGroup?.get('tendencyOfBruise')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Anemia" [control]="medicalHistoryFormGroup?.get('anemia')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Blood transfusion" [control]="medicalHistoryFormGroup?.get('bloodTransfusion')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Abnormal bleeding" [control]="medicalHistoryFormGroup?.get('abnormalBleeding')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Anticoagulant (blood thinners)" [control]="medicalHistoryFormGroup?.get('anticoagulant')"></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5 class="form-input-group-header mb-3">OTHER</h5>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Radiation therapy" [control]="medicalHistoryFormGroup?.get('radiationTherapy')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Tumors or growth" [control]="medicalHistoryFormGroup?.get('difficulty_swallowing')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Cancer" [control]="medicalHistoryFormGroup?.get('cancer')"></app-form-checkbox-field>
+          </div>
+          <div class="mb-3">
+            <app-form-checkbox-field labelText="Immune suppression disorder" [control]="medicalHistoryFormGroup?.get('immuneSuppressionDisorder')"></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <app-form-input-field class="long-text-responsive" appearance="appearance-1" [labelText]="'Is there anything else you would like us to take note of?'"
+          [control]="medicalHistoryFormGroup?.get('note')">
+        </app-form-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 w-100">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8 reg-sign-date-section">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Sign'"
+            [control]="medicalHistoryFormGroup?.get('sign')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-3 date-responsive reg-sign-date-section">
+          <app-form-masked-input-field
+            appearance="flat"
+              labelText="Date"
+              [control]="medicalHistoryFormGroup?.get('date')"
+              mask="99/99/9999"
+              slotChar="mm/dd/yyyy"
+              placeholder="00/00/0000">
+            </app-form-masked-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button [style.width]="'700px'" [style.padding]="'12px'" class="btn btn-primary" (click)="onSubmitPatientInfo()">
+      Next
+    </button>
+  </div>
+
+
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="dentalHistoryFormGroup"></form-validation-message>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="medicalHistoryFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

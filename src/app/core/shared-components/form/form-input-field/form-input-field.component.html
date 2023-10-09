@@ -1,0 +1,31 @@
+<div class="d-flex {{appearance}}" *ngIf="control">
+  <div class="d-flex align-items-center w-100" *ngIf="!floatingLabel">
+    <div class="flex-grow-0" *ngIf="!noLabel">
+      <label class="fw-medium mb-0">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+        <span *ngIf="isRequired && labelText" class="fw-normal"> * </span>
+      </label>
+    </div>
+    <div class="flex-grow-1">
+      <div class="row">
+        <div class="col-12">
+          <input [id]="id" [name]="name" class="{{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" [ngClass]="{'no-bg' : noBackground}" [type]="inputType" pInputText  [formControl]="control"
+          placeholder="{{placeholder}} {{isRequired ? '*' : ''}}" [readonly]="disabled"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100" *ngIf="floatingLabel">
+    <span class="p-float-label {{appearance}}">
+      <input [id]="id" [name]="name" class="{{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" [ngClass]="{'no-bg' : noBackground}" [type]="inputType" pInputText  [formControl]="control"
+      placeholder="{{placeholder}} {{isRequired ? '*' : ''}}" [readonly]="disabled"/>
+      <label [htmlFor]="id">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+        <span *ngIf="isRequired && labelText" class="fw-normal"> * </span>
+      </label>
+    </span>
+  </div>
+</div>

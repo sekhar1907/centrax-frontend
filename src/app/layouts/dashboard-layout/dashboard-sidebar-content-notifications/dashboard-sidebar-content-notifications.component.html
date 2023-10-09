@@ -1,0 +1,16 @@
+<div class="popup-menu py-5 px-3">
+  <div class="d-flex flex-column h-100">
+      <div [ngClass]="{'hide' : makeAnnouncementActive}" class="announce-box mt-5 text-muted cursor-pointer" (click)="toggleMakeAnnouncement()">
+        Announce something to your practice
+      </div>
+      <div class="make-announcement" [ngClass]="{'show' : makeAnnouncementActive}">
+        <app-dashboard-sidebar-content-make-announcement (closeMakeAnnouncement)="toggleMakeAnnouncement()"
+        (announcementCreated)="onAnnouncementCreated($event)">
+        </app-dashboard-sidebar-content-make-announcement>
+      </div>
+
+      <div class="announce-box mt-5 text-dark" *ngFor="let notification of notifications">
+        {{notification.message}}
+      </div>
+  </div>
+</div>

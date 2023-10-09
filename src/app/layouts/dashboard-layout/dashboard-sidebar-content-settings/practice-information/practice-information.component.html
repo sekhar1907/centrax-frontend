@@ -1,0 +1,42 @@
+<div class="row no-gutters mt-2 pl-2 body-wrapper">
+    <form [formGroup]="practiceInformationForm" novalidate (ngSubmit)="createPracticeInformation()">
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="text-right pb-5">
+                    <span class="p-2"><i class="far fa-edit s-13-12"></i></span>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-sm-4"><label for="npi">NPI</label></div>
+                    <div class="col-sm-8 pl-2"><input type="text" formControlName="NPI" id="npi"></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-sm-4"><label for="dental_license">Dental License</label></div>
+                    <div class="col-sm-8 pl-2"><input type="text" formControlName="dentalLicense" id="dental_license">
+                    </div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-sm-4"><label for="tax_id">Tax ID</label></div>
+                    <div class="col-sm-8 pl-2"><input type="text" formControlName="taxId" id="tax_id"></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-sm-4"><label for="Agency_number">Drug Enforcement Agency (DEA) Number</label>
+                    </div>
+                    <div class="col-sm-8 pl-2"><input type="text" formControlName="DEANumber" id="Agency_number"></div>
+                </div>
+
+                <div class="d-flex pb-3">
+                    <div class="text-diff">
+                        Business Associate Agreement
+                    </div>
+                    <div class="ml-4">
+                        <a class="review-text">Review</a>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-holder">
+                <button class="btn-save" type="submit"
+                    [disabled]="practiceInformationForm.pristine || practiceInformationForm.invalid">save</button>
+            </div>
+        </div>
+    </form>
+</div>

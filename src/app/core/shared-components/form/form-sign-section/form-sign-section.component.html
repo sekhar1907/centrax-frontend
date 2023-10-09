@@ -1,0 +1,21 @@
+<div class="mt-5 w-100">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <app-form-input-field
+        appearance="flat"
+          [labelText]="'Sign'"
+          [control]="signControl">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-md-3">
+        <app-form-masked-input-field
+        appearance="flat"
+          [labelText]="'Date'"
+          [control]="signDateControl"
+          [mask]="'00/00/0000'">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+  </div>
+</div>

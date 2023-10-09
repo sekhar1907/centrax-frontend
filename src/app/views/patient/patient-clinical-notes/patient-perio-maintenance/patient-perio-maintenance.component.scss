@@ -1,0 +1,55 @@
+
+
+.d-none-print {
+  display: none;
+}
+
+@media only print and (max-width:1023px) {
+
+  .p-padding {
+    padding-bottom: 100px !important;
+  }
+  .print_none {
+    display: none !important;
+  }
+  .p-letr{
+    letter-spacing: 5px !important;
+  }
+  .print-m-t{
+    margin-top: 70px !important;
+  }
+  .print-show{
+    display: inline-block !important;
+  }
+  .print-padding-y{
+    padding: 0px !important;
+  }
+  .centrax-size {
+    width: 100px;
+    height: auto;
+    margin-left: 35%;
+  }
+  .p_subjective {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+  }
+  .print-m-p-t{
+    margin-top: 30px !important;
+    padding-top: 0px !important;
+  }
+  .print-p{
+    padding: 0px 20px !important;
+  }
+  .print-hygiene-cc{
+    width: 50% !important;
+  }
+  .print-w-25{
+    width: 25%;
+  }
+  .print-w-75{
+    width: 75%;
+  }
+  .print-w-20{
+    width: 20%;
+  }
+}

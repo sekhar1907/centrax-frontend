@@ -1,0 +1,100 @@
+<div class="create-profile-container">
+  <form
+    class="needs-validation"
+    novalidate
+    class="w-100"
+    [formGroup]="billingFormGroup"
+    (ngSubmit)="onSaveBilling()"
+  >
+    <div class="text-center mb-5 pb-5">
+      <h1 class="fs-3 mb-3">Profile Creation</h1>
+      <p class="fs-6">Step 3: Billing</p>
+    </div>
+
+    <div class="form-container mt-5">
+      <h4 class="w-100 text-start">Plans & Billing</h4>
+
+      <div class="d-flex justify-content-between flex-column flex-md-row align-items-center w-100 mt-5">
+        <div class="billing-options"
+          [ngClass]="{'selected' : selectedPlanIndex === i}"
+          [ngStyle]="{ backgroundColor: option.bgColor }"
+          *ngFor="let option of billingOptions; let i = index;"
+          (click)="onSelectBilling(option.planName, i)">
+          <div class="text-dark px-2">{{ option.planName }}</div>
+          <div class="mt-4 px-2">
+            <span class="fs-3 fw-bold">{{ option.pricePerMonth }}</span>
+            <span class="text-dark ms-2">per month</span>
+          </div>
+          <div class="text-dark billing-description mt-3">{{ option.description }}</div>
+          <div class="selected-dot"></div>
+        </div>
+      </div>
+
+      <h4 class="w-100 text-start mt-5 pt-5">Add payment method</h4>
+      <div class="d-flex justify-content-center w-100 mt-4" [formGroup]="paymentMethodFormGroup">
+        <div class="payment-method-container">
+          <div>
+            <div class="col-12">
+              <label htmlFor="cardHolder" class="w-100 fw-medium">Card holder*</label>
+              <input class="w-100 {{formsubmit && form['cardHolder'].errors ? 'is-invalid' : 'is-valid'}}" type="text" pInputText id="cardHolder" formControlName="cardHolder" />
+            </div>
+            <div class="col-12 mt-4">
+              <label htmlFor="cardNumber" class="w-100 fw-medium">Credit/debit card number *</label>
+              <input class="w-100 {{formsubmit && form['cardNumber'].errors ? 'is-invalid' : 'is-valid'}}" type="text" pInputText id="cardNumber" formControlName="cardNumber" />
+            </div>
+
+            <div class="row mt-4 mx-0">
+              <div class="col-lg-6 col-12">
+                <label htmlFor="expirationMonthYear" class="w-100 fw-medium">Expiration month and year*</label>
+                <input mask="M0/0000" placeholder="MM/YYYY" [dropSpecialCharacters]="false" [leadZeroDateTime]="true" [showMaskTyped]="true" class="w-100 {{formsubmit && form['expirationMonthYear'].errors ? 'is-invalid' : 'is-valid'}}" type="text" pInputText id="expirationMonthYear" formControlName="expirationMonthYear" />
+                <!-- <p-inputMask mask="99/9999" placeholder="MM/YYYY" slotChar="MM/YYYY"
+                class="w-100 {{formsubmit && form['expirationMonthYear'].errors ? 'is-invalid' : 'is-valid'}}"
+                id="expirationMonthYear" characterPattern="/^(0[1-9]|1[0-2])\/\d{4}$/" [keepBuffer]="true" formControlName="expirationMonthYear"></p-inputMask> -->
+              </div>
+              <div class="col-lg-6 col-12">
+                <label htmlFor="cvc" class="w-100 fw-medium">CVC*</label>
+                <input mask="000" class="w-100 {{formsubmit && form['cvc'].errors ? 'is-invalid' : 'is-valid'}}" type="text" pInputText id="cvc" formControlName="cvc" />
+              </div>
+            </div>
+
+            <div class="row mt-5 mx-0">
+              <div class="col-lg-6 col-12 d-flex align-items-center">
+                <div class="fw-medium">*This field is mandatory</div>
+              </div>
+              <div class="col-lg-6 col-12 d-flex justify-content-end">
+                <button [disabled]="paymentMethodFormGroup.invalid" (click)="onSavePaymentMethod()" class="btn btn-secondary px-5">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="button"
+          (click)="onSaveBilling()"
+          [disabled]="billingFormGroup.invalid"
+        >
+          Save and Next
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="button"
+          (click)="onSkip()"
+        >
+          Skip for now
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

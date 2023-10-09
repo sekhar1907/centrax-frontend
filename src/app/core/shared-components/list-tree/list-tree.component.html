@@ -1,0 +1,10 @@
+<div *ngIf="nodes.length">
+  <p-tree styleClass="tree-list {{appearance}}" [value]="nodes" class="w-full md:w-30rem">
+    <ng-template let-node pTemplate="url">
+        <a [href]="node.data" target="_blank">{{ node.label }}</a>
+    </ng-template>
+    <ng-template let-node pTemplate="default">
+        <b>{{ node.label }}</b>
+    </ng-template>
+  </p-tree>
+</div>

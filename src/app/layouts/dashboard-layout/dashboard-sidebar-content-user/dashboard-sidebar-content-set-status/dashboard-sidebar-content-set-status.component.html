@@ -1,0 +1,39 @@
+<div class="set-status-container">
+  <div class="d-flex align-items-center w-100 text-dark justify-content-between px-4">
+    <h4 class="mb-0">Set a status</h4>
+    <i class="fa fa-close fs-5 cursor-pointer" (click)="onCloseSetStatus()" (change)="currentStatus = null"></i>
+  </div>
+  <div class="px-4">
+    <div class="status-input">
+      <input type="text" placeholder="what is your status?" [(ngModel)]="statusInput">
+      <i class="fa-regular fa-face-smile fs-5"></i>
+    </div>
+  </div>
+  <div class="d-flex flex-column mt-4 status-list">
+    <div class="d-flex align-items-center fw-bold mb-3 px-5 py-2" [ngClass]="{'active' : currentStatus === 'In a meeting'}" (click)="currentStatus = 'In a meeting'">
+      <img class="me-4 black-ic" src="assets/images/icons/meeting-icon.svg" alt="">
+      <img class="me-4 white-ic" src="assets/images/icons/meeting-icon-white.svg" alt="">
+      In a meeting
+    </div>
+    <div class="d-flex align-items-center fw-bold mb-3 px-5 py-2" [ngClass]="{'active' : currentStatus === 'Lunch'}" (click)="currentStatus = 'Lunch'">
+      <img class="me-4 black-ic" src="assets/images/icons/lunch-icon.svg" alt="">
+      <img class="me-4 white-ic" src="assets/images/icons/lunch-icon-white.svg" alt="">
+      Lunch
+    </div>
+    <div class="d-flex align-items-center fw-bold mb-3 px-5 py-2" [ngClass]="{'active' : currentStatus === 'Out Sick'}" (click)="currentStatus = 'Out Sick'">
+      <img class="me-4 black-ic" src="assets/images/icons/out-sick-icon.svg" alt="">
+      <img class="me-4 white-ic" src="assets/images/icons/out-sick-icon-white.svg" alt="">
+      Out Sick
+    </div>
+    <div class="d-flex align-items-center fw-bold px-5 py-2" [ngClass]="{'active' : currentStatus === 'Vacation'}" (click)="currentStatus = 'Vacation'">
+      <img class="me-4 black-ic" src="assets/images/icons/vacation-icon.svg" alt="">
+      <img class="me-4 white-ic" src="assets/images/icons/vacation-icon-white.svg" alt="">
+      Vacation
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-end mt-5 pt-5 px-3">
+    <p-button label="Cancel" styleClass="p-button-outlined p-button-secondary me-2" (onClick)="onCloseSetStatus()"></p-button>
+    <p-button label="Save" styleClass="p-button-secondary" (onClick)="onSaveStatus()"></p-button>
+  </div>
+</div>

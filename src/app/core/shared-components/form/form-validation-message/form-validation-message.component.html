@@ -1,0 +1,7 @@
+<div class="form-validation-container" *ngIf="errorItems.length">
+  <ul>
+    <li *ngFor="let errorItem of errorItems">
+      {{ errorItem.errorMessage }}
+    </li>
+  </ul>
+</div>

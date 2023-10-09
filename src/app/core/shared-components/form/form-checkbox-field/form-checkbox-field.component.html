@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-12 d-flex align-items-center" *ngIf="control">
+    <label class="me-2 mb-0" for="{{selectPrefix + labelText}}" *ngIf="!noLabel && !rightLabel">{{ labelText }}<span *ngIf="labelTextSecondary">{{ labelTextSecondary }}</span></label>
+    <p-checkbox [formControl]="control" [binary]="true" inputId="{{selectPrefix + labelText}}"></p-checkbox>
+    <label class="ms-2 mb-0" for="{{selectPrefix + labelText}}" *ngIf="!noLabel && rightLabel">{{ labelText }}<span *ngIf="labelTextSecondary">{{ labelTextSecondary }}</span></label>
+  </div>
+</div>

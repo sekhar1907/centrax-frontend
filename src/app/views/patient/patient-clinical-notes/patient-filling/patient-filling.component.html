@@ -1,0 +1,214 @@
+<div class="py-3 h-100">
+  <div class="d-flex print-m-p form-title mt-5 pt-5 mb-4">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 print-p-l patient-consult-heading">Fillings</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-7 print-w-50 col-xl-7 col-lg-12 col-md-12 filling-first">
+        <div class="row mb-4">
+          <div class="col-12 col-xl-8">
+            <app-form-input-field appearance="appearance-1" [labelText]="'Treatment Provider'" [control]="fillingsFormGroup.get('treatmentProvider')"></app-form-input-field>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-12 col-xl-8">
+            <app-form-input-field appearance="appearance-1" [labelText]="'Treatment Assistant'" [control]="fillingsFormGroup.get('treatmentAssistant1')"></app-form-input-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mb-5 col-lg-4 col-xl-3 d-flex align-items-center">
+            <app-form-checkbox-field [labelText]="'PARQ'" [control]="fillingsFormGroup.get('parq')"></app-form-checkbox-field>
+          </div>
+          <div class="col-12 col-lg-8 col-xl-9">
+            <div class="row">
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <app-form-checkbox-field [labelText]="'Medical HX Reviewed'" [control]="fillingsFormGroup.get('medicalHxReviewed')"></app-form-checkbox-field>
+              </div>
+              <div class="col-12 col-lg-6 d-flex align-items-center">
+                <app-form-input-field appearance="appearance-1" [labelText]="'Pre-op BP'" [control]="fillingsFormGroup.get('preOpBp')"></app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 print-w-50 col-lg-12 ">
+        <app-form-textarea-field
+          [labelText]="'Next'"
+          [rows]="5"
+          [control]="fillingsFormGroup.get('next')">
+        </app-form-textarea-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12">
+        <app-form-checkbox-field
+          [labelText]="'Topical Anesthetic'"
+          [control]="fillingsFormGroup.get('topicalAnesthetic')">
+        </app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mt-4 mb-4">
+      <div class="col-12 print-w-50 col-md-7 col-xl-5">
+        <app-form-input-field appearance="appearance-1" [labelText]="'1st Type of Anesthetic'" [control]="fillingsFormGroup.get('firstAnesthetic')"></app-form-input-field>
+      </div>
+      <div class="col-12 print-w-50 col-md-5 col-xl-2 d-flex align-items-center">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Carpules'" [control]="fillingsFormGroup.get('firstAnestheticCarpules')"></app-form-input-field>
+      </div>
+      <div class="col-12 print-w-10 col-md-4 col-xl-2 d-flex align-items-center">
+        <app-form-checkbox-field
+          [labelText]="'N2O'"
+          [control]="fillingsFormGroup.get('n2o')">
+        </app-form-checkbox-field>
+      </div>
+      <div class="col-12 print-w-20 col-md-4 col-xl-1 d-flex align-items-center">
+        <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingsFormGroup.get('n2oPercent')"></app-form-input-field>
+        <label>%</label>
+      </div>
+      <div class="col-12 print-w-25 col-md-4 col-xl-2 d-flex align-items-center">
+        <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingsFormGroup.get('n2oMin')"></app-form-input-field>
+        <label>minutes</label>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12 print-w-50 col-md-7 col-xl-5">
+        <app-form-input-field appearance="appearance-1" [labelText]="'2nd Type of Anesthetic'" [control]="fillingsFormGroup.get('secondAnesthetic')"></app-form-input-field>
+      </div>
+      <div class="col-12 print-w-50 col-md-5 col-xl-2 d-flex align-items-center">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Carpules'" [control]="fillingsFormGroup.get('secondAnestheticCarpules')"></app-form-input-field>
+      </div>
+      <div class="col-12 col-md-4 print-w-20 col-xl-2 d-flex align-items-center extre_textarea">
+        <app-form-checkbox-field [labelText]="'O2 Flush 100%'" [control]="fillingsFormGroup.get('o2Fluse')"></app-form-checkbox-field>
+      </div>
+      <div class="col-12 col-md-4 col-xl-1 d-none d-xl-flex align-items-center">
+      </div>
+      <div class="col-12 col-md-4 print-w-25 col-xl-2 d-flex align-items-center">
+        <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingsFormGroup.get('o2Min')"></app-form-input-field>
+        <label>minutes</label>
+      </div>
+    </div>
+
+    <div class="row mt-5 mb-4">
+      <div class="col-12 col-xl-10 print-flex d-flex flex-column flex-md-row flex-xl-nowrap">
+       <div>
+        <label class="me-auto me-md-4 mb-3 mb-md-0">Type of Injections</label>
+      </div>
+      <div class="d-flex flex-wrap print-m-top flex-xl-nowrap">
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'PSA'" [control]="fillingsFormGroup.get('psa')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'MSA'" [control]="fillingsFormGroup.get('msa')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'ASA'" [control]="fillingsFormGroup.get('asa')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'IA'" [control]="fillingsFormGroup.get('ia')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'LB'" [control]="fillingsFormGroup.get('lb')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'PAL'" [control]="fillingsFormGroup.get('pal')"></app-form-checkbox-field>
+        <app-form-checkbox-field class="mx-5 mx-md-2 mx-xl-3 " [labelText]="'Infiltrate'" [control]="fillingsFormGroup.get('infiltrate')"></app-form-checkbox-field>
+      </div>
+    </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-12  d-none-print print-show mt-5">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+          </div>
+          <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+              <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+              <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ <div class="row">
+      <div class="col-12 print-show d-none-print">
+        <app-form-header-info
+        [providerName]="'Dr. Jane Doe'"
+        [practiceName]="'Astra Practice Partners'"
+        [practicePhoneNumber]="'(555) 555-5555'"
+        [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+        [patientName]="'Mickey Mouse'"
+        [patientBirthdate]="'04/26/1936'"
+        [entryDate]="'02/20/2020'">
+      </app-form-header-info>
+      </div>
+    </div>
+  <div class="form-section-container">
+    <div class="d-none d-xl-block">
+      <div class="row">
+        <div class="col-1 text-center"><label>Tooth</label></div>
+        <div class="col-2 text-center"><label>Surfaces</label></div>
+        <div class="col-2 text-center"><label>Restoration Type</label></div>
+        <div class="col-2 text-center"><label>Shade</label></div>
+        <div class="col-1 text-center"><label>30%<br>Etch</label></div>
+        <div class="col-1 text-center"><label>Optibond<br>Adhesive</label></div>
+        <div class="col-1 text-center"><label>Vitrabond<br>Adhesive</label></div>
+        <div class="col-1 text-center"><label>Record<br>w/ epi</label></div>
+      </div>
+      <div class="row mb-4" *ngFor="let fillingItem of fillingList.controls; let fillingIndex = index">
+        <div class="col-1">
+          <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('toothNumber')"></app-form-input-field>
+        </div>
+        <div class="col-2">
+          <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('surfaces')"></app-form-input-field>
+        </div>
+        <div class="col-2">
+          <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('restorationtype')"></app-form-input-field>
+        </div>
+        <div class="col-2">
+          <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('shade')"></app-form-input-field>
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+          <app-form-checkbox-field [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('etch35Percent')"></app-form-checkbox-field>
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+          <app-form-checkbox-field [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('optibondAdhesive')"></app-form-checkbox-field>
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+          <app-form-checkbox-field [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('vitrabondBase')"></app-form-checkbox-field>
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center">
+          <app-form-checkbox-field [noLabel]="true" [control]="fillingList.controls[fillingIndex].get('recordWithEpi')"></app-form-checkbox-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row print-m-t">
+      <div class="col-12 print-w-50 col-lg-6 col-xl-4 mt-5">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Post-op BP'" [control]="fillingsFormGroup.get('postOpBp')"></app-form-input-field>
+      </div>
+      <div class="col-12 print-w-50 col-lg-6 col-xl-6 mt-5">
+        <app-form-textarea-field
+          [labelText]="'Treatment Notes'"
+          [rows]="5"
+          [control]="fillingsFormGroup.get('treatmentNotes')">
+        </app-form-textarea-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-none-print print-show mt-5">
+        <div class="row mt-5">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+          </div>
+          <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+              <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+              <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

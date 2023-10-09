@@ -1,0 +1,1293 @@
+<div class="py-3 h-100">
+  <div class="d-flex form-title p_subjective mt-3 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Provider/Anesthetic</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container print-mp">
+    <div class="row g-0">
+      <div class="col-md-6 print-w-50 col-lg-12 d-lg-flex flex-lg-row px-0">
+        <div class="col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-6 d-flex align-items-center mb-4">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Treatment Provider'"
+                [control]="operativeProgressFormGroup.get('treatmentProvider')"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center mb-4">
+              <app-form-checkbox-field
+                [labelText]="'Medical HX Reviewed'"
+                [control]="
+                  operativeProgressFormGroup.get('medicalHxReviewed')
+                "
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 d-flex align-items-center">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Pre-op BP'"
+                [control]="operativeProgressFormGroup.get('preBp')"
+                class="w-100"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center operative-text-top">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Nitrous Oxide Ratio'"
+                [control]="operativeProgressFormGroup.get('nitrousOxideRatio')"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center operative-text-top">
+              <app-form-checkbox-field
+                [labelText]="'O2 Flush'"
+                [control]="
+                  operativeProgressFormGroup.get('o2Fluse')
+                "
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 print-w-50 col-lg-12 d-lg-flex flex-lg-row px-0">
+        <div class="col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-6 d-flex align-items-center mb-4">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Treatment Assistant'"
+                [control]="operativeProgressFormGroup.get('treatmentAssistant')"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center mb-4">
+              <app-form-checkbox-field
+                [labelText]="'PARQ'"
+                [control]="
+                  operativeProgressFormGroup.get('parq')
+                "
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 d-flex align-items-center">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Post-op BP'"
+                [control]="operativeProgressFormGroup.get('postBp')"
+                class="w-100"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center operative-text-top">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Nitrous Oxide Minutes'"
+                [control]="operativeProgressFormGroup.get('nitrousOxideMin')"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center operative-text-top">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'100% O2 Minutes'"
+                [control]="operativeProgressFormGroup.get('o2Min')"
+              >
+              </app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 operative-text-top">
+        <app-form-checkbox-field
+          [labelText]="'Topical Anesthetic'"
+          [control]="operativeProgressFormGroup.get('topicalAnesthetic')"
+        ></app-form-checkbox-field>
+      </div>
+    </div>
+    <div class="row mt-md-5 mt-3">
+      <div class="col-md-6 print-w-50 px-0">
+        <h5 class="form-input-group-header mb-3 text-center">Type of Anesthetic</h5>
+        <div class="col-12 mb-4">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'First Type of Anesthetic'"
+            [control]="operativeProgressFormGroup.get('firstAnesthetic')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Carpules'"
+            [control]="operativeProgressFormGroup.get('firstAnestheticCarpules')"
+          >
+          </app-form-input-field>
+        </div>
+
+        <div class="col-12 mb-4">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Second Type of Anesthetic'"
+            [control]="operativeProgressFormGroup.get('secondAnesthetic')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Carpules'"
+            [control]="operativeProgressFormGroup.get('secondAnestheticCarpules')"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+      <div class="col-md-6 px-md-5 px-1 print-w-50">
+        <h5 class="form-input-group-header mb-4 text-center">Type of Injections</h5>
+
+        <div class="row mb-md-4">
+          <div class="col-4 col-md-6 print-w-75">
+            <app-form-checkbox-field
+              [labelText]="'PSA'"
+              [control]="operativeProgressFormGroup.get('psa')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-4 col-md-6">
+            <app-form-checkbox-field
+              [labelText]="'MSA'"
+              [control]="operativeProgressFormGroup.get('msa')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-4 col-md-6">
+            <app-form-checkbox-field
+              [labelText]="'ASA'"
+              [control]="operativeProgressFormGroup.get('asa')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+        <div class="row mb-md-4">
+          <div class="col-4 col-md-6">
+            <app-form-checkbox-field
+              [labelText]="'IA'"
+              [control]="operativeProgressFormGroup.get('ia')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-4 col-md-6">
+            <app-form-checkbox-field
+              [labelText]="'LB'"
+              [control]="operativeProgressFormGroup.get('lb')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+        <div class="row mb-md-5">
+          <div class="col-6 col-md-6 print-w-25 col-lg-4">
+            <app-form-checkbox-field
+              [labelText]="'Infiltrate'"
+              [control]="operativeProgressFormGroup.get('infiltrate')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-4 col-md-6 col-4 col-md-6">
+            <app-form-checkbox-field
+              [labelText]="'Mental'"
+              [control]="operativeProgressFormGroup.get('mental')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-6 print-mp">
+        <app-form-textarea-field
+          [labelText]="'Treatment Notes:'"
+          [rows]="5"
+          [control]="operativeProgressFormGroup.get('treatmentNotes')"
+
+        >
+        </app-form-textarea-field>
+      </div>
+      <div class="col-lg-6 print-mp">
+        <app-form-textarea-field
+          [labelText]="'Next:'"
+          [rows]="5"
+          [control]="operativeProgressFormGroup.get('next')"
+
+        >
+        </app-form-textarea-field>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12 d-none-print print-show mt-3">
+      <div class="row">
+        <div class="col-4">
+          <h6 class="fw-mediumi fs-5 d-none-print print-show">
+            PATIENT REGISTRATION FORMS
+          </h6>
+        </div>
+        <div
+          class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+        >
+          <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+            <i>powerd by</i>
+          </h6>
+          <img
+            class="centrax-size text-center d-none-print print-show"
+            src="/assets/centrax-logo.svg"
+            alt="CENTRAX"
+          />
+        </div>
+        <div class="col-4 text-end d-none-print print-show">
+          <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 print-show d-none-print">
+      <app-form-header-info
+        [providerName]="'Dr. Jane Doe'"
+        [practiceName]="'Astra Practice Partners'"
+        [practicePhoneNumber]="'(555) 555-5555'"
+        [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+        [patientName]="'Mickey Mouse'"
+        [patientBirthdate]="'04/26/1936'"
+        [entryDate]="'02/20/2020'"
+      >
+      </app-form-header-info>
+    </div>
+  </div>
+
+  <div class="d-flex form-title mt-3 pt-2 mb-2 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Nitrous Sedation</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row mb-5">
+      <div class="col-lg-6 col-md-12 print-h pe-md-5 print-w-50" *ngFor="let nitrous of nitrousSedation.controls; let nitrousSedationIndex = index">
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <h5 class="form-input-group-header mb-3 text-center">Nitrous</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Time'"
+              [control]="nitrousSedation.controls[nitrousSedationIndex].get('time')"
+            >
+            </app-form-input-field>
+          </div>
+          <div class="col-6 d-flex align-items-center">
+            <div class="flex-grow-1">
+              <app-form-input-field appearance="appearance-1"
+                [noLabel]="true"
+                [control]="nitrousSedation.controls[nitrousSedationIndex].get('percentage')"
+              >
+              </app-form-input-field>
+            </div>
+            <label class="ms-3">%</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center mt-3 mb-5 nitros-sed-flush">
+      <div class="print-w-20 col-md-2 justify-content-md-end d-flex">
+        <app-form-checkbox-field
+          [labelText]="'Flush'"
+          [control]="operativeProgressFormGroup.get('nitrousSedationFlush')"
+        ></app-form-checkbox-field>
+      </div>
+      <div class="print-w-25 col-md-4 justify-content-md-center d-flex">
+        <label>100% O2</label>
+      </div>
+      <div class="col-md-5 print-w-25 justify-content-md-start d-flex">
+        <app-form-input-field appearance="appearance-1"
+        [noLabel]="true"
+        [control]="operativeProgressFormGroup.get('nitrousSedationMinutes')"
+      ></app-form-input-field>
+        <label>minutes</label>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-7 col-md-12">
+        <app-form-textarea-field
+          [labelText]="'Notes:'"
+          [rows]="5"
+          [control]="operativeProgressFormGroup.get('nitrousSedationNotes')"
+        >
+        </app-form-textarea-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-none-print print-show">
+      <div class="row">
+        <div class="col-4">
+          <h6 class="fw-mediumi fs-5 d-none-print print-show">
+            PATIENT REGISTRATION FORMS
+          </h6>
+        </div>
+        <div
+          class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+        >
+          <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+            <i>powerd by</i>
+          </h6>
+          <img
+            class="centrax-size text-center d-none-print print-show"
+            src="/assets/centrax-logo.svg"
+            alt="CENTRAX"
+          />
+        </div>
+        <div class="col-4 text-end d-none-print print-show">
+          <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 print-show d-none-print">
+      <app-form-header-info
+        [providerName]="'Dr. Jane Doe'"
+        [practiceName]="'Astra Practice Partners'"
+        [practicePhoneNumber]="'(555) 555-5555'"
+        [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+        [patientName]="'Mickey Mouse'"
+        [patientBirthdate]="'04/26/1936'"
+        [entryDate]="'02/20/2020'"
+      >
+      </app-form-header-info>
+    </div>
+  </div>
+
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5 mt-3 pt-2 mb-3">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Build Up</h2>
+    </div>
+  </div>
+  <div class="form-section-container print-mp">
+    <div class="row text-center mb-5">
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="row">
+            <div class="col-md-2 print-h-830 col-lg-1 print-w-20">
+              <label for="">Tooth #</label>
+            </div>
+            <div class="col-md-3 print-w-20">
+              <label for="">Build Up Type</label>
+            </div>
+            <div class="col-md-3 print-w-20">
+              <label for="">Material Used</label>
+            </div>
+            <div class="col-lg-4 col-md-4 px-5 print-w-20">
+              <label for="">Post Size</label>
+            </div>
+          </div>
+          <div class="row" *ngFor="let build of buildup.controls; let buildIndex = index">
+            <div class="col-md-2 print-h-830 col-lg-1 print-w-20">
+              <app-form-input-field appearance="appearance-1"
+                [noLabel]="true"
+                [control]="buildup.controls[buildIndex].get('toothNumber')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-20">
+              <app-form-input-field appearance="appearance-1"
+                [noLabel]="true"
+                [control]="buildup.controls[buildIndex].get('type')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-20">
+              <app-form-input-field appearance="appearance-1"
+                [noLabel]="true"
+                [control]="buildup.controls[buildIndex].get('materialUsed')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-lg-4 col-md-4 px-5 print-w-20">
+              <div class="col-12 d-flex align-items-center mb-3">
+                <app-form-input-field appearance="appearance-1"
+                  [noLabel]="true"
+                  [control]="buildup.controls[buildIndex].get('postSize')"
+                ></app-form-input-field>
+                <label for="">@</label>
+                <app-form-input-field appearance="appearance-1"
+                  [noLabel]="true"
+                  [control]="buildup.controls[buildIndex].get('postSizeMm')"
+                ></app-form-input-field>
+                <label for="">mm</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <div class="row">
+            <div class="col-12 mt-5 mb-md-3 text-start my-3">
+              <app-form-checkbox-field
+                [labelText]="'Ultra-Etch'"
+                [control]="operativeProgressFormGroup.get('buildUpUltraEtch')"
+              ></app-form-checkbox-field>
+            </div>
+            <div class="col-12 text-start">
+              <app-form-checkbox-field
+                [labelText]="'Optibond Ad'"
+                [control]="operativeProgressFormGroup.get('buildUpOptibondAd')"
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-none-print print-show mt-5">
+            <div class="row">
+              <div class="col-4">
+                <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                  PATIENT REGISTRATION FORMS
+                </h6>
+              </div>
+              <div
+                class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+              >
+                <h6
+                  class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+                >
+                  <i>powerd by</i>
+                </h6>
+                <img
+                  class="centrax-size text-center d-none-print print-show"
+                  src="/assets/centrax-logo.svg"
+                  alt="CENTRAX"
+                />
+              </div>
+              <div class="col-4 text-end d-none-print print-show">
+                <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 print-show d-none-print">
+            <app-form-header-info
+              [providerName]="'Dr. Jane Doe'"
+              [practiceName]="'Astra Practice Partners'"
+              [practicePhoneNumber]="'(555) 555-5555'"
+              [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+              [patientName]="'Mickey Mouse'"
+              [patientBirthdate]="'04/26/1936'"
+              [entryDate]="'02/20/2020'"
+            >
+            </app-form-header-info>
+          </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 mt-md-4 mt-lg-1">
+        <app-form-textarea-field
+          [labelText]="'Treatment Notes'"
+          [rows]="5"
+          [control]="operativeProgressFormGroup.get('buildUpTreatmentNotes')"
+        >
+        </app-form-textarea-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex form-title my-2 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Crown/Bridge Preparation</h2>
+    </div>
+  </div>
+  <div class="form-section-container print-mp">
+    <div class="row mb-5">
+      <div class="col-lg-6 print-w-50 print-h">
+        <div class="row">
+          <div class="col-md-4 print-w-33 text-center">
+            <label for="">Tooth #</label>
+          </div>
+          <div class="col-md-4 print-w-33 text-center">
+            <label for="">Restoration Type</label>
+          </div>
+          <div class="col-md-4 print-w-33 text-center">
+            <label for="">Temporary Type</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 print-w-50">
+        <div class="row">
+          <div class="col-md-5 print-w-33 text-center">
+            <label for="">Temporary Cement</label>
+          </div>
+          <div class="col-md-3 print-w-33 text-center">
+            <label for="">Shade</label>
+          </div>
+          <div class="col-md-4 print-w-33 text-center">
+            <label for="">Diagnosis</label>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row mb-5" *ngFor="let bridgePrepItem of bridgePrep.controls; let bridgePrepIndex = index">
+        <div class="col-lg-6 print-w-50 print-h">
+          <div class="row">
+            <div class="col-md-4 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('tooth')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-4 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('restorationType')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-4 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('temporaryType')"
+            ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 print-w-50">
+          <div class="row">
+            <div class="col-md-5 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('temporaryCement')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('shade')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-4 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgePrep.controls[bridgePrepIndex].get('diagnosis')"
+            ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-6 col-lg-4 print-w-50 mb-4">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Retraction cord type'"
+            [control]="operativeProgressFormGroup.get('bridgePrepRetractionCordType')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-md-6 col-lg-4 print-w-50">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Final impression material'"
+            [control]="operativeProgressFormGroup.get('bridgePrepFinalImpressionMaterial')"
+          ></app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 print-w-50">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Opposing model'"
+            [control]="operativeProgressFormGroup.get('bridgePrepOpposingModel')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-4 col-md-6 print-w-50 d-flex align-items-center">
+          <app-form-checkbox-field
+            [labelText]="'Bite registration'"
+            [control]="operativeProgressFormGroup.get('bridgePrepBiteRegistration')"
+          ></app-form-checkbox-field>
+        </div>
+      </div>
+
+      <div class="row print-mp">
+        <div class="col-lg-4 col-md-6 print-w-50">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Lab'"
+            [control]="operativeProgressFormGroup.get('bridgePrepLab')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-6 d-flex print-w-50 align-items-center operative-text-top">
+          <div class="w-100">
+            <app-form-textarea-field
+              [labelText]="'Treatment Notes'"
+              [rows]="5"
+              [control]="operativeProgressFormGroup.get('bridgePrepTreatmentNotes')"
+            >
+            </app-form-textarea-field>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12 d-none-print print-show">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">
+              PATIENT REGISTRATION FORMS
+            </h6>
+          </div>
+          <div
+            class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+          >
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+              <i>powerd by</i>
+            </h6>
+            <img
+              class="centrax-size text-center d-none-print print-show"
+              src="/assets/centrax-logo.svg"
+              alt="CENTRAX"
+            />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 print-show d-none-print">
+        <app-form-header-info
+          [providerName]="'Dr. Jane Doe'"
+          [practiceName]="'Astra Practice Partners'"
+          [practicePhoneNumber]="'(555) 555-5555'"
+          [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+          [patientName]="'Mickey Mouse'"
+          [patientBirthdate]="'04/26/1936'"
+          [entryDate]="'02/20/2020'"
+        >
+        </app-form-header-info>
+      </div>
+  </div>
+  <div class="d-flex form-title mt-5 pt-5 mb-5">
+      <div class="title-container">
+        <h2 class="fw-mediumi fs-3 patient-consult-heading">Crown/Bridge Seat</h2>
+      </div>
+  </div>
+  <div class="form-section-container">
+      <div class="row text-center">
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <div class="col-md-2 print-h print-w-33">
+              <label for="">Tooth</label>
+            </div>
+            <div class="col-md-5 print-w-33">
+              <label for="">Type of Restoration</label>
+            </div>
+            <div class="col-md-5 print-w-33">
+              <label for="">Cemented With</label>
+            </div>
+          </div>
+          <div class="row mb-3" *ngFor="let bridgeSeatItem of bridgeSeat.controls; let bridgeSeatIndex = index">
+            <div class="col-md-2 print-h print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgeSeat.controls[bridgeSeatIndex].get('tooth')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-5 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgeSeat.controls[bridgeSeatIndex].get('restorationType')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-5 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="bridgeSeat.controls[bridgeSeatIndex].get('cementedWith')"
+            ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mt-3 mt-lg-0 text-left crown-tret-textarea">
+          <label for="">Treatment Notes</label>
+          <app-form-textarea-field
+            [noLabel]="true"
+            [rows]="5"
+            [control]="operativeProgressFormGroup.get('bridgeSeatTreatmentNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12 d-none-print print-show mt-3">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">
+              PATIENT REGISTRATION FORMS
+            </h6>
+          </div>
+          <div
+            class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+          >
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+              <i>powerd by</i>
+            </h6>
+            <img
+              class="centrax-size text-center d-none-print print-show"
+              src="/assets/centrax-logo.svg"
+              alt="CENTRAX"
+            />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 print-show d-none-print">
+        <app-form-header-info
+          [providerName]="'Dr. Jane Doe'"
+          [practiceName]="'Astra Practice Partners'"
+          [practicePhoneNumber]="'(555) 555-5555'"
+          [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+          [patientName]="'Mickey Mouse'"
+          [patientBirthdate]="'04/26/1936'"
+          [entryDate]="'02/20/2020'"
+        >
+        </app-form-header-info>
+      </div>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5 my-2">
+      <div class="title-container">
+        <h2 class="fw-mediumi fs-3 patient-consult-heading">Extraction</h2>
+      </div>
+  </div>
+  <div class="form-section-container">
+      <div class="row text-center">
+        <div class="col-lg-10 col-md-12">
+          <!-- <div class="row">
+          <div class="col-1"><label for="">Tooth #</label></div>
+          <div class="col-3"><label for="">Build Up Type</label></div>
+          <div class="col-5"><label for="">Material Used</label></div>
+          <div class="col-3"><label for="">Material Used</label></div>
+        </div> -->
+        <div class="row">
+          <div class="col-lg-1 print-h-830 col-md-2 print-w-25">
+            <label for="">Tooth #</label>
+          </div>
+          <div class="col-lg-3 col-md-4 print-w-25">
+            <label for="">Build Up Type</label>
+          </div>
+          <div class="col-lg-5 col-md-4 print-w-25">
+            <label for="">Material Used</label>
+          </div>
+          <div class="col-lg-3 col-md-2 print-w-25">
+            <label for="">Diagnosis</label>
+          </div>
+        </div>
+          <div class="row mb-3" *ngFor="let extractionItem of extraction.controls; let extractionIndex = index">
+            <div class="col-lg-1 print-h-830 col-md-2 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="extraction.controls[extractionIndex].get('toothNumber')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-lg-3 col-md-4 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="extraction.controls[extractionIndex].get('buildUpType')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-lg-5 col-md-4 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="extraction.controls[extractionIndex].get('materialUsed')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-lg-3 col-md-2 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="extraction.controls[extractionIndex].get('diagnosis')"
+            ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10 col-md-12">
+          <div class="row d-flex justify-content-end">
+            <div class="col-lg-5 col-md-9 my-5">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Post-Op Instructions Given'"
+                [control]="operativeProgressFormGroup.get('extractionPostOpInstructionGiven')"
+              ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-9 col-md-12">
+          <app-form-textarea-field
+            [labelText]="'Treatment Notes'"
+            [rows]="5"
+            [control]="operativeProgressFormGroup.get('extractionTreatmentNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-none-print print-show mt-4">
+          <div class="row">
+            <div class="col-4">
+              <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                PATIENT REGISTRATION FORMS
+              </h6>
+            </div>
+            <div
+              class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+            >
+              <h6
+                class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+              >
+                <i>powerd by</i>
+              </h6>
+              <img
+                class="centrax-size text-center d-none-print print-show"
+                src="/assets/centrax-logo.svg"
+                alt="CENTRAX"
+              />
+            </div>
+            <div class="col-4 text-end d-none-print print-show">
+              <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 print-show d-none-print">
+          <app-form-header-info
+            [providerName]="'Dr. Jane Doe'"
+            [practiceName]="'Astra Practice Partners'"
+            [practicePhoneNumber]="'(555) 555-5555'"
+            [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+            [patientName]="'Mickey Mouse'"
+            [patientBirthdate]="'04/26/1936'"
+            [entryDate]="'02/20/2020'"
+          >
+          </app-form-header-info>
+        </div>
+      </div>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5 my-2">
+      <div class="title-container">
+        <h2 class="fw-mediumi fs-3 patient-consult-heading">Implant Crown/Bridge Preparation</h2>
+      </div>
+  </div>
+  <div class="form-section-container mb-4">
+    <div class="row text-center">
+      <div class="col-md-1 print-h print-w-33"><label for="">Tooth</label></div>
+      <div class="col-md-3 print-h print-w-33"><label for="">Restoration Type</label></div>
+      <div class="col-md-4 print-h print-w-33"><label for="">Implant Brand</label></div>
+      <div class="col-md-2 print-h print-w-33"><label for="">Implant Size</label></div>
+      <div class="col-md-2 print-h print-w-33"><label for="">Shade</label></div>
+    </div>
+    <div class="row mb-4" *ngFor="let impBridgePrepItem of impBridgePrep.controls; let impBridgePrepIndex = index">
+      <div class="col-md-1 print-h print-w-33">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="bridgePrep.controls[impBridgePrepIndex].get('tooth')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-3 print-h print-w-33">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="bridgePrep.controls[impBridgePrepIndex].get('restorationType')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-4 print-h print-w-33">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="bridgePrep.controls[impBridgePrepIndex].get('temporaryType')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-2 print-h print-w-33">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="bridgePrep.controls[impBridgePrepIndex].get('temporaryCement')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-2 print-h print-w-33">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="bridgePrep.controls[impBridgePrepIndex].get('shade')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+      <div class="row my-4">
+        <div class="col-md-6 print-w-50 px-0 mt-5">
+          <div class="col-lg-12 col-md-12 mb-4">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Retraction cord type'"
+              [control]="operativeProgressFormGroup.get('implantBridgePrepRetractionCordType')"
+            ></app-form-input-field>
+          </div>
+          <div class="col-md-12 mb-4">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Final imp. material'"
+              [control]="operativeProgressFormGroup.get('implantBridgePrepOpposingMaterial')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div class="col-md-6 print-w-50 px-0">
+          <div class="row">
+            <div class="col-lg-5 col-md-12">
+              <app-form-input-field appearance="appearance-1"
+                [labelText]="'Opposing model'"
+                [control]="operativeProgressFormGroup.get('implantBridgePrepOpposingModel')"
+              ></app-form-input-field>
+            </div>
+            <div
+              class="col-lg-6 col-md-12 mt-4 d-md-flex justify-content-md-center"
+            >
+              <app-form-checkbox-field
+                [labelText]="'Bite registration'"
+                [control]="operativeProgressFormGroup.get('implantBridgePrepBiteRegistration')"
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+      <div class="col-lg-4 col-md-8">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Final imp. material'"
+          [control]="operativeProgressFormGroup.get('txProvider')"
+        ></app-form-input-field>
+      </div>
+    </div> -->
+      <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 print-w-25">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Lab'"
+            [control]="operativeProgressFormGroup.get('implantBridgePrepLab')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-8 print-w-75 operative-text-top">
+          <app-form-textarea-field
+            [labelText]="'Treatment Notes'"
+            [rows]="5"
+            [control]="operativeProgressFormGroup.get('implantBridgePrepTreatmentNotes')"
+          ></app-form-textarea-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-none-print print-show mt-4">
+          <div class="row">
+            <div class="col-4">
+              <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                PATIENT REGISTRATION FORMS
+              </h6>
+            </div>
+            <div
+              class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+            >
+              <h6
+                class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+              >
+                <i>powerd by</i>
+              </h6>
+              <img
+                class="centrax-size text-center d-none-print print-show"
+                src="/assets/centrax-logo.svg"
+                alt="CENTRAX"
+              />
+            </div>
+            <div class="col-4 text-end d-none-print print-show">
+              <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 print-show d-none-print">
+          <app-form-header-info
+            [providerName]="'Dr. Jane Doe'"
+            [practiceName]="'Astra Practice Partners'"
+            [practicePhoneNumber]="'(555) 555-5555'"
+            [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+            [patientName]="'Mickey Mouse'"
+            [patientBirthdate]="'04/26/1936'"
+            [entryDate]="'02/20/2020'"
+          >
+          </app-form-header-info>
+        </div>
+      </div>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5 my-2">
+      <div class="title-container">
+        <h2 class="fw-mediumi fs-3 patient-consult-heading">Implant Crown/Bridge Seat</h2>
+      </div>
+  </div>
+  <div class="form-section-container">
+      <div class="row text-center">
+        <div class="col-lg-12 print-w-50 my-2 my-lg-0">
+          <div class="row">
+            <div class="col-md-1 print-h-830 print-w-33">
+              <label for="">Tooth</label>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <label for="">Restoration Type</label>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <label for="">Implant Brand</label>
+            </div>
+            <div class="col-md-2 print-h-830 print-w-33">
+              <label for="">Tooth</label>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <label for="">Restoration Type</label>
+            </div>
+            <div class="col-md-3 print-w-33">
+              <label for="">Torque</label>
+            </div>
+          </div>
+          <div class="row mb-4" *ngFor="let impBridgeSeatItem of impBridgeSeat.controls; let impBridgeSeatIndex = index">
+            <div class="col-md-1 print-h-830 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('tooth')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('restorationType')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('cementedWith')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-2 print-h-830 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('implantBrand')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-2 print-w-33">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('implantSize')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-33">
+              <div class="row">
+                <div class="col-9">
+                  <app-form-input-field appearance="appearance-1"
+                  [noLabel]="true"
+                  [control]="impBridgeSeat.controls[impBridgeSeatIndex].get('torque')"
+                ></app-form-input-field>
+                </div>
+                <div class="col-3 d-flex align-items-center"><div class="fs-5">NCM</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-lg-4 col-md-6 print-w-50">
+          <app-form-input-field appearance="appearance-1"
+            [labelText]="'Lab'"
+            [control]="operativeProgressFormGroup.get('implantBridgeSeatLab')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-8 print-w-50 operative-text-top">
+          <app-form-textarea-field
+            [labelText]="'Treatment Notes'"
+            [rows]="5"
+            [control]="operativeProgressFormGroup.get('implantBridgeSeatTreatmentNotes')"
+          ></app-form-textarea-field>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12 d-none-print print-show">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">
+              PATIENT REGISTRATION FORMS
+            </h6>
+          </div>
+          <div
+            class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+          >
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+              <i>powerd by</i>
+            </h6>
+            <img
+              class="centrax-size text-center d-none-print print-show"
+              src="/assets/centrax-logo.svg"
+              alt="CENTRAX"
+            />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 print-show d-none-print">
+        <app-form-header-info
+          [providerName]="'Dr. Jane Doe'"
+          [practiceName]="'Astra Practice Partners'"
+          [practicePhoneNumber]="'(555) 555-5555'"
+          [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+          [patientName]="'Mickey Mouse'"
+          [patientBirthdate]="'04/26/1936'"
+          [entryDate]="'02/20/2020'"
+        >
+        </app-form-header-info>
+      </div>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 my-2 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Fillings</h2>
+    </div>
+  </div>
+  <div class="form-section-container">
+    <div class="row text-center">
+      <div class="col-lg-6 print-w-50 ps-0">
+        <div class="row">
+          <div class="col-md-2 print-h-830 print-w-25">
+            <label class="fc-accent-text text-center">Tooth #</label>
+          </div>
+          <div class="col-md-3 print-w-25">
+            <label class="fc-accent-text text-center">Surfaces</label>
+          </div>
+          <div class="col-md-4 print-w-25">
+            <label class="fc-accent-text text-center">Restoration Type</label>
+          </div>
+          <div class="col-md-3 print-w-25">
+            <label class="fc-accent-text text-center">Shade</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 print-w-50 pe-0">
+        <div class="row">
+          <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+            <label class="fc-accent-text text-center mb-3">35%<br />Etch</label>
+          </div>
+          <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+            <label class="fc-accent-text mb-3 text-center">Optibond<br />Adhesive</label>
+          </div>
+          <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+            <label class="fc-accent-text mb-3 text-center">Vitrabond<br />Base</label>
+          </div>
+          <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+            <label class="fc-accent-text mb-3 text-center">Record<br />w/ epi</label>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row text-center mb-4" *ngFor="let fillingsItem of fillings.controls; let fillingsIndex = index">
+        <div class="col-lg-6 print-w-50 ps-0">
+          <div class="row">
+            <div class="col-md-2 print-h-830 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('toothNumber')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('surfaces')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-4 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('restorationType')"
+            ></app-form-input-field>
+            </div>
+            <div class="col-md-3 print-w-25">
+              <app-form-input-field appearance="appearance-1"
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('shade')"
+            ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 print-w-50 pe-0 d-flex align-items-center">
+          <div class="row w-100">
+            <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+              <app-form-checkbox-field
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('etchPercentage35')"
+            ></app-form-checkbox-field>
+            </div>
+            <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+              <app-form-checkbox-field
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('vitrabondBase')"
+            ></app-form-checkbox-field>
+            </div>
+            <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+              <app-form-checkbox-field
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('optibondAdhesive')"
+            ></app-form-checkbox-field>
+            </div>
+            <div class="col-md-3 print-w-25 d-flex flex-column align-items-center">
+              <app-form-checkbox-field
+              [noLabel]="true"
+              [control]="fillings.controls[fillingsIndex].get('recordWithEpi')"
+            ></app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-lg-flex justify-content-lg-end mt-5">
+        <div class="col-lg-8 col-12">
+          <app-form-textarea-field
+            [labelText]="'Treatment Notes'"
+            [rows]="5"
+            [control]="operativeProgressFormGroup.get('fillingsTreatmentNotes')"
+          ></app-form-textarea-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-none-print print-show mt-5">
+          <div class="row">
+            <div class="col-4">
+              <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                PATIENT REGISTRATION FORMS
+              </h6>
+            </div>
+            <div
+              class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+            >
+              <h6
+                class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+              >
+                <i>powerd by</i>
+              </h6>
+              <img
+                class="centrax-size text-center d-none-print print-show"
+                src="/assets/centrax-logo.svg"
+                alt="CENTRAX"
+              />
+            </div>
+            <div class="col-4 text-end d-none-print print-show">
+              <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

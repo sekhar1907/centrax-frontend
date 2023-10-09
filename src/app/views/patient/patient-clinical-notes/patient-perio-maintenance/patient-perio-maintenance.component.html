@@ -1,0 +1,835 @@
+<div class="py-3 p-bg h-100 clinical-notes-container">
+  <div class="d-flex form-title p_subjective mt-3 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container p_subjective">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Patient Status Report</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-md-6 print-hygiene-cc mb-5">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Hygiene Provider'"
+          [control]="perioMaintenanceFormGroup.get('hygieneProvider')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-6 print-hygiene-cc mb-5">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'CC:'"
+          [control]="perioMaintenanceFormGroup.get('cc')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 print-hygiene-cc mb-5">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Periodontist'"
+          [control]="perioMaintenanceFormGroup.get('periodonitst')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 print-hygiene-cc mb-3">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Referring Doctor'"
+          [control]="perioMaintenanceFormGroup.get('refferingDoctor')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-6 pe-3">
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div> -->
+
+    <div class="row mt-4">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-md-6 print-hygiene-cc px-0 print-p px-md-2 mb-4">
+            <app-form-checkbox-field
+              [labelText]="'HH reviewed - No changes'"
+              [control]="perioMaintenanceFormGroup.get('HhReviewedNoCharges')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-6 print-hygiene-cc px-0 print-p px-md-2">
+            <app-form-checkbox-field
+              [labelText]="'HH reviewed - Updated'"
+              [control]="perioMaintenanceFormGroup.get('HhReviewedUpdated')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+        <div class="row mt-3 mb-4">
+          <div class="col-md-6 px-0 print-p px-md-2">
+            <app-form-checkbox-field
+              [labelText]="'PARQ'"
+              [control]="perioMaintenanceFormGroup.get('parq')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-4 px-0 print-p px-md-2">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'BP / P'"
+          [control]="perioMaintenanceFormGroup.get('bp')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-5 p_subjective print-m-p-t">
+      <div class="col-lg-6 pl-lg-0">
+        <h3 class="fw-mediumi fs-5 fc-accent-text mb-4">OCS</h3>
+
+        <div class="row">
+          <div class="col-md-2 print-w-25 mt-3 mt-lg-0">
+            <app-form-checkbox-field
+              [labelText]="'WNL'"
+              [control]="perioMaintenanceFormGroup.get('wnl')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-10 print-w-75">
+            <app-form-textarea-field
+              [className]="'finding-area'"
+              [labelText]="'Findings'"
+              [rows]="3"
+              [control]="perioMaintenanceFormGroup.get('findings')"
+            >
+            </app-form-textarea-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-center align-items-center mt-3 print-m-p-t">
+          <div class="col-md-2 print-w-20">
+            <label>Stage</label>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'I'"
+              [control]="perioMaintenanceFormGroup.get('stageI')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'II'"
+              [control]="perioMaintenanceFormGroup.get('stageII')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'III'"
+              [control]="perioMaintenanceFormGroup.get('stageIII')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'IV'"
+              [control]="perioMaintenanceFormGroup.get('stageIV')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-2 print-w-20">
+            <label>Grade</label>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'A'"
+              [control]="perioMaintenanceFormGroup.get('gradeA')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'B'"
+              [control]="perioMaintenanceFormGroup.get('gradeB')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20">
+            <app-form-checkbox-field
+              [labelText]="'C'"
+              [control]="perioMaintenanceFormGroup.get('gradeC')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-2 col-sm-2 print-w-20"></div>
+        </div>
+
+        <h3 class="fw-mediumi fs-5 fc-accent-text mt-5 print-m-p-t mb-3">Exam</h3>
+        <div class="row justify-content-center align-items-center px-3 mb-4">
+          <div class="col-md-3 pl-md-0 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'No exam'"
+              [control]="perioMaintenanceFormGroup.get('noExam')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-9 pr-md-0 print-w-75">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Exam Type'"
+              [control]="perioMaintenanceFormGroup.get('examType')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row justify-content-end mt-3">
+          <div class="col-10">
+            <app-form-textarea-field
+              [labelText]="'Exam Notes'"
+              [rows]="3"
+              [control]="perioMaintenanceFormGroup.get('examNotes')"
+            >
+            </app-form-textarea-field>
+          </div>
+        </div>
+
+        <div class="row mt-5 print-m-p-t mb-5">
+          <div class="col-lg-12 col-md-3 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'Perio chart updated'"
+              [control]="perioMaintenanceFormGroup.get('perioChartUpdate')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="row mt-3 print-m-p-t">
+          <div class="col-lg-12 col-md-3 print-w-25 mb-3">
+            <app-form-checkbox-field
+              [labelText]="'Ultrasonic'"
+              [control]="perioMaintenanceFormGroup.get('ultrasonic')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-12 col-md-5 print-w-25 mb-3">
+            <app-form-checkbox-field
+              [labelText]="'Hand instrumentation'"
+              [control]="perioMaintenanceFormGroup.get('handInstrumentation')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-12 col-md-4 print-w-25 mb-3">
+            <app-form-checkbox-field
+              [labelText]="'Implant Instrument'"
+              [control]="perioMaintenanceFormGroup.get('implantInstrument')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-none-print print-show print-m-t">
+            <div class="row">
+              <div
+                class="offset-3 col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+              >
+                <h6
+                  class="fw-mediumi fs-5 d-inline-block d-none-print p-letr print-show"
+                >
+                  <i>powerd by</i>
+                </h6>
+                <img
+                  class="centrax-size text-center d-none-print print-show"
+                  src="/assets/centrax-logo.svg"
+                  alt="CENTRAX"
+                />
+              </div>
+              <div class="col-5 text-end d-none-print print-show">
+                <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 print-show d-none-print">
+            <app-form-header-info
+              [providerName]="'Dr. Jane Doe'"
+              [practiceName]="'Astra Practice Partners'"
+              [practicePhoneNumber]="'(555) 555-5555'"
+              [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+              [patientName]="'Mickey Mouse'"
+              [patientBirthdate]="'04/26/1936'"
+              [entryDate]="'02/20/2020'"
+            >
+            </app-form-header-info>
+          </div>
+        </div>
+        <div class="row mt-5 print-m-p-t">
+          <div class="col-12">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Sensitivity Noted:'"
+              [control]="perioMaintenanceFormGroup.get('sensitivityNote')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row mt-md-5">
+          <div class="col-md-6 print-hygiene-cc">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Oral Sedation'"
+              [control]="perioMaintenanceFormGroup.get('oralSedation')"
+            ></app-form-input-field>
+          </div>
+          <div class="col-md-6 print-hygiene-cc">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'N202'"
+              [control]="perioMaintenanceFormGroup.get('n202')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row mt-5 print-m-p-t">
+          <app-form-checkbox-field
+            [labelText]="'Informed Consent'"
+            [control]="perioMaintenanceFormGroup.get('informedConsentTxt')"
+          ></app-form-checkbox-field>
+        </div>
+
+        <div class="row mt-5 print-m-p-t">
+          <div class="col-md-6 print-hygiene-cc">
+            <app-form-textarea-field
+              [labelText]="'Local Anesthetic'"
+              [rows]="2"
+              [control]="perioMaintenanceFormGroup.get('localAnesthetic')"
+            ></app-form-textarea-field>
+          </div>
+          <div class="col-md-6 print-hygiene-cc">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Amt.'"
+              [control]="perioMaintenanceFormGroup.get('amt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <app-form-textarea-field
+              [labelText]="'Injections'"
+              [rows]="2"
+              [control]="perioMaintenanceFormGroup.get('injections')"
+            ></app-form-textarea-field>
+          </div>
+          <div class="col-6"></div>
+        </div>
+
+        <div class="row mt-5 print-m-p-t">
+          <div class="col-lg-12 col-md-4 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'Informed Consent'"
+              [control]="perioMaintenanceFormGroup.get('informedConsent')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-12 col-md-4 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'FMX'"
+              [control]="perioMaintenanceFormGroup.get('fmx')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-12 col-md-4 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'BWX'"
+              [control]="perioMaintenanceFormGroup.get('bwx')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="row mt-5 print-m-p-t">
+          <div class="col-4 print-w-20"><label>Patient Status:</label></div>
+          <div class="col-md-4 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'Stable'"
+              [control]="perioMaintenanceFormGroup.get('stable')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-4 print-w-25">
+            <app-form-checkbox-field
+              [labelText]="'Unstable'"
+              [control]="perioMaintenanceFormGroup.get('unstable')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="row mt-5 print-m-p-t">
+          <app-form-textarea-field
+            [labelText]="'Notes'"
+            [rows]="3"
+            [control]="perioMaintenanceFormGroup.get('patientStatusNote')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+
+      <div class="col-lg-6 px-lg-0">
+        <div class="form-subsection-container pb-2 h-100">
+          <div class="row">
+            <div class="col-4 print-w-25"><label>Oral Hygiene:</label></div>
+            <div class="col-md-8 print-w-25">
+              <app-form-radio-field
+                [items]="oralHygieneRadioItems"
+                [control]="perioMaintenanceFormGroup.get('oralHygiene')"
+                inputIDPrefix="plaqueStain"
+              ></app-form-radio-field>
+            </div>
+          </div>
+
+          <div class="row mt-5 print-m-p-t">
+            <div class="col-lg-5 px-0 mt-lg-0 mt-2">
+              <label>Home Care Routine:</label>
+            </div>
+            <div class="col-lg-7 px-0 mt-lg-0 mt-2">
+              <div class="row">
+                <div class="col-md-6 mt-lg-0 mt-2 print-w-25">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Electric TB'"
+                        [control]="perioMaintenanceFormGroup.get('electricTb')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Floss'"
+                        [control]="perioMaintenanceFormGroup.get('floss')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Fl Rx'"
+                        [control]="perioMaintenanceFormGroup.get('flRx')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'End Tuft'"
+                        [control]="perioMaintenanceFormGroup.get('endTuft')"
+                      ></app-form-checkbox-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mt-lg-0 mt-2 print-w-25">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Manual TB'"
+                        [control]="perioMaintenanceFormGroup.get('manualTb')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Proxy Brush'"
+                        [control]="perioMaintenanceFormGroup.get('proxyBrush')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Rinse'"
+                        [control]="perioMaintenanceFormGroup.get('rinse')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Soft-picks'"
+                        [control]="perioMaintenanceFormGroup.get('softPicks')"
+                      ></app-form-checkbox-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <app-form-textarea-field
+              [labelText]="'Notes'"
+              [rows]="3"
+              [control]="perioMaintenanceFormGroup.get('homeCareNote')"
+            >
+            </app-form-textarea-field>
+            <div class="col-12 d-none-print print-show print-m-t">
+              <div class="row">
+                <div
+                  class="offset-3 col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+                >
+                  <h6
+                    class="fw-mediumi fs-5 d-inline-block d-none-print p-letr print-show"
+                  >
+                    <i>powerd by</i>
+                  </h6>
+                  <img
+                    class="centrax-size text-center d-none-print print-show"
+                    src="/assets/centrax-logo.svg"
+                    alt="CENTRAX"
+                  />
+                </div>
+                <div class="col-5 text-end d-none-print print-show">
+                  <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 print-show d-none-print">
+              <app-form-header-info
+                [providerName]="'Dr. Jane Doe'"
+                [practiceName]="'Astra Practice Partners'"
+                [practicePhoneNumber]="'(555) 555-5555'"
+                [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+                [patientName]="'Mickey Mouse'"
+                [patientBirthdate]="'04/26/1936'"
+                [entryDate]="'02/20/2020'"
+              >
+              </app-form-header-info>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12"><label>Patient presents with:</label></div>
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="w-100 table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th><label>Gen</label></th>
+                      <th><label>Loc</label></th>
+                      <th><label>S</label></th>
+                      <th><label>M</label></th>
+                      <th><label>H</label></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-end pe-5"><label>Gen</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('supraPlaqueGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('supraPlaqueLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('supraPlaqueS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('supraPlaqueM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('supraPlaqueH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end pe-5"><label>Floss</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('flossGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('flossLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('flossS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('flossM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('flossH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end pe-5"><label>Sub plaque</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subPlaqueGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subPlaqueLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subPlaqueS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subPlaqueM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subPlaqueH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end pe-5"><label>Sub calculus</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subCalculasGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subCalculasLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subCalculasS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subCalculasM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('subCalculasH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end pe-5"><label>Inflammation</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('inflammationGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('inflammationLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('inflammationS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('inflammationM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('inflammationH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-end pe-5"><label>Bleeding</label></td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('bleedingGen')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('bleedingLoc')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('bleedingS')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('bleedingM')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                      <td>
+                        <app-form-checkbox-field
+                          [control]="
+                            perioMaintenanceFormGroup.get('bleedingH')
+                          "
+                        ></app-form-checkbox-field>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-5 px-0 mt-lg-0 mt-2">
+              <label>Tissue texture:</label>
+            </div>
+            <div class="col-lg-7 px-0 mt-lg-0 mt-2">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 mt-lg-0 mt-2 print-w-25">
+                  <div class="row">
+                    <div class="col-md-6  col-sm-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Healthy'"
+                        [control]="perioMaintenanceFormGroup.get('healthy')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Stipled'"
+                        [control]="perioMaintenanceFormGroup.get('stipled')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Rolled'"
+                        [control]="perioMaintenanceFormGroup.get('rolled')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Spongy'"
+                        [control]="perioMaintenanceFormGroup.get('spongy')"
+                      ></app-form-checkbox-field>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 mt-lg-0 mt-2 print-w-25">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6  col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Pink'"
+                        [control]="perioMaintenanceFormGroup.get('pink')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-sm-6  col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Smooth'"
+                        [control]="perioMaintenanceFormGroup.get('smooth')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-sm-6  col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Red'"
+                        [control]="perioMaintenanceFormGroup.get('red')"
+                      ></app-form-checkbox-field>
+                    </div>
+                    <div class="col-md-6 col-sm-6  col-lg-12">
+                      <app-form-checkbox-field
+                        [labelText]="'Fibrotic'"
+                        [control]="perioMaintenanceFormGroup.get('fibrotic')"
+                      ></app-form-checkbox-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5 p-padding">
+            <div class="col-12">
+              <app-form-textarea-field
+                [labelText]="'Notes'"
+                [rows]="3"
+                [control]="perioMaintenanceFormGroup.get('presentsWithNote')"
+              >
+              </app-form-textarea-field>
+            </div>
+            <div class="col-12 d-none-print print-show print-m-t">
+              <div class="row">
+                <div
+                  class="offset-3 col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+                >
+                  <h6
+                    class="fw-mediumi fs-5 d-inline-block d-none-print p-letr print-show"
+                  >
+                    <i>powerd by</i>
+                  </h6>
+                  <img
+                    class="centrax-size text-center d-none-print print-show"
+                    src="/assets/centrax-logo.svg"
+                    alt="CENTRAX"
+                  />
+                </div>
+                <div class="col-5 text-end d-none-print print-show">
+                  <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

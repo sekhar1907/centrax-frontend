@@ -1,0 +1,80 @@
+.form-subsection-container {
+    border-left: 0;
+    padding: 0;
+}
+
+.d-none-print {
+  display: none;
+}
+
+@media only print and (max-width:1023px) {
+
+  .print_none {
+    display: none !important;
+  }
+
+  .centrax-size {
+    width: 100px;
+    height: auto;
+    margin-left: 35%;
+  }
+.print-show{
+  display: block !important;
+}
+  .print-m-p{
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+  .print-m-top{
+    margin-top: 20px;
+  }
+  .print-top-m{
+    margin-top: 60px;
+  }
+  .print-p-l{
+    padding-left: 29px !important;
+  }
+  .print-w-100{
+    width: 100% !important;
+  }
+  .print-w-50{
+    width: 50% !important;
+  }
+  .print-w-25{
+    width: 25%;
+  }
+  .print-w-75{
+    width: 75%;
+  }
+  .print-w-20{
+    width: 20%;
+  }
+  .print-w-30{
+    width: 30%;
+  }
+  .print-m-t{
+    margin-top: 40px;
+  }
+  .print-w-40{
+    width: 40%;
+  }
+  .print-w-10{
+    width: 10%;
+  }
+  .print-flex{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .print-h{
+    height: 500px !important;
+  }
+  .print-h-830{
+    height: 830px !important;
+  }
+  .print-row{
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+}
+

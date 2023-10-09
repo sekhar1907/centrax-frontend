@@ -1,0 +1,25 @@
+<div class="p-4 calendar-container">
+  <div class="location-dropdown">
+    <app-form-dropdown-field [control]="calendarDropdownControl" [dropdownItems]="locationItems" appearance="appearance-1"></app-form-dropdown-field>
+  </div>
+  <div #calendarContainer (contextmenu)="onRightClick($event)">
+    <full-calendar #calendar [options]="calendarOptions">
+      <ng-template #eventContent let-arg let-timeText>
+        <div (dblclick)="onDoubleClickAppointment($event)" [attr.data-eventid]="arg.event.extendedProps?.id" class="event-box d-flex flex-column p-2 h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="fw-medium">{{arg.event.start | date: 'hh:mm a'}}</div>
+            <div class="fw-medium">{{ arg.event.start | dateDuration: arg.event.end }}</div>
+          </div>
+          <div class="mt-3 fw-bold fs-7 flex-grow-1">{{ arg.event.title }}</div>
+          <div class="event-icons d-flex align-items-center flex-wrap">
+            <img class="mx-1" *ngIf="arg.event?.extendedProps?.alert" src="assets/images/icons/schedule/alert.svg">
+            <img class="mx-1" *ngIf="arg.event?.extendedProps?.allergy" src="assets/images/icons/schedule/allergy.svg">
+            <img class="mx-1" *ngIf="arg.event?.extendedProps?.dollar" src="assets/images/icons/schedule/red-dollar.svg">
+          </div>
+          <!-- <pre>{{arg | json}}</pre> -->
+        </div>
+      </ng-template>
+    </full-calendar>
+  </div>
+  <p-contextMenu #contextMenu styleClass="sched-content-menu" [target]="calendarContainer" [model]="items" appendTo="body"></p-contextMenu>
+</div>

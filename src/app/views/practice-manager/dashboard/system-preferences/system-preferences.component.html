@@ -1,0 +1,93 @@
+<div class="main-wrapper">
+  <form
+    class="form-group"
+    novalidate
+    [formGroup]="systemPreferencesFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid main-wrapper-section-1500">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h1 class="page-heading mb-0 pb-0">System Preferences</h1>
+          <p class="page-heading-subtitle">General Options</p>
+        </div>
+      </div>
+      <div class="row my-5 practice-manager-section system-pre-select">
+        <div class="col-12 mt-5">
+          <div class="d-flex justify-content-center ms-md-5">
+            <ul class="flex-column nav">
+              <li>
+                <div class="custom_radio">
+                  <input
+                    type="radio"
+                    id="featured-1"
+                    name="featured"
+                    [checked]="form['showPopupReminder'].value === true"
+                    (change)="
+                      form['showPopupReminder'].setValue($event.target.checked)
+                    "
+                  />
+                  <label
+                    for="featured-1"
+                    class="form-label font-roboto fw-medium fs-1-4 fc-565656"
+                    >Show popup reminder
+                  </label>
+                </div>
+              </li>
+              <li class="mt-3">
+                <span class="form-label font-roboto fw-medium fs-1-4 fc-565656"
+                  >Change Password every</span
+                >
+                <select
+                  class="px-2 py-1 password-select-day mx-3"
+                  [formControl]="form['changePasswordHowManyDays']"
+                >
+                  <option class="password-select-day-text" value="1">1</option>
+                  <option class="password-select-day-text" value="10">
+                    10
+                  </option>
+                </select>
+                <span class="form-label font-roboto fw-medium fc-565656 fs-1-4"
+                  >days</span
+                >
+              </li>
+              <li class="mt-3">
+                <span class="form-label font-roboto fw-medium fs-1-4 fc-565656"
+                  >Patients older than</span
+                >
+                <select
+                  class="px-2 py-1 password-select-day mx-3"
+                  [formControl]="form['usePermanentDentitionOlderThan']"
+                >
+                  <option class="password-select-day-text" value="1">1</option>
+                  <option class="password-select-day-text" value="5">5</option>
+                  <option class="password-select-day-text" value="10">
+                    10
+                  </option>
+                </select>
+                <span class="form-label font-roboto fw-medium fs-1-4 fc-565656"
+                  >use permanent dentition</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/system-preference-claims"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+          <button class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

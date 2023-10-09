@@ -1,0 +1,27 @@
+<div class="d-flex {{appearance}}" *ngIf="control">
+  <div class="d-flex align-items-center w-100">
+    <div class="flex-grow-0 me-2" *ngIf="!noLabel">
+      <label class="fw-medium mb-0">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+        <span *ngIf="isRequired && labelText" class="fw-normal"> * </span>
+      </label>
+    </div>
+    <div class="flex-grow-1">
+      <div class="row">
+        <div class="col-12">
+          <p-calendar styleClass="w-100 {{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}"
+            [placeholder]="placeholder"
+            [appendTo]="appendTo"
+            [showClear]="showClear"
+            [timeOnly]="timeOnly"
+            [formControl]="control"
+            [disabled]="disabled"
+            panelStyleClass="{{panelStyleClass}}"
+            [showIcon]="showIcon">
+          </p-calendar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

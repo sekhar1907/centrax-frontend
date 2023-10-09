@@ -1,0 +1,74 @@
+<div class="provider-login-container py-5 px-5">
+  <h1 class="fs-3">Create Account</h1>
+  <form class="needs-validation" novalidate class="w-100 px-5" [formGroup]="registerFormGroup" (ngSubmit)="onRegister()">
+    <div class="row mt-5 mx-5">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Best email address"
+          inputType="email"
+          [isRequired]="true"
+          [control]="registerFormGroup?.get('email')"
+          [isInValid]="formsubmit && form['email'].errors">
+        </app-form-input-field>
+        <small id="username-help">This email address will receive appointment requests and other notifications.</small>
+      </div>
+    </div>
+    <div class="row mt-5 mx-5">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Password"
+          inputType="password"
+          [isRequired]="true"
+          [control]="registerFormGroup?.get('password')"
+          [isInValid]="formsubmit && form['password'].errors">
+        </app-form-input-field>
+        <small id="username-help">The password must be at least 8 characters in length (case sensitive), contain at least one number, and can't include + symbol. </small>
+      </div>
+    </div>
+    <div class="row mt-4 mx-5">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Confirm Password"
+          inputType="password"
+          [isRequired]="true"
+          [control]="registerFormGroup?.get('confirmPassword')"
+          [isInValid]="formsubmit && form['confirmPassword'].errors">
+        </app-form-input-field>
+        <small class="text-danger" id="username-help" *ngIf="form['confirmPassword'].errors && form['confirmPassword'].errors['notEquivalent']">Passwords do not match</small>
+      </div>
+    </div>
+    <div class="row mt-5 mx-5">
+      <div class="col-12 flat">
+        <label htmlFor="securityQuestion" class="w-100 fw-bold">Security Question <span class="text-danger">*</span></label>
+        <p-dropdown styleClass="w-100 {{formsubmit && form['securityQuestion'].errors ? 'ng-invalid ng-dirty' : 'is-valid'}}" formControlName="securityQuestion"
+        [options]="securityQuestions" optionLabel="label"></p-dropdown>
+      </div>
+    </div>
+    <div class="row mt-5 mx-5">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Your Answer"
+          [isRequired]="true"
+          [control]="registerFormGroup?.get('securityQuestionAnswer')"
+          [isInValid]="formsubmit && form['securityQuestionAnswer'].errors">
+        </app-form-input-field>
+      </div>
+    </div>
+    <div class="row mt-5 mb-5 mx-5">
+      <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="submit">Create Account</button>
+        <a class="btn btn-link fw-bold mt-2" [routerLink]="['/auth/login']">Login</a>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="registerFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

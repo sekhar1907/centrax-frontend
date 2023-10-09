@@ -1,0 +1,46 @@
+.side-menu-container {
+  width: 400px;
+}
+
+.nav-pills .nav-link {
+  font-size: 20px;
+  color: #405464;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.nav-pills .nav-item {
+  position: relative;
+}
+
+.nav-pills .indicator{
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.nav-pills .indicator.active{
+  background-color: #3D5567;
+  width: 6px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: #EEEDED;
+}
+
+
+.nav-pills .nav-link span {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,28 @@
+<app-form-header [title]="'Patient Registration Forms'" [isUpperCase]="true"></app-form-header>
+<div class="patient-registration-container mb-5">
+  <app-form-steps class="d-md-none d-lg-flex justify-content-lg-center" [steps]="patientRegistrationSteps"
+    [activeStep]="patientRegistrationActiveStep" [previousActive]="false" (selectStep)="onSelectStep($event)" [patientId]="patientId">
+  </app-form-steps>
+
+  <div class="d-md-none d-lg-flex form-title">
+    <div class="d-md-none"></div>
+    <div class="registration-title">
+      <h1 class="fw-mediumi fs-1 patient-info-title">
+        {{
+        patientRegistrationSteps[patientRegistrationActiveStep]?.stepLongTitle
+        }}
+      </h1>
+    </div>
+  </div>
+  <div class="d-md-none d-print-flex d-lg-flex mb-5 pb-5 container-fluid">
+    <app-form-side-menu [navItems]="patientRegistrationSteps" [activeNav]="patientRegistrationActiveStep" [patientId]="patientId"
+      (selectNavItem)="onSelectStep($event)">
+    </app-form-side-menu>
+    <div class="form-page-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="d-flex d-lg-none mt-5 pt-5">
+    <app-patient-registration-accordion [stepIndex]="patientRegistrationActiveStep" [patientid]="patientId"></app-patient-registration-accordion>
+  </div>
+</div>

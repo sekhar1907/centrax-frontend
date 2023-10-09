@@ -1,0 +1,733 @@
+<div class=" py-5 py-lg-3 h-100 accordion-content container-fluid">
+  <!-- patient info start -->
+  <div class="form-section-container">
+    <div class="row mb-5">
+      <div class="col-12 col-lg-8 d-flex flex-column flex-md-row align-items-md-center info-input-box">
+        <div>
+          <label for="">Name *</label>
+        </div>
+        <div class="flex-grow-1">
+          <div class="row">
+            <div class="col-12 col-md">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="First"
+                [control]="patientInfoFormGroup?.get('firstName')">
+              </app-form-input-field>
+            </div>
+            <div class="col-12 col-md-2">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="MI"
+                [control]="patientInfoFormGroup?.get('middleName')">
+              </app-form-input-field>
+            </div>
+            <div class="col-12 col-md">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="Last"
+                [control]="patientInfoFormGroup?.get('lastName')">
+              </app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 text-field-responsive">
+        <app-form-input-field
+        appearance="appearance-1"
+          [labelText]="'Preferred Name'"
+          [control]="patientInfoFormGroup?.get('prefferedName')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field
+        appearance="appearance-1"
+          [labelText]="'Address *'"
+          [control]="patientInfoFormGroup?.get('address')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-xl-6 col-md-6">
+        <app-form-input-field
+        appearance="appearance-1"
+          [labelText]="'City *'"
+          [control]="patientInfoFormGroup?.get('city')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-xl-6 col-md-6">
+        <div class="row">
+          <div class="col-12 col-xl-6 d-flex align-items-center col-md-6 state-responsive">
+            <app-form-dropdown-field
+            appearance="flat"
+              [dropdownItems]="states"
+              [control]="patientInfoFormGroup?.get('state')"
+              [textField]="'abbreviation'"
+              [valueField]="'abbreviation'"
+              [labelText]="'State *'">
+            </app-form-dropdown-field>
+          </div>
+          <div class="col-12 col-xl-6 col-md-6 zip-responsive">
+            <app-form-input-field
+            appearance="appearance-1"
+              [labelText]="'Zip *'"
+              [control]="patientInfoFormGroup?.get('zip')">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-lg-9">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <app-form-masked-input-field
+              appearance="flat"
+              [labelText]="'Primary Phone *'"
+              [control]="patientInfoFormGroup?.get('primaryPhone')"
+              mask="(999) 999-999"
+              slotChar="(999) 999-999"
+              placeholder="(000) 000-0000">
+            </app-form-masked-input-field>
+          </div>
+          <div class="col-12 col-md-6">
+            <app-form-masked-input-field
+              appearance="flat"
+              [labelText]="'Alternative Phone'"
+              [control]="patientInfoFormGroup?.get('alternativePhone')"
+              mask="(999) 999-999"
+              slotChar="(999) 999-999"
+              placeholder="(000) 000-000">
+            </app-form-masked-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 text-field-responsive">
+        <app-form-masked-input-field
+        appearance="flat"
+          [labelText]="'DOB'"
+          [control]="patientInfoFormGroup?.get('dob')"
+          mask="99/99/9999"
+          slotChar="mm/dd/yyyy"
+          placeholder="00/00/0000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-5">
+            <app-form-input-field
+          appearance="appearance-1"
+              [labelText]="'Gender Identity? *'"
+              [control]="patientInfoFormGroup?.get('genderIdentity')">
+            </app-form-input-field>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 col-lg-6">
+            <app-form-input-field
+          appearance="appearance-1"
+              [labelText]="'Preferred Pronouns?'"
+              [control]="patientInfoFormGroup?.get('prefferedPronouns')"
+              [placeholder]="'Ex. she/her/hers'">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'Emergency Contact'"
+          [control]="patientInfoFormGroup?.get('emergencyContact')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="row">
+          <div class="col-12 col-lg-6 col-md-6">
+            <app-form-masked-input-field
+              appearance="flat"
+              [labelText]="'Primary Phone'"
+              [control]="patientInfoFormGroup?.get('emergencyPrimaryPhone')"
+              mask="(999) 999-999"
+              slotChar="(999) 999-999"
+              placeholder="(000) 000-000">
+            </app-form-masked-input-field>
+          </div>
+          <div class="col-12 col-lg-6 col-md-6">
+            <app-form-input-field
+          appearance="appearance-1"
+              [labelText]="'Relationship to Patient'"
+              [control]="patientInfoFormGroup?.get('emergencyContactPatientRelation')">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- patient info end -->
+
+  <!-- responsible party start -->
+  <div class="d-flex form-title">
+    <div></div>
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-2  titel-container-info">Responsible Party Information <i>(if different from patient)</i></h2>
+      <div class="row">
+        <div class="col-12 d-flex align-items-center">
+          <p-checkbox [formControl]="responsiblePartyFormGroup?.get('notApplicable')" [binary]="true" inputId="notApplicable" (onChange)="updateCheckboxValue()"></p-checkbox>
+          <label class="ms-3 label-container-info" for="notApplicable">not applicable?</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-section-container" *ngIf="responsiblePartyFormGroup && responsiblePartyFormGroup?.get('notApplicable') && !responsiblePartyFormGroup?.get('notApplicable')?.value">
+    <div class="row mb-5">
+      <div class="col-12 col-lg-8 d-flex flex-column flex-md-row align-items-md-center">
+        <div>
+          <label for="">Name *</label>
+        </div>
+        <div class="flex-grow-">
+          <div class="row">
+            <div class="col-12 col-md">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="First"
+                [control]="responsiblePartyFormGroup?.get('firstName')">
+              </app-form-input-field>
+            </div>
+            <div class="col-12 col-md-2">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="MI"
+                [control]="responsiblePartyFormGroup?.get('middleName')">
+              </app-form-input-field>
+            </div>
+            <div class="col-12 col-md">
+              <app-form-input-field
+                appearance="appearance-1"
+                placeholder="Last"
+                [control]="responsiblePartyFormGroup?.get('lastName')">
+              </app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'Preferred Name'"
+          [control]="responsiblePartyFormGroup?.get('preffered_name')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'Address *'"
+          [control]="responsiblePartyFormGroup?.get('address')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-lg-6 col-md-6">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'City *'"
+          [control]="responsiblePartyFormGroup?.get('city')">
+        </app-form-input-field>
+      </div>
+      <div class="col-12 col-lg-6 ">
+        <div class="row">
+          <div class="col-12 col-lg-5 d-flex align-items-center col-md-6 state-responsive">
+            <app-form-dropdown-field
+              appearance="flat"
+              [dropdownItems]="states"
+              [control]="responsiblePartyFormGroup?.get('state')"
+              [textField]="'abbreviation'"
+              [valueField]="'abbreviation'"
+              [labelText]="'State *'">
+            </app-form-dropdown-field>
+          </div>
+          <div class="col-12 col-lg-7 col-md-6 zip-responsive">
+            <app-form-input-field
+          appearance="appearance-1"
+              [labelText]="'Zip *'"
+              [control]="responsiblePartyFormGroup?.get('zip')">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 col-xl-9">
+        <div class="row">
+          <div class="col-12 col-lg-6 col-md-6">
+            <app-form-masked-input-field
+              appearance="flat"
+              [labelText]="'Primary Phone *'"
+              [control]="responsiblePartyFormGroup?.get('primaryPhone')"
+              mask="(999) 999-9999"
+              slotChar="(000) 000-0000"
+              placeholder="(000) 000-0000">
+            </app-form-masked-input-field>
+          </div>
+          <div class="col-12 col-lg-6 col-md-6">
+            <app-form-masked-input-field
+              appearance="flat"
+              [labelText]="'Alternative Phone'"
+              [control]="responsiblePartyFormGroup?.get('alternativePhone')"
+              mask="(999) 999-9999"
+              slotChar="(000) 000-0000"
+              placeholder="(000) 000-0000">
+            </app-form-masked-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3 text-field-responsive">
+        <app-form-masked-input-field
+        appearance="flat"
+          [labelText]="'DOB'"
+          [control]="responsiblePartyFormGroup?.get('dob')"
+          mask="99/99/9999"
+          slotChar="mm/dd/yyyy"
+          placeholder="00/00/0000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+  </div>
+  <!-- responsible party end -->
+
+  <!-- health insurance start -->
+  <div class="d-flex form-title">
+    <div></div>
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-2 mt-3 titel-container-info">Health Insurance</h2>
+      <h3 class="fw-mediumi fs-2-4i primary-dental-heading">Primary Dental Insurance</h3>
+    </div>
+  </div>
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12 col-xl-9">
+        <div class="row">
+          <div class="col-12 col-lg-6 d-flex align-items-center">
+            <div class="d-flex align-items-center w-100">
+              <div class="flex-grow-0 me-2">
+                <label class="fw-medium">Insurance Plan</label>
+              </div>
+              <div class="flex-grow-1">
+                <p-autoComplete inputStyleClass="flat" [formControl]="healthInsuranceFormGroup?.get('insurance')" [suggestions]="filteredPrimaryInsurance" [showClear]="true"
+                (completeMethod)="searchInsurance($event, true)"  field="planName"
+                (onSelect)="onInsurancePlanSelect(true)" appendTo="body">
+                  <ng-template pTemplate="item" let-insurance>
+                    <div>
+                      <span><b>{{insurance.planName}}</b></span>
+                    </div>
+                  </ng-template>
+                  <ng-template let-selectedInsurance pTemplate="selectedItem">
+                    <div>
+                      <span><b>{{selectedInsurance.planName}}</b></span>
+                    </div>
+                  </ng-template>
+                </p-autoComplete>
+              </div>
+            </div>
+            <!-- <app-form-input-field
+              [labelText]="'Insurance Plan'"
+              [control]="healthInsuranceFormGroup?.get('insuranceId')">
+            </app-form-input-field> -->
+
+          </div>
+          <div class="col-12 col-lg-6 text-field-responsive">
+            <app-form-input-field
+          appearance="appearance-1"
+              [labelText]="'Subscriber ID #'"
+              [control]="healthInsuranceFormGroup?.get('subcriberId')"
+              [disabled]="!healthInsuranceFormGroup?.get('insuranceId').value">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3 text-field-responsive">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'Group #'"
+          [control]="healthInsuranceFormGroup?.get('group')"
+          [disabled]="!healthInsuranceFormGroup?.get('insuranceId').value">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-5 mb-3">
+      <div class="col-12 col-xl-2">
+        <label for="">Is the subscriber the:</label>
+      </div>
+      <div class="col-12 col-xl-10">
+        <app-form-radio-field [isVertical]="breakpointObserverService.isSmallerThanOrEqual('md') | async" [disabled]="!healthInsuranceFormGroup?.get('insuranceId').value" [checkboxAppearance]="true" [items]="subscriberRadioItems" [control]="healthInsuranceFormGroup.get('subscriberPersonType')"
+        inputIDPrefix="PDIsubscriber"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="form-subsection-container" *ngIf="healthInsuranceFormGroup?.get('subscriberPersonType')?.value === 'other'">
+      <div class="row">
+        <div class="col-12 col-xl-9 d-flex align-items-center">
+          <div>
+            <label for="">Subscriber’s Name</label>
+          </div>
+          <div class="flex-grow-">
+            <div class="row">
+              <div class="col mb-3">
+                <app-form-input-field
+          appearance="appearance-1"
+                appearance="appearance-1"
+                  placeholder="First"
+                  [control]="primaryPersonDataFormGroup.get('firstName')">
+                </app-form-input-field>
+              </div>
+              <div class="col-2 mb-3">
+                <app-form-input-field
+          appearance="appearance-1"
+                appearance="appearance-1"
+                  placeholder="MI"
+                  [control]="primaryPersonDataFormGroup.get('middleName')">
+                </app-form-input-field>
+              </div>
+              <div class="col mb-3">
+                <app-form-input-field
+                appearance="appearance-1"
+                  placeholder="Last"
+                  [control]="primaryPersonDataFormGroup.get('lastName')">
+                </app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-3 mb-3">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'DOB'"
+            [control]="primaryPersonDataFormGroup.get('dob')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-3">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Subscriber’s Address'"
+            [control]="primaryPersonDataFormGroup.get('address')">
+          </app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'City'"
+            [control]="primaryPersonDataFormGroup.get('city')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col-12 col-lg-5 d-flex align-items-center mb-3">
+              <app-form-dropdown-field
+              appearance="flat"
+                [dropdownItems]="states"
+                [control]="primaryPersonDataFormGroup.get('state')"
+                [textField]="'abbreviation'"
+                [valueField]="'abbreviation'"
+                [labelText]="'State'">
+              </app-form-dropdown-field>
+            </div>
+            <div class="col-12 col-lg-7 mb-3">
+              <app-form-input-field
+                appearance="appearance-1"
+                [labelText]="'Zip'"
+                [control]="primaryPersonDataFormGroup.get('zip')">
+              </app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Subscriber’s Employer'"
+            [control]="primaryPersonDataFormGroup.get('employer')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-lg-6 mb-3">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Relationship to Patient'"
+            [control]="primaryPersonDataFormGroup.get('patientRelation')">
+          </app-form-input-field>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- health insurance end -->
+
+
+  <!-- secondary health insurance start -->
+  <div class="d-flex form-title">
+    <div></div>
+    <div class="title-container">
+      <h3 class="fw-mediumi fs-2-4i">Secondary Dental Insurance </h3>
+      <div class="row mt-3">
+        <div class="col-12 d-flex align-items-center">
+          <p-checkbox [formControl]="secondaryHealthInsuranceFormGroup?.get('notApplicable')" [binary]="true" inputId="notApplicableSDI"></p-checkbox>
+          <label class="ms-3" for="notApplicableSDI">not applicable?</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-section-container" *ngIf="!secondaryHealthInsuranceFormGroup?.get('notApplicable')?.value">
+    <div class="row">
+      <div class="col-12 col-xl-9">
+        <div class="row">
+          <div class="col-12 col-lg-6 d-flex align-items-center">
+            <div class="d-flex align-items-center w-100">
+              <div class="flex-grow-0 me-2">
+                <label class="fw-medium">Insurance Plan</label>
+              </div>
+              <div class="flex-grow-1">
+                <p-autoComplete inputStyleClass="flat" [formControl]="secondaryHealthInsuranceFormGroup?.get('insurance')" [suggestions]="filteredSecondaryInsurance" [showClear]="true"
+                (completeMethod)="searchInsurance($event, false)"  field="planName"
+                (onSelect)="onInsurancePlanSelect(false)" appendTo="body">
+                  <ng-template pTemplate="item" let-insurance>
+                    <div>
+                      <span><b>{{insurance.planName}}</b></span>
+                    </div>
+                  </ng-template>
+                  <ng-template let-selectedInsurance pTemplate="selectedItem">
+                    <div>
+                      <span><b>{{selectedInsurance.planName}}</b></span>
+                    </div>
+                  </ng-template>
+                </p-autoComplete>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 text-field-responsive">
+            <app-form-input-field
+              appearance="appearance-1"
+              [labelText]="'Subscriber ID #'"
+              [control]="secondaryHealthInsuranceFormGroup?.get('subcriberId')"
+              [disabled]="!secondaryHealthInsuranceFormGroup?.get('insuranceId').value">
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3 text-field-responsive">
+        <app-form-input-field
+          appearance="appearance-1"
+          [labelText]="'Group #'"
+          [control]="secondaryHealthInsuranceFormGroup?.get('group')"
+          [disabled]="!secondaryHealthInsuranceFormGroup?.get('insuranceId').value">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-5 mb-3">
+      <div class="col-12 col-xl-2">
+        <label for="">Is the subscriber the:</label>
+      </div>
+      <div class="col-12 col-xl-10">
+        <app-form-radio-field [isVertical]="breakpointObserverService.isSmallerThanOrEqual('md') | async" [disabled]="!secondaryHealthInsuranceFormGroup?.get('insuranceId').value" [checkboxAppearance]="true" [items]="subscriberRadioItems" [control]="secondaryHealthInsuranceFormGroup.get('subscriberPersonType')"
+        inputIDPrefix="SDIsubscriber"></app-form-radio-field>
+      </div>
+    </div>
+
+    <div class="form-subsection-container" *ngIf="secondaryHealthInsuranceFormGroup?.get('subscriberPersonType')?.value === 'other'">
+      <div class="row">
+        <div class="col-12 col-xl-9 d-flex align-items-center">
+          <div>
+            <label for="">Subscriber’s Name'</label>
+          </div>
+          <div class="flex-grow-">
+            <div class="row">
+              <div class="col mb-3">
+                <app-form-input-field
+                  appearance="appearance-1"
+                  placeholder="First"
+                  [control]="secondaryPersonDataFormGroup.get('firstName')">
+                </app-form-input-field>
+              </div>
+              <div class="col-2 mb-3">
+                <app-form-input-field
+                  appearance="appearance-1"
+                  placeholder="MI"
+                  [control]="secondaryPersonDataFormGroup.get('middleName')">
+                </app-form-input-field>
+              </div>
+              <div class="col mb-3">
+                <app-form-input-field
+                  appearance="appearance-1"
+                  placeholder="Last"
+                  [control]="secondaryPersonDataFormGroup.get('lastName')">
+                </app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-3 mb-3">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'DOB'"
+            [control]="secondaryPersonDataFormGroup.get('dob')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-3">
+          <app-form-input-field
+            appearance="appearance-1"
+            [labelText]="'Subscriber’s Address'"
+            [control]="secondaryPersonDataFormGroup.get('address')">
+          </app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          <app-form-input-field
+            appearance="appearance-1"
+            [labelText]="'City'"
+            [control]="secondaryPersonDataFormGroup.get('city')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col-12 col-xl-6 d-flex align-items-center mb-3">
+              <app-form-dropdown-field
+              appearance="flat"
+                [dropdownItems]="states"
+                [control]="secondaryPersonDataFormGroup.get('state')"
+                [textField]="'abbreviation'"
+                [valueField]="'abbreviation'"
+                [labelText]="'State'">
+              </app-form-dropdown-field>
+            </div>
+            <div class="col-12 col-xl-6 mb-3">
+              <app-form-input-field
+                appearance="appearance-1"
+                [labelText]="'Zip'"
+                [control]="secondaryPersonDataFormGroup.get('zip')">
+              </app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <app-form-input-field
+            appearance="appearance-1"
+            [labelText]="'Subscriber’s Employer'"
+            [control]="secondaryPersonDataFormGroup.get('employer')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-lg-6">
+          <app-form-input-field
+            appearance="appearance-1"
+            [labelText]="'Relationship to Patient'"
+            [control]="secondaryPersonDataFormGroup.get('patientRelation')">
+          </app-form-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- secondary health insurance end -->
+
+  <div class="mt-5 w-100">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Sign '"
+            [control]="patientInfoFormGroup?.get('sign')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-3">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'Date'"
+            [control]="patientInfoFormGroup?.get('date')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button [style.width]="'700px'" [style.padding]="'12px'" class="btn btn-primary" (click)="onSubmitPatientInfo()">
+      Next
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="patientInfoFormGroup"></form-validation-message>
+    </div>
+  </div>
+  <div class="row" *ngIf="responsiblePartyFormGroup && responsiblePartyFormGroup?.get('notApplicable') && !responsiblePartyFormGroup?.get('notApplicable')?.value">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="responsiblePartyFormGroup"></form-validation-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="healthInsuranceFormGroup"></form-validation-message>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!secondaryHealthInsuranceFormGroup?.get('notApplicable')?.value">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="secondaryHealthInsuranceFormGroup"></form-validation-message>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="secondaryPersonDataFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

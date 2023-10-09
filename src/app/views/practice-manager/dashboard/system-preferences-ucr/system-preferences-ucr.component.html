@@ -1,0 +1,122 @@
+<div class="main-wrapper">
+  <form
+    novalidate
+    [formGroup]="systemPreferencesUcrFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="page-heading mb-0 pb-0">System Preferences</h1>
+          <p class="p-0 m-0 page-heading-subtitle">UCR Management</p>
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <div class="col-12 mt-md-5 manualSection">
+          <div class="d-flex justify-content-center">
+            <ul class="nav flex-column col-md-8 col-lg-6">
+              <li>
+                <p class="fs-1-4 fw-normal fc-565656 font-roboto form-label">
+                  Prompt for UCR updates when posting insurance payments?
+                </p>
+              </li>
+
+              <li class="d-flex flex-row mt-3">
+                <div class="custom_radio">
+                  <input
+                    type="radio"
+                    id="featured-1"
+                    name="featured"
+                    [checked]="
+                      form['promptUCRUpdatesWhenPostingInsurancePayments']
+                        .value === true
+                    "
+                    (change)="
+                      form[
+                        'promptUCRUpdatesWhenPostingInsurancePayments'
+                      ].setValue($event.target.checked)
+                    "
+                  />
+                  <label
+                    for="featured-1"
+                    class="font-roboto fc-565656 fw-normal fs-1-4 form-label"
+                  >
+                    Yes
+                  </label>
+                </div>
+                <div class="custom_radio ms-auto me-5">
+                  <input
+                    type="radio"
+                    id="featured-2"
+                    name="featured"
+                    [checked]="
+                      form['promptUCRUpdatesWhenPostingInsurancePayments']
+                        .value === false
+                    "
+                    (change)="
+                      form[
+                        'promptUCRUpdatesWhenPostingInsurancePayments'
+                      ].setValue(!$event.target.checked)
+                    "
+                  />
+                  <label
+                    for="featured-2"
+                    class="font-roboto fc-565656 fw-normal fs-1-4 form-label me-5"
+                  >
+                    No
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/system-preference-cutoff"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center">
+          <button
+            routerLink="/practice-manager/system-preference-recall"
+            class="theme-btn py-2 mx-3"
+          >
+            Back
+          </button>
+          <button type="submit" class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section> -->
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fw-normali fs-1-2"
+            routerLink="/practice-manager/system-preference-cutoff"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-footer-responsive">
+          <button class="theme-btn fs-1-2 py-2 mx-3" routerLink="/practice-manager/system-preference-recall">Back</button>
+          <button
+            class="theme-btn py-2 fs-1-2"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

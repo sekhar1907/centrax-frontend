@@ -1,0 +1,60 @@
+
+.onboarding-parent-box {
+  width: 725px;
+  height: 429px;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  text-align: center;
+  padding: 70px;
+
+  @media only screen and (max-width: 767px) {
+    padding: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .h3 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #565656;
+  }
+  .p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify !important;
+    color: #727272;
+  }
+  .search-btn {
+    background: #00ae8e;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.12);
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 90px;
+    color: #ffffff;
+  }
+  .find-id {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    color: #00ae8e;
+  }
+}

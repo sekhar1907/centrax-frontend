@@ -1,0 +1,174 @@
+<div class="create-profile-container">
+  <form
+    class="needs-validation"
+    novalidate
+    class="w-100"
+    [formGroup]="practiceDetailsFormGroup"
+    (ngSubmit)="onSavePracticeDetails()"
+  >
+    <div class="text-center mb-5 pb-5">
+      <h1 class="fs-3 mb-3">Profile Creation</h1>
+      <p class="fs-6">Step 3</p>
+    </div>
+
+    <div class="form-container py-5 my-5 mt-5">
+      <div class="row">
+        <div class="col-12 mb-4 pt-5 mt-5">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Owners full name"
+            [noLabel]="false"
+            [control]="form['ownerFullname']"
+            [isInValid]="formsubmit && form['ownerFullname'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Email"
+            [noLabel]="false"
+            [control]="form['ownerEmail']"
+            [isInValid]="formsubmit && form['ownerEmail'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-masked-input-field
+          appearance="appearance-1"
+            placeholder="Phone"
+            [control]="form['ownerPhone']"
+            [isInvalid]="formsubmit && form['ownerPhone'].errors"
+            [isHorizontal]="false"
+            mask="(999) 999-999"
+            slotChar="(000) 000-000">
+          </app-form-masked-input-field>
+        </div>
+        <div class="col-12 mb-4 mt-3">
+          <div class="d-flex align-items-center">
+            <p-checkbox [binary]="true" inputId="contactPersonDiff" [formControl]="form['contactPersonSameAsOwner']"></p-checkbox>
+            <label class="mb-0 ms-4 fw-bold" for="contactPersonDiff">Contact person, if different from owner</label>
+          </div>
+        </div>
+        <div *ngIf="form['contactPersonSameAsOwner'].value" class="col-12 mb-4 ps-4 border-start mx-3 border-dark" formGroupName="contactPerson" [hidden]="!form['contactPersonSameAsOwner'].value">
+          <div class="col-12 mb-4 mt-3">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Full name"
+              [noLabel]="false"
+              [control]="contactPersonForm['fullName']"
+              [isInValid]="formsubmit && contactPersonForm['fullName'].errors"
+            >
+            </app-form-input-field>
+          </div>
+
+          <div class="col-12 mb-4">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Email"
+              [noLabel]="false"
+              [control]="contactPersonForm['email']"
+              [isInValid]="formsubmit && contactPersonForm['email'].errors"
+            >
+            </app-form-input-field>
+          </div>
+
+          <div class="col-12 mb-4">
+            <app-form-masked-input-field
+            appearance="appearance-1"
+              placeholder="Phone"
+              [control]="contactPersonForm['phone']"
+              [isInvalid]="formsubmit && contactPersonForm['phone'].errors"
+              [isHorizontal]="false"
+              mask="(999) 999-999"
+              slotChar="(000) 000-000">
+            </app-form-masked-input-field>
+          </div>
+
+          <div class="col-12 mb-4">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Job Title"
+              [noLabel]="false"
+              [control]="contactPersonForm['jobtitle']"
+              [isInValid]="formsubmit && contactPersonForm['fullName'].errors"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="NPI"
+            [noLabel]="false"
+            [control]="form['NPI']"
+            [isInValid]="formsubmit && form['NPI'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Dental license"
+            [noLabel]="false"
+            [control]="form['dentalLicense']"
+            [isInValid]="formsubmit && form['dentalLicense'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Tax ID"
+            [noLabel]="false"
+            [control]="form['taxId']"
+            [isInValid]="formsubmit && form['taxId'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Drug Enforcement Agency (DEA) number"
+            [noLabel]="false"
+            [control]="form['DEANumber']"
+            [isInValid]="formsubmit && form['DEANumber'].errors"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+
+      <h6 class="text-start mt-5 w-100">Providers at your practice</h6>
+      <div class="row w-100 mt-4">
+        <div class="col-6 px-0"><label for="" class="w-100 fw-bold text-muted">Last, First</label></div>
+        <div class="col-6 px-0"><label for="" class="w-100 fw-bold text-muted">NPI</label></div>
+      </div>
+      <div class="row w-100 mt-3" *ngFor="let provider of providers; let i = index">
+        <div class="col-6 px-0"><div>{{provider.lastname}}, {{provider.firstname}}</div></div>
+        <div class="col-6 px-0">{{provider.npi}}</div>
+      </div>
+      <div class="w-100 mt-4">
+        <i class="fa fa-circle-plus fs-4 cursor-pointer" (click)="onAddNewProvider()"></i>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="submit"
+        >
+          Save and Next
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="practiceDetailsFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

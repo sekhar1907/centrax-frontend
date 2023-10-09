@@ -1,0 +1,45 @@
+<div class="row" [formGroup]="reschedFormGroup">
+  <div class="col-12 mb-5">
+    <form-calendar-field
+      [control]="reschedFormGroup.get('date')"
+      appearance="appearance-2"
+      labelText="Date"
+      [isRequired]="true"
+      appendTo="body"
+      [showClear]="true"
+      >
+    </form-calendar-field>
+  </div>
+  <div class="col-12 mb-3">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <form-calendar-field
+          [control]="reschedFormGroup.get('start')"
+          appearance="appearance-2"
+          labelText="Start"
+          [isRequired]="true"
+          appendTo="body"
+          [showClear]="true"
+          [timeOnly]="true"
+          >
+        </form-calendar-field>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <form-calendar-field
+          [control]="reschedFormGroup.get('end')"
+          appearance="appearance-2"
+          labelText="End"
+          [isRequired]="true"
+          appendTo="body"
+          [showClear]="true"
+          [timeOnly]="true"
+          >
+        </form-calendar-field>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 d-flex justify-content-end">
+    <p-button (onClick)="onCancel()" label="Cancel" styleClass="p-button-outlined p-button-secondary me-2"></p-button>
+    <p-button [disabled]="reschedFormGroup.invalid" label="Reschedule" (onClick)="onReschedule()"></p-button>
+  </div>
+</div>

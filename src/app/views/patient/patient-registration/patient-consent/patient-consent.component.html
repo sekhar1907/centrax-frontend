@@ -1,0 +1,167 @@
+<div class=" py-5 py-lg-3 h-100 accordion-content container-fluid">
+  <div class="form-section-container">
+    <p>
+      I authorize Dr.
+      <app-blank-signature-line
+        [signatureWidth]="'230px'"
+      ></app-blank-signature-line>
+      and/or such associates or assistants as they may designate to perform
+      those procedures as may be deemed necessary or advisable to maintain my
+      dental health or the dental health of any minor or other individual for
+      which I have responsibility, including arrangement and/or administration
+      of any sedative (including nitrous oxide), analgesic, therapeutic, and/or
+      other pharmaceutical agent(s), including those related to restorative,
+      palliative, therapeutic or surgical treatments.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I understand</b> that the administration of local anesthetic may cause
+      an untoward reaction or side effects, which may include, but are not
+      limited to:
+    </p>
+    <ul>
+      <li>bruising</li>
+      <li>hematoma</li>
+      <li>cardiac stimulation</li>
+      <li>muscle soreness</li>
+      <li>and temporary or rarely, permanent numbness.</li>
+    </ul>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I understand</b> that occasionally needles break and may require
+      surgical retrieval and/or occasionally drops of local anesthetic may
+      contact the eyes and facial tissues and cause temporary irritation.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I understand</b> that as part of the dental treatment, including
+      preventive procedures such as cleanings and basic dentistry, including
+      fillings of all types, teeth may remain sensitive or even possibly quite
+      painful both during and after completion of treatment. Dental materials
+      and medications may trigger allergic or sensitivity reactions.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>After lengthy appointments, jaw muscles may also be sore or tender.</p>
+    <ul>
+      <li>
+        Holding one’s mouth open can, in a predisposed patient, precipitate a
+        TMJ disorder.
+      </li>
+      <li>
+        Gums and surrounding tissues may also be sensitive or painful during
+        and/or after treatment.
+      </li>
+    </ul>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      Although rare, it is also possible for the tongue, cheek or other oral
+      tissues to be inadvertently abraded or lacerated (cut) during routine
+      dental procedures which may require sutures or additional treatment.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I understand</b> that as part of dental treatment items including, but
+      not limited to crowns, small dental instruments, drill components, etc.
+      may be aspirated (inhaled into the respiratory system) or swallowed. This
+      unusual situation may require a series of x-rays to be taken by a
+      physician or hospital and may, in rare cases, require bronchoscopy or
+      other procedures to ensure safe removal.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I understand</b> that taking the class of
+      <b>drugs prescribed for the prevention of osteoporosis</b> , such as
+      Fosamax, Boniva or Actonel, may result in complications of nonhealing of
+      the jaw bones following oral surgery or tooth extractions.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <b>I do voluntarily assume any and all possible risks</b>, including the risk of
+      substantial and serious harm, if any, which may be associated with general
+      preventive and operative treatment procedures in hopes of obtaining the
+      potential desired results, which may or may not be achieved, for my
+      benefit or the benefit of my minor child or ward. I acknowledge that the
+      nature and purpose of the foregoing procedures have been explained to me
+      if necessary and I have been given the opportunity to ask questions.
+    </p>
+    <div class="my-2">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="mt-5 w-100">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8 reg-sign-date-section">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Sign'"
+            [control]="consentFormGroup?.get('sign')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-3 date-responsive reg-sign-date-section">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'Date'"
+            [control]="consentFormGroup?.get('date')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button [style.width]="'700px'" [style.padding]="'12px'" class="btn btn-primary" (click)="onSubmitPatientInfo()">
+      Next
+    </button>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="consentFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

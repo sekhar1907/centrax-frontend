@@ -1,0 +1,108 @@
+<div class="main-wrapper">
+  <form
+    class="form-group"
+    novalidate
+    [formGroup]="practiceDetailsFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid main-wrapper-section">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="page-heading mb-0 pb-0">Practice information</h1>
+          <p class="p-0 m-0 page-heading-subtitle">
+            Let’s make sure your practice information is correct!
+          </p>
+        </div>
+      </div>
+      <div class="row my-md-4 practice-manager-section">
+        <div class="col-12 my-2 form-horizontal">
+          <div class="row">
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="fullname" class="form-label">NPI</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="123456789"
+                class="form-control form-input-box"
+                id="fullname"
+                [formControl]="form['NPI']"
+                [ngClass]="{ 'is-invalid': formsubmit && form['NPI'].errors }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="licence" class="form-label"> Dental License</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="1234567"
+                class="form-input-box form-control"
+                id="licence"
+                [formControl]="form['dentalLicense']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['dentalLicense'].errors
+                }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="phone" class="form-label"> Tax ID</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="12-345678"
+                class="form-input-box form-control"
+                id="phone"
+                [formControl]="form['taxId']"
+                [ngClass]="{ 'is-invalid': formsubmit && form['taxId'].errors }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="phone" class="form-label">
+                Drug Enforcement Agency (DEA) Number</label
+              >
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="1234567"
+                class="form-input-box form-control"
+                id="phone"
+                [formControl]="form['DEANumber']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['DEANumber'].errors
+                }"
+              />
+            </div>
+            <div class="col-md-5 col-9 text-md-end">
+              <label for="fullname" class="form-label">
+                Business Associate Agreement
+              </label>
+            </div>
+            <div class="col-md-7 col-3 mt-2">
+              <span class="footer-save-btn py-1" (click)="openPdf()"
+                >Review</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/add-staff"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+          <button class="theme-btn py-2" type="submit">Done</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

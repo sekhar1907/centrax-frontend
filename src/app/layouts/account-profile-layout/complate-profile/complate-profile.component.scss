@@ -1,0 +1,120 @@
+.main-wrapper{
+  position: relative;
+  // min-width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.profile-parent{
+
+  .search-profile{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+letter-spacing: -0.408333px;
+color: #565656;
+  }
+  .search-update{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 0.1px;
+text-decoration-line: underline;
+text-transform: uppercase;
+color: #00AE8E;
+  }
+  .profile-border{
+    background: #FFFFFF;
+border: 1px solid #707F8B;
+  }
+  .profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D7D7D7;
+border: 1px solid #707F8B;
+box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+  }
+  .user-name{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 0px;
+color: #565656;
+  }
+  .user-role{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+color: #727272;
+  }
+  .profile-address{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+color: #565656;
+  }
+  .claim-profile{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+
+color: #00AE8D;
+  }
+
+  .pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 16px;
+color: #979797;
+  }
+
+  .pagination a.active {
+    background-color: #00AE8D;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+  // .pagination a:hover:not(.active) {background-color: #ddd;}
+  .pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .pagination a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .see-profile{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 18px;
+text-decoration-line: underline;
+
+color: #00AE8E;
+  }
+}

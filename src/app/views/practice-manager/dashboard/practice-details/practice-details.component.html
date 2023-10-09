@@ -1,0 +1,95 @@
+<div class="main-wrapper">
+  <form
+    class="form-group"
+    novalidate
+    [formGroup]="practiceDetailsFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid main-practice-div">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="page-heading pb-0">Practice details</h1>
+          <p class="page-heading-subtitle">
+            Verify your information is correct
+          </p>
+        </div>
+      </div>
+      <div class="row my-md-5 practice-manager-section">
+        <div class="col-12 my-2 form-horizontal">
+          <div class="row">
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="fullname" class="form-label">Owners full name</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="Dr. Jane Doe, DMD"
+                class="form-control fc-565656 form-input-box fw-normali"
+                id="fullname"
+                [formControl]="form['name']"
+                [ngClass]="{ 'is-invalid': formsubmit && form['name'].errors }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="email" class="form-label"> Email</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="email"
+                placeholder="jdoemd@dentalpractice.com"
+                class="fc-565656 form-input-box form-control fw-normali"
+                id="email"
+                [formControl]="form['email']"
+                [ngClass]="{ 'is-invalid': formsubmit && form['email'].errors }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="phone" class="form-label"> Phone</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <!-- <input
+                type="number"
+                placeholder="(555) 555-5555"
+                class="form-input-box fc-565656 form-control fw-normali"
+                id="phone"
+                [formControl]="form['phone']"
+                [ngClass]="{ 'is-invalid': formsubmit && form['phone'].errors }"
+
+              /> -->
+              <p-inputMask
+                mask="(999) 999-999"
+                class="form-input-box fc-565656 form-control fw-normali"
+                [formControl]="form['phone']"
+                slotChar="(999) 999-999"
+                placeholder="(999) 999-999"
+              ></p-inputMask>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fw-normali fs-1-2"
+            routerLink="/practice-manager/contact-person"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-footer-responsive">
+          <button class="theme-btn fs-1-2 py-2 mx-3" type="submit">Save</button>
+          <button
+            routerLink="/practice-manager/contact-person"
+            class="theme-btn py-2 fs-1-2"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

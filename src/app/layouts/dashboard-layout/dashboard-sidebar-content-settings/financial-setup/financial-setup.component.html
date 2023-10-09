@@ -1,0 +1,52 @@
+<form [formGroup]="financialSetupForm" novalidate (ngSubmit)="createFinancialSetup()">
+    <div class="content-wrapper">
+
+        <div class="row no-gutters body-wrapper">
+            <div class="container">
+                <div class="heading-text">Financial Charge</div>
+                <div class="radio-item">
+                    <input type="radio" class="cursor-pointer" id="interest" formControlName="financialCharge" [value]="true" (change)="financialChargeToggle('interest')">
+                    <label for="interest" class="cursor-pointer">Interest</label>
+                </div>
+                <div class="radio-item ml-4">
+                    <input type="radio" class="cursor-pointer" id="rebill-fee" formControlName="financialCharge" [value]="false" (change)="financialChargeToggle('rebill')">
+                    <label for="rebill-fee" class="cursor-pointer">Rebill Fee</label>
+                </div>
+                <!-- {{ financialSetupForm.controls['financialCharge'].value | json}} -->
+                <div class="row no-gutters mt-4">
+                    <div class="col-sm-6">
+                        <div class="heading-text">Annual Interest Precent</div>
+                    </div>
+                    <div class="col-sm-6"><input type="number" formControlName="annualInterestPercent" /></div>
+                </div>
+
+                <div class="row no-gutters mt-4">
+                    <div class="col-sm-6">
+                        <div class="heading-text">Minimum Finance Charge</div>
+                    </div>
+                    <div class="col-sm-6"><input type="text" formControlName="minimumFinanceCharge" /></div>
+                </div>
+
+                <div class="row no-gutters mt-4">
+                    <div class="col-sm-6">
+                        <div class="heading-text">Rebill Fee Amount</div>
+                    </div>
+                    <div class="col-sm-6"><input type="number" formControlName="rebillFreeAmount" /></div>
+                </div>
+
+                <div class="row no-gutters mt-4">
+                    <div class="col-sm-6">
+                        <div class="heading-text">Minimum Balance to Incur Fees</div>
+                    </div>
+                    <div class="col-sm-6"><input type="text" value="$0.00" formControlName="minimumBalanceToIncur" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-holder">
+            <button class="btn-save cursor-pointer" type="submit"
+                [disabled]="financialSetupForm.pristine || financialSetupForm.invalid">save</button>
+        </div>
+
+    </div>
+</form>

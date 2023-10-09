@@ -1,0 +1,20 @@
+<div class="d-flex {{layout}}" *ngIf="control">
+  <div class="flex-grow-0">
+    <label class="fw-bold mb-0 px-1">
+      {{ labelText }}
+      <span *ngIf="labelTextSecondary" class="fw-normal">{{
+        labelTextSecondary
+      }}</span>
+      <span *ngIf="isRequired">*</span>
+    </label>
+  </div>
+  <div class="flex-grow-1">
+    <div class="row">
+      <div class="col-12">
+        <p-dropdown [panelStyleClass]="panelStyleClass" [styleClass]="styleClass" [appendTo]="appendTo" [scrollHeight]="scrollHeight" [autoDisplayFirst]="false" class="{{appearance}} {{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" *ngIf="!valueField || !textField" [options]="dropdownItems" [formControl]="control"></p-dropdown>
+        <p-dropdown [panelStyleClass]="panelStyleClass" [styleClass]="styleClass" [appendTo]="appendTo" [scrollHeight]="scrollHeight" [autoDisplayFirst]="false" class="{{appearance}} {{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" *ngIf="valueField && textField" [options]="dropdownItems" [formControl]="control"
+        [optionLabel]="textField" [optionValue]="valueField" [dataKey]="valueField"></p-dropdown>
+      </div>
+    </div>
+  </div>
+</div>

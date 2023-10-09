@@ -1,0 +1,115 @@
+<div class="main-wrapper">
+  <form
+    class="form-group"
+    novalidate
+    [formGroup]="practiceDetailsFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="page-heading mb-0 pb-0">Contact Person</h1>
+          <p class="page-heading-subtitle p-0 m-0">
+            Is this who you want Centrax to contact?
+          </p>
+        </div>
+      </div>
+      <div class="row my-md-5 practice-manager-section">
+        <div class="col-12 my-2 form-horizontal">
+          <div class="row">
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="fullname" class="form-label"> Name</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="Dr. Jane Doe, DMD"
+                class="form-control form-input-box fw-normal fs-1-4 border-0"
+                id="fullname"
+                [formControl]="form['cfullname']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['cfullname'].errors
+                }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="email" class="form-label"> Email</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="email"
+                placeholder="jdoemd@dentalpractice.com"
+                class="form-input-box fw-normal fs-1-4 form-control border-0"
+                id="email"
+                [formControl]="form['cemail']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['cemail'].errors
+                }"
+              />
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="phone" class="form-label"> Phone</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <!-- <input
+                type="number"
+                placeholder="(555) 555-5555"
+                class="form-input-box fw-normal fs-1-4 form-control border-0"
+                id="phone"
+                [formControl]="form['cphone']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['cphone'].errors
+                }"
+              /> -->
+              <p-inputMask
+                mask="(999) 999-999"
+                class="form-input-box fc-565656 form-control fw-normali"
+                [formControl]="form['cphone']"
+                slotChar="(999) 999-999"
+                placeholder="(999) 999-999"
+              ></p-inputMask>
+            </div>
+            <div class="col-md-5 text-md-end my-md-2">
+              <label for="fullname" class="form-label"> Job title</label>
+            </div>
+            <div class="col-md-7 my-md-2">
+              <input
+                type="text"
+                placeholder="Office Manager"
+                class="form-control form-input-box fw-normal fs-1-4 border-0"
+                id="jobTitle"
+                [formControl]="form['cjobTitle']"
+                [ngClass]="{
+                  'is-invalid': formsubmit && form['cjobTitle'].errors
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fs-1-2"
+            routerLink="/practice-manager/practice-info"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-footer-responsive">
+          <button class="theme-btn fs-1-2 py-2 mx-3" type="submit">Save</button>
+          <button
+            routerLink="/practice-manager/practice-info"
+            class="theme-btn fs-1-2 py-2"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

@@ -1,0 +1,313 @@
+<div class="main-wrapper">
+  <section class="container-fluid main-wrapper-section-1500">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <h1 class="page-heading mb-0 pb-0">Add Staff</h1>
+        <p class="p-0 m-0 page-heading-subtitle">Dentists and Hygenists</p>
+      </div>
+    </div>
+    <div class="row practice-manager-section">
+      <div class="col-12 mt-5">
+        <div
+          class="table-responsive d-flex justify-content-center align-item-center"
+        >
+        <div class="staff-list-table">
+          <table class="table table-width w-100 mt-3 table-borderless">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="staff-name add-staff-list-label">
+                  Name (Last, First)
+                </th>
+                <th class="staff-name add-staff-list-label">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white mt-5 add-staff-list fw-medium" *ngFor="let staff of staffList">
+                <td class="text-center">
+                </td>
+                <td><span class="mt-1">{{staff.fullname}}</span></td>
+                <td class="">{{staff.title}}</td>
+              </tr>
+              <tr class="bg-white mt-5 add-staff-list fw-medium">
+                <td class="text-center">
+                  <i
+                    *ngIf="iconshowplus"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    class="fa-solid fa-circle-plus fa-md mt-1"
+                  ></i>
+
+                  <i
+                    *ngIf="iconrightangle"
+                    class="fa fa-angle-right"
+                    aria-hidden="true"
+                  ></i>
+                </td>
+                <td><span class="mt-1">{{practiceInfo?.staffs?.fullname ? practiceInfo?.staffs?.fullname :""}}</span></td>
+                <td class=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid">
+    <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+      <div class="col d-flex align-self-center">
+        <span
+          class="footer-save-btn cursor-pointer fc-475560"
+          routerLink="/practice-manager/add-staff-dental"
+        >
+          Save for later
+        </span>
+      </div>
+      <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+        <button (click)="nextPage()" class="btn theme-btn i py-2 fc-5F6D78">
+          Next
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Model -->
+  <div
+    #modalRef
+    class="modal fade bgcolor staff-modal-form"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content px-5 py-5">
+        <div class="container px-5">
+          <h3 class="staff-detail-popup-title fw-normal">New Provider</h3>
+          <form
+            class="row"
+            novalidate
+            [formGroup]="addStaffListFormGroup"
+
+          >
+            <div class="col-md-9 mt-2">
+              <label for="name" class="form-label mb-0 pb-0 staff-name"
+                >Name <span class="opacity-5">(Last, First)</span></label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="name"
+                [formControl]="form['fullname']"
+              />
+            </div>
+            <div class="col-md-3 mt-2 position-relative">
+              <label for="Suffix" class="form-label mb-0 pb-0 staff-name"
+                >Suffix</label
+              >
+              <select
+                class="common-design-form form-select"
+                name="time"
+                id="Suffix"
+                [formControl]="form['suffix']"
+              >
+                <option value="abc">ABC</option>
+                <option value="dmd">DMD</option>
+              </select>
+              <i class="fa-solid fa-angle-down fa-lg select-arrow-angle"></i>
+            </div>
+            <div class="col-md-3 mt-2">
+              <label for="date" class="form-label mb-0 pb-0 staff-name"
+                >DOB</label
+              >
+              <input
+                type="date"
+                placeholder=""
+                class="form-control common-design-form"
+                id="date"
+                [formControl]="form['birthDate']"
+              />
+            </div>
+            <div class="col-md-6 mt-2">
+              <label for="email" class="form-label mb-0 pb-0 staff-name"
+                >Email</label
+              >
+              <input
+                type="email"
+                placeholder=""
+                class="form-control common-design-form"
+                id="email"
+                [formControl]="form['email']"
+              />
+            </div>
+            <div class="col-md-3 mt-2">
+              <label for="number" class="form-label mb-0 pb-0 staff-name"
+                >Phone</label
+              >
+              <!-- <input
+                type="number"
+                placeholder=""
+                class="form-control common-design-form"
+                id="number"
+                [formControl]="form['phone']"
+              /> -->
+              <p-inputMask
+                mask="(999) 999-999"
+                class="form-control common-design-form"
+                [formControl]="form['phone']"
+                slotChar="(999) 999-999"
+                placeholder="(999) 999-999"
+              ></p-inputMask>
+            </div>
+            <div class="col-md-8 mt-2">
+              <label for="Street" class="form-label mb-0 pb-0 staff-name"
+                >Street Address</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="Street"
+                [formControl]="form['address']"
+              />
+            </div>
+            <div class="col-md-4 mt-2">
+              <label for="city" class="form-label mb-0 pb-0 staff-name"
+                >City</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="city"
+                [formControl]="form['city']"
+              />
+            </div>
+            <div class="col-md-2 mt-2">
+              <label for="state" class="form-label mb-0 pb-0 staff-name"
+                >State</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="state"
+                [formControl]="form['state']"
+              />
+            </div>
+            <div class="col-md-2 mt-2">
+              <label for="zip" class="form-label mb-0 pb-0 staff-name"
+                >Zip</label
+              >
+              <input
+                type="number"
+                placeholder=""
+                class="form-control common-design-form"
+                id="zip"
+                [formControl]="form['zip']"
+              />
+            </div>
+            <hr class="mt-3" />
+            <div class="col-md-6 mt-3 position-relative">
+              <label for="title" class="form-label mb-0 pb-0 staff-name"
+                >Title</label
+              >
+              <select
+                class="common-design-form form-select"
+                name="time"
+                id="title"
+                [formControl]="form['title']"
+              >
+                <option value="Dentist">Dentist</option>
+                <option value="DMD">DMD</option>
+              </select>
+              <i class="fa-solid fa-angle-down fa-lg select-arrow-angle"></i>
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="hire" class="form-label mb-0 pb-0 staff-name"
+                >Hire Date</label
+              >
+              <input
+                type="date"
+                placeholder=""
+                class="form-control common-design-form"
+                id="hire"
+                [formControl]="form['hireDate']"
+              />
+            </div>
+            <div class="col-md-3 mt-3 position-relative">
+              <label for="Permissions" class="form-label mb-0 pb-0 staff-name"
+                >Permissions</label
+              >
+              <select
+                class="common-design-form form-select"
+                name="time"
+                id="Permissions"
+                [formControl]="form['permissions']"
+              >
+                <option value="Moderate">Moderate</option>
+                <option value="DMD">DMD</option>
+              </select>
+              <i class="fa-solid fa-angle-down fa-lg select-arrow-angle"></i>
+            </div>
+            <hr class="mt-3" />
+            <div class="col-md-4 mt-3">
+              <label for="NPI" class="form-label mb-0 pb-0 staff-name"
+                >NPI</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="NPI"
+                [formControl]="form['NPI']"
+              />
+            </div>
+            <div class="col-md-4 mt-3">
+              <label for="dental" class="form-label mb-0 pb-0 staff-name"
+                >Dental License</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="dental"
+                [formControl]="form['dentalLicense']"
+              />
+            </div>
+            <div class="col-md-4 mt-3">
+              <label for="dea" class="form-label mb-0 pb-0 staff-name"
+                >DEA Number</label
+              >
+              <input
+                type="text"
+                placeholder=""
+                class="form-control common-design-form"
+                id="dea"
+                [formControl]="form['DEANumber']"
+              />
+            </div>
+            <div class="col-12 mt-5 add-staff-modal-btn">
+              <button
+                type="submit"
+                (click)="onSave()"
+                class="model-save-btn cursor-pointer py-2 rounded-3 text-white fw-medium"
+              >
+                Save
+              </button>
+
+              <span
+              (click)="closeModal()"
+                class="py-2 rounded-3 mt-2 bgcanel float-end fw-medium cancel-btn cursor-pointer"
+              >
+                Cancel
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="d-flex flex-column px-3 border-right h-100">
+  <div class="flex-grow-1 top-list">
+    <ul>
+      <li>
+        <div class="d-flex align-items-center" [ngClass]="{'active' : (activeTab$ | async) === 'admin'}" (click)="onSelectTab('admin')">
+          <div class="img-box">
+            <img src="assets/images/icons/pat-info-admin.svg" alt="" />
+          </div>
+          <span>Admin</span>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex align-items-center" [ngClass]="{'active' : (activeTab$ | async) === 'chart'}" (click)="onSelectTab('chart')">
+          <div class="img-box">
+            <img src="assets/images/icons/pat-info-chart.svg" alt="" />
+          </div>
+          <span>Chart</span>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex align-items-center" [ngClass]="{'active' : (activeTab$ | async) === 'perio'}" (click)="onSelectTab('perio')">
+          <div class="img-box">
+            <img src="assets/images/icons/pat-info-perio.svg" alt="" />
+          </div>
+          <span>Perio</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom-list">
+    <ul class="mb-0">
+      <li class="mb-4">
+        <div class="d-flex align-items-center">
+          <div class="img-box">
+            <img src="assets/images/icons/pat-info-paperclip.svg" alt="" />
+          </div>
+          <span>Attachments</span>
+        </div>
+      </li>
+      <li class="mb-4">
+        <div class="d-flex align-items-center">
+          <div class="img-box">
+            <img
+              src="assets/images/icons/pat-info-arrow-top-right.svg"
+              alt=""
+            />
+          </div>
+          <span>Tasks</span>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex align-items-center">
+          <div class="img-box">
+            <img src="assets/images/icons/pat-info-link.svg" alt="" />
+          </div>
+          <span>Link patient profile</span>
+        </div>
+      </li>
+    </ul>
+    <div>
+      <list-tree [nodes]="nodes" appearance="appearance-1"></list-tree>
+    </div>
+  </div>
+</div>

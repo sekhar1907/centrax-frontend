@@ -1,0 +1,48 @@
+strong {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+p {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.label-text {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+input {
+    width: 268px;
+    height: 28px;
+    border-radius: 6px;
+    border: 0.8px solid #00AE8E80;
+    background: rgba(241, 240, 240, 1);
+}
+
+.btn-save {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    width: 81px;
+    height: 35px;
+    border-radius: 3px;
+    color: rgba(87, 87, 87, 1);
+    background-color: rgba(224, 224, 221, 1);
+    border: none;
+}

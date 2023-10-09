@@ -1,0 +1,67 @@
+<div class="patient-registration-accordion">
+  <p-accordion [activeIndex]="patientRegistrationActiveStep">
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <h3 class="accordion-header ml-3 accordin-text">
+          <i class="fa fa-user"></i>
+          <span class="ml-5 fw-normal"> PATIENT HISTORY </span>
+        </h3>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <app-patient-info [patientid]="patientid"></app-patient-info>
+      </ng-template>
+    </p-accordionTab>
+
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <h3 class="accordion-header ml-3 accordin-text">
+          <i class="fa fa-heart"></i>
+          <span class="ml-5 fw-normal"> MEDICAL HISTORY</span>
+        </h3>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <app-patient-medical-history
+          [patientid]="patientid"
+        ></app-patient-medical-history>
+      </ng-template>
+    </p-accordionTab>
+
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <h3 class="accordion-header ml-3 accordin-text">
+          <i class="fa fa-lock"></i>
+          <span class="ml-5 fw-normal"> HIPAA </span>
+        </h3>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <app-patient-hipaa [patientid]="patientid"></app-patient-hipaa>
+      </ng-template>
+    </p-accordionTab>
+
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <h3 class="accordion-header ml-3 accordin-text">
+          <i class="fa fa-file-pen"></i>
+          <span class="ml-5 fw-normal"> FINANCIAL AGREEMENT </span>
+        </h3>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <app-patient-financial-agreement
+          [patientid]="patientid"
+        ></app-patient-financial-agreement>
+      </ng-template>
+    </p-accordionTab>
+
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <h3 class="accordion-header ml-3 accordin-text">
+          <i class="fa fa-handshake"></i>
+          <span class="ml-5 fw-normal"> CONSENT FORM </span>
+        </h3>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <app-patient-consent [patientid]="patientid"></app-patient-consent>
+      </ng-template>
+    </p-accordionTab>
+  </p-accordion>
+</div>

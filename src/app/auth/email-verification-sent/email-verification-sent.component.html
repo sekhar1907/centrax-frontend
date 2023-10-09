@@ -1,0 +1,10 @@
+<div class="provider-login-container py-5 px-5">
+  <h1 class="fs-3 mb-5">Email Verification</h1>
+  <p class="border-top pt-5 fs-6">A verification email has been sent to the email address you had provided. Please follow the directions in that email to complete your profile verification.</p>
+</div>
+
+<div class="row mt-5 mx-5">
+  <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+    <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="button" [disabled]="emailResent" (click)="onResendEmailLink()">{{ resendEmailLabel }}</button>
+  </div>
+</div>

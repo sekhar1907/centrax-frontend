@@ -1,0 +1,349 @@
+<div class="py-3 h-100 p-bg clinical-notes-container">
+  <div class="d-flex form-title p_subjective mt-3 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container p_subjective">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Extraction</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12 col-xl-7 print-w-50">
+        <div class="row">
+          <div class="col-12 col-md-10 col-lg-8 mb-5">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Treatment Provider'"
+              [control]="extractionFormGroup.get('treatmentProvider')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-10 col-lg-8 mb-5">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Treatment Assistant'"
+              [control]="extractionFormGroup.get('treatmentAssistant')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div class="row print-m-p-t">
+          <div class="col-12 print-w-50 col-xl-3 d-flex align-items-center">
+            <app-form-checkbox-field
+              [labelText]="'PARQ'"
+              [control]="extractionFormGroup.get('parq')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-12 col-xl-9 print-m-p-t">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xl-6 d-flex align-items-center">
+                <app-form-checkbox-field
+                  [labelText]="'Medical HX Reviewed'"
+                  [control]="extractionFormGroup.get('medicalHxReviewed')"
+                ></app-form-checkbox-field>
+              </div>
+              <div class="col-12 col-md-6 col-xl-6 d-flex align-items-center">
+                <app-form-input-field appearance="appearance-1"
+                  [labelText]="'Pre-op BP'"
+                  [control]="extractionFormGroup.get('preOpBp')"
+                ></app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-5 print-w-50 extre_textarea">
+        <app-form-textarea-field
+          [labelText]="'Next'"
+          [rows]="7"
+          [control]="extractionFormGroup.get('next')"
+        >
+        </app-form-textarea-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12">
+        <app-form-checkbox-field
+          [labelText]="'Topical Anesthetic'"
+          [control]="extractionFormGroup.get('topicalAnesthetic')"
+        >
+        </app-form-checkbox-field>
+      </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+      <div class="col-12 col-xl-4 col-lg-6 print-w-50 col-md-7">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'1st Type of Anesthetic'"
+          [control]="extractionFormGroup.get('firstAnesthetic')"
+        ></app-form-input-field>
+      </div>
+      <div
+        class="col-12 col-xl-2 col-lg-6 print-w-50 col-md-5 d-flex align-items-center"
+      >
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Carpules'"
+          [control]="extractionFormGroup.get('firstAnestheticCarpules')"
+        ></app-form-input-field>
+      </div>
+      <div
+        class="col-12 col-xl-2 col-lg-2 print-w-20 col-md-3 d-flex align-items-center"
+      >
+        <app-form-checkbox-field
+          [labelText]="'N2O'"
+          [control]="extractionFormGroup.get('n2o')"
+        >
+        </app-form-checkbox-field>
+      </div>
+      <div
+        class="col-12 col-xl-2 col-lg-3 print-w-20 col-md-4 d-flex align-items-center"
+      >
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extractionFormGroup.get('n2oPercent')"
+        ></app-form-input-field>
+        <label>%</label>
+      </div>
+      <div
+        class="col-12 col-xl-2 col-lg-3 col-md-4 print-w-20 d-flex align-items-center"
+      >
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extractionFormGroup.get('n2oMin')"
+        ></app-form-input-field>
+        <label>minutes</label>
+      </div>
+    </div>
+
+    <div class="row print-m-p-t mb-5">
+      <div class="col-xl-4 col-lg-6 print-w-50 col-md-7">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'2nd Type of Anesthetic'"
+          [control]="extractionFormGroup.get('secondAnesthetic')"
+        ></app-form-input-field>
+      </div>
+      <div
+        class="col-xl-2 col-lg-6 print-w-50 col-md-5 d-flex align-items-center"
+      >
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Carpules'"
+          [control]="extractionFormGroup.get('secondAnestheticCarpules')"
+        ></app-form-input-field>
+      </div>
+      <div
+        class="col-xl-2 col-lg-2 print-w-20 col-md-3 d-flex align-items-center extre_textarea"
+      >
+        <app-form-checkbox-field
+          [labelText]="'O2 Flush 100%'"
+          [control]="extractionFormGroup.get('o2')"
+        ></app-form-checkbox-field>
+      </div>
+      <div
+        class="col-xl-2 col-lg-3 col-md-4 d-xl-flex d-none align-items-center"
+      ></div>
+      <div
+        class="col-xl-2 col-lg-3 print-w-20 col-md-4 d-flex align-items-center"
+      >
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extractionFormGroup.get('o2Min')"
+        ></app-form-input-field>
+        <label>minutes</label>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12 print-m-p-t">
+        <div class="row">
+          <div class="col-lg-2">
+            <label class="">Type of Injections</label>
+          </div>
+          <div class="col-lg-8 col-md-12 d-flex justify-content-evenly mt-3 mt-lg-0 print-flex print-m-p-t exctr-inj-type">
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'PSA'"
+              [control]="extractionFormGroup.get('psa')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'MSA'"
+              [control]="extractionFormGroup.get('msa')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'ASA'"
+              [control]="extractionFormGroup.get('asa')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'IA'"
+              [control]="extractionFormGroup.get('ia')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'LB'"
+              [control]="extractionFormGroup.get('lb')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="mx-lg-3 mx-md-2 col-md-3 d-md-inline-block print-w-50"
+              [labelText]="'PAL'"
+              [control]="extractionFormGroup.get('pal')"
+            ></app-form-checkbox-field>
+            <app-form-checkbox-field
+              class="d-md-inline-block print-w-25"
+              [labelText]="'Infiltrate'"
+              [control]="extractionFormGroup.get('infiltrate')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 d-none-print print-show print-m-t">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">
+              PATIENT REGISTRATION FORMS
+            </h6>
+          </div>
+          <div
+            class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+          >
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+              <i>powerd by</i>
+            </h6>
+            <img
+              class="centrax-size text-center d-none-print print-show"
+              src="/assets/centrax-logo.svg"
+              alt="CENTRAX"
+            />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <!-- <div class="row">
+      <div class="col-3 col-xl-1 text-center"><label>Tooth</label></div>
+      <div class="col-3 col-xl-3 text-center">
+        <label>Extraction Type</label>
+      </div>
+      <div class="col-3 col-xl-3 text-center">
+        <label>Instrumentation</label>
+      </div>
+      <div class="col-3 col-xl-3 text-center"><label>Diagnosis</label></div>
+    </div> -->
+    <div class="row">
+      <div class="col-12 print-show d-none-print">
+        <app-form-header-info
+          [providerName]="'Dr. Jane Doe'"
+          [practiceName]="'Astra Practice Partners'"
+          [practicePhoneNumber]="'(555) 555-5555'"
+          [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+          [patientName]="'Mickey Mouse'"
+          [patientBirthdate]="'04/26/1936'"
+          [entryDate]="'02/20/2020'"
+        >
+        </app-form-header-info>
+      </div>
+    </div>
+    <div class="row print-m-p-t mb-5">
+      <div class="col-md-3 print-w-25 col-xl-1 text-center ">
+        <label>Tooth</label>
+      </div>
+      <div class="col-md-3 print-w-25 text-center col-xl-3">
+        <label>Extraction Type</label>
+      </div>
+      <div class="col-md-3 col-xl-3 print-w-25 text-center">
+        <label>Instrumentation</label>
+      </div>
+      <div class="col-md-3 col-xl-3 print-w-25 text-center">
+        <label>Diagnosis</label>
+      </div>
+    </div>
+    <div #extractionList class="row print-m-p-t mb-4" *ngFor="let extractionItem of extraction.controls; let extractionIndex = index">
+      <div class="col-md-3 print-w-25 col-xl-1 text-center ">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extraction.controls[extractionIndex].get('tooth')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-3 print-w-25 text-center col-xl-3">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extraction.controls[extractionIndex].get('extractionType')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-3 col-xl-3 print-w-25 text-center">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extraction.controls[extractionIndex].get('instrumentation')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-3 col-xl-3 print-w-25 text-center">
+        <app-form-input-field appearance="appearance-1"
+          [noLabel]="true"
+          [control]="extraction.controls[extractionIndex].get('diagnosis')"
+        ></app-form-input-field>
+      </div>
+    </div>
+    <div class="row print-m-p-t mt-5">
+      <div class="col-12 col-xl-10">
+        <div class="row d-flex justify-content-xl-end">
+          <div class="col-12 col-xl-5">
+            <app-form-input-field appearance="appearance-1"
+              [labelText]="'Post-Op Instructions Given'"
+              [control]="extractionFormGroup.get('postOpInstructionGiven')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container print-m-p-t">
+    <div class="row">
+      <div class="col-md-7 col-xl-4 print-w-50">
+        <app-form-input-field appearance="appearance-1"
+          [labelText]="'Post-op BP'"
+          [control]="extractionFormGroup.get('postOpBp')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-12 col-xl-6 print-w-50 extre_textarea">
+        <app-form-textarea-field
+          [labelText]="'Treatment Notes'"
+          [rows]="5"
+          [control]="extractionFormGroup.get('treatmentNotes')"
+        >
+        </app-form-textarea-field>
+      </div>
+
+      <div class="col-12 d-none-print print-show print-m-t">
+        <div class="row">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">
+              PATIENT REGISTRATION FORMS
+            </h6>
+          </div>
+          <div
+            class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+          >
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show">
+              <i>powerd by</i>
+            </h6>
+            <img
+              class="centrax-size text-center d-none-print print-show"
+              src="/assets/centrax-logo.svg"
+              alt="CENTRAX"
+            />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

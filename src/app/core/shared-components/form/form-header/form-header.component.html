@@ -1,0 +1,6 @@
+<nav class="navbar navbar-expand-sm navbar-dark print_none p-bg"
+  (scroll)="onScroll()"
+  [ngClass]="(navbarFixed && !notSticky) ? 'fixed' : 'not-fixed'">
+  <h1 [ngClass]="{'text-uppercase' : isUpperCase}">{{ title }}</h1>
+  <img src="/assets/images/Header _ White_Logo.svg" alt="">
+</nav>

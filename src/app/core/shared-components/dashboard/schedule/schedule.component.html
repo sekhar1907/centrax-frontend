@@ -1,0 +1,25 @@
+<div class="schedule-container">
+  <div>
+    <sched-tabs></sched-tabs>
+  </div>
+  <div class="bg-accent-color h-100">
+      <ng-container *ngIf="(rightTabActive$ | async) === schedDashboardTabActive.CALENDAR">
+        <div><sched-calendar></sched-calendar></div>
+      </ng-container>
+      <ng-container *ngIf="(rightTabActive$ | async) === schedDashboardTabActive.PATIENT_SEARCH">
+        <sched-patient-search></sched-patient-search>
+      </ng-container>
+      <ng-container *ngIf="(leftTabActive$ | async)?.tab === schedDashboardTabActive.NEW_PATIENT">
+        <sched-new-patient></sched-new-patient>
+      </ng-container>
+      <ng-container *ngIf="(leftTabActive$ | async)?.tab === schedDashboardTabActive.PATIENT_DETAIL">
+        <sched-patient-info></sched-patient-info>
+      </ng-container>
+      <ng-container *ngIf="(leftTabActive$ | async)?.tab === schedDashboardTabActive.REPORTS">
+        <sched-report></sched-report>
+      </ng-container>
+      <ng-container *ngIf="(leftTabActive$ | async)?.tab === schedDashboardTabActive.APPOINTMENT">
+        <sched-appointment-form></sched-appointment-form>
+      </ng-container>
+    </div>
+</div>

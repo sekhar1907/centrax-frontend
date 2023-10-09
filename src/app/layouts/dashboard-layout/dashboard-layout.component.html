@@ -1,0 +1,46 @@
+<div class="dashboard-layout-container">
+  <div class="dashboard-sidebar">
+    <app-dashboard-sidebar></app-dashboard-sidebar>
+  </div>
+  <div class="dashboard-content position-relative">
+    <div class="popupmenu-container" *ngIf="(sidebarPopupOpen$ | async) as popoup">
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.USER">
+        <dashboard-sidebar-content-user></dashboard-sidebar-content-user>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.NOTIFICATIONS">
+        <dashboard-sidebar-content-notifications></dashboard-sidebar-content-notifications>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.TODO">
+        <dashboard-sidebar-content-todo></dashboard-sidebar-content-todo>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.NEW_PATIENT">
+        <dashboard-sidebar-content-new-patient></dashboard-sidebar-content-new-patient>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.SETTINGS">
+        <dashboard-sidebar-content-settings></dashboard-sidebar-content-settings>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.PRACTICE">
+        <dashboard-sidebar-content-practice></dashboard-sidebar-content-practice>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.FAQ">
+        <dashboard-sidebar-content-faq></dashboard-sidebar-content-faq>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.PAYMENT">
+        <dashboard-sidebar-content-payment></dashboard-sidebar-content-payment>
+      </ng-container>
+      <ng-container *ngIf="popoup && popoup.id === menuItemKeys.APPOINTMENT">
+        <dashboard-sidebar-content-appointment [appointmentId]="popoup.appointmentId"></dashboard-sidebar-content-appointment>
+      </ng-container>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <div class="dashboard-content position-relative">
+    <div class="popupmenu-container">
+      <ng-container>
+        <dashboard-sidebar-content-settings></dashboard-sidebar-content-settings>
+      </ng-container>
+    </div>
+    <router-outlet></router-outlet>
+  </div> -->
+</div>

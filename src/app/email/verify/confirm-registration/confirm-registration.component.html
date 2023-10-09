@@ -1,0 +1,10 @@
+<div class="provider-login-container py-5 px-5" *ngIf="linkVerified">
+  <h1 class="fs-3 mb-5">Email Verified!</h1>
+  <p class="border-top pt-5 fs-5">Welcome to Centrax. Complete your account by following the steps below.</p>
+</div>
+
+<div class="row mt-5 mb-5 mx-5">
+  <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+    <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="button" [routerLink]="['/auth/login']">Login</button>
+  </div>
+</div>

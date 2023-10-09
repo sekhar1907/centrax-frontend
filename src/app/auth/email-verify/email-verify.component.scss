@@ -1,0 +1,35 @@
+
+.email-perant-box{
+  width: 600px;
+  height: 375px;
+  background: #FFFFFF;
+  border: 1px solid #D7D7D7;
+
+  @media screen and (max-width:767px) {
+    height: 522px;
+    padding: 16px;
+  }
+
+
+  .detail{
+    font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4F4F4F;
+  border-top: 1px solid #D7D7D7;
+  }
+  .email-verify-btn{
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+letter-spacing: 2px;
+color: #FFFFFF;
+background: #00AE8E;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  }
+  }

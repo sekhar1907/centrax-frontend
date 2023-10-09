@@ -1,0 +1,10 @@
+
+@media only print and (max-width:1023px) {
+    .print-p{
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .clinical-notes-container{
+      padding: 0px 20px !important;
+    }
+}

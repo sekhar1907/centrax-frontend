@@ -1,0 +1,37 @@
+.set-status-container {
+  border-radius: 6px;
+  background: #FAFAF8;
+  box-shadow: -4px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  padding: 25px 0;
+  color: #575757;
+
+  .status-input {
+    textarea {
+      border-radius: 6px;
+      border: 3px solid #B4DBEE;
+      width: 100%;
+      border-radius: 3px;
+      border: 0.8px solid #1E5796;
+      height: 100%;
+      padding: 10px;
+    }
+    margin-top: 20px;
+    margin-bottom: 35px;
+    position: relative;
+
+    i {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+  }
+
+
+}
+
+
+::ng-deep .roledropdown {
+  .p-overlay {
+    left: -30px !important;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="set-status-container">
+  <div class="d-flex align-items-center w-100 text-dark justify-content-between px-2">
+    <h4 class="mb-0">For</h4>
+    <i class="fa fa-close fs-5 cursor-pointer" (click)="onCloseSetStatus()"></i>
+  </div>
+  <div class="d-flex justify-content-between mt-4 dropdown-box px-2">
+    <app-form-dropdown-field [control]="announcementFormgroup.get('recepientLocation')" [dropdownItems]="locationItems" appearance="appearance-2"></app-form-dropdown-field>
+    <app-form-dropdown-field styleClass="roledropdown" [control]="announcementFormgroup.get('recepientRole')" [dropdownItems]="userGroupItems" appearance="appearance-2"></app-form-dropdown-field>
+  </div>
+  <div class="px-2">
+    <div class="status-input">
+      <textarea [formControl]="announcementFormgroup.get('message')" class="w-100" rows="5" placeholder="Make an announcement"></textarea>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-end mt-5 px-3">
+    <p-button label="Cancel" styleClass="p-button-outlined p-button-secondary me-2" (onClick)="onCloseSetStatus()"></p-button>
+    <p-button [disabled]="announcementFormgroup.invalid" label="Post" styleClass="p-button-secondary" (onClick)="onSubmitMakeAnnouncement()"></p-button>
+  </div>
+</div>

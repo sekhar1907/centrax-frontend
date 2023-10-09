@@ -1,0 +1,82 @@
+.create-profile-container {
+  width: 725px;
+  h1 {
+    font-size: 20px;
+  }
+
+  > div {
+    width: 100%;
+  }
+
+  .form-container {
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 7rem !important;
+  }
+}
+
+::host signature-pad {
+  background-color: white;
+}
+
+::ng-deep .p-dialog-header-close {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #00AE8E !important;
+  border: 2px solid #FFF;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+  right: 15px;
+}
+
+::ng-deep .p-dialog-header-close-icon {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.baa-doc-scroller {
+  height: 100%;
+  position: absolute;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 0;
+
+  button {
+    border: 2px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #FFF;
+    border: 2px solid #00AE8E;
+    filter: drop-shadow(3px 1px 4px rgba(0, 0, 0, 0.1));
+
+    i {
+      font-size: 20px;
+      color: #00AE8E;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .create-profile-container {
+    width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+
+    .form-container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+}

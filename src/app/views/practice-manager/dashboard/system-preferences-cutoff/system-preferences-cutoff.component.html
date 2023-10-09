@@ -1,0 +1,61 @@
+<div class="main-wrapper">
+  <form
+    novalidate
+    [formGroup]="systemPreferencesCuttOffFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h1 class="page-heading mb-0 pb-0">System Preferences</h1>
+          <p class="p-0 m-0 page-heading-subtitle">Ledger Cutoff</p>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-12 mt-md-4 d-flex justify-content-center">
+          <ul class="d-flex flex-column nav">
+            <li>
+              <div class="d-flex flex-row flex-nowrap mt-5">
+                <label
+                  for="Default"
+                  class="form-label fs-1-4 fc-565656 font-roboto"
+                >
+                  Only show transactions after</label
+                >
+                <app-form-masked-input-field
+                appearance="flat"
+                  [control]="systemPreferencesCuttOffFormGroup?.get('onlyShowTransactionsAfter')"
+                  mask="99/99/9999"
+                  slotChar="mm/dd/yyyy"
+                  placeholder="00/00/0000">
+                </app-form-masked-input-field>
+                <app-form-masked-input-field></app-form-masked-input-field>
+                <!-- <select type="date"
+                                  class="system-preferences ms-3 fs-1-0 w-125 font-roboto p-2" name="time"
+                                  id="Default">
+                                  <option value="">10/02/2022</option>
+                                  <option value="">DMD</option>
+                              </select> -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/half-way-done"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+          <button class="theme-btn py-2">Done</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

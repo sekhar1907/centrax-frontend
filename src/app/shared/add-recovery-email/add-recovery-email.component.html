@@ -1,0 +1,20 @@
+<div class="provider-login-container py-5 px-5">
+  <h1 class="fs-3 mb-5">Add Recovery Email</h1>
+  <p class="border-top pt-5 fs-6">Add a recovery email to streamline the process of recovering your account in the event of a forgotten password. We recommend using an email address other people at your practice can access. Enter your recovery email below.</p>
+
+  <form class="needs-validation" novalidate class="w-100 px-5" [formGroup]="recoveryEmailFormGroup" (ngSubmit)="onAddRecoveryEmail()">
+    <div class="row mt-5 mx-5">
+      <div class="col-12">
+        <label htmlFor="email" class="w-100 fw-bold">Recovery Email Address <span class="text-danger">*</span></label>
+        <input class="w-100 {{formsubmit && form['email'].errors ? 'ng-invalid ng-dirty' : 'is-valid'}}" pInputText id="email" formControlName="email" />
+      </div>
+    </div>
+
+    <div class="row mt-5 mx-5">
+      <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="submit">Add Recovery Email</button>
+      </div>
+    </div>
+  </form>
+</div>
+

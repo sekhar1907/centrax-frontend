@@ -1,0 +1,37 @@
+export interface CreateSrpDto {
+  srpUr?: boolean;
+  srpLr?: boolean;
+  ohi?: boolean;
+  nutritionalCounsel?: boolean;
+  srpUl?: boolean;
+  srpLl?: boolean;
+  moreTeethSrp?: boolean;
+  specifyTeeth?: string;
+  tobaccoCounsel?: boolean;
+  probing?: boolean;
+  other1?: boolean;
+  other1Txt?: string;
+  healthHistory?: string;
+  changeTxt?: string;
+  ccConcerns?: string;
+  pulse?: string;
+  nextVisit?: string;
+  provider1?: string;
+  dispensedHome?: boolean;
+  toothBrush?: boolean;
+  floss?: boolean;
+  toothpaste?: boolean;
+  other2?: boolean;
+  other2Txt?: string;
+  perioDx?: string;
+  gen?: string;
+  loc?: string;
+  plaque?: string;
+  tissueColor?: string;
+  stain?: string;
+  calculus?: string;
+  bleeding?: string;
+  inflammation?: string;
+  notes?: string;
+  provider2?: string;
+}

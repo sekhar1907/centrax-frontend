@@ -1,0 +1,74 @@
+.create-profile-container {
+  width: 725px;
+  h1 {
+    font-size: 20px;
+  }
+
+  > div {
+    width: 100%;
+  }
+
+  .form-container {
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 7rem !important;
+  }
+
+  textarea {
+    background: #FAFAFA;
+    border: 0.4px solid #4B4B4B;
+    border-radius: 6px;
+    padding: 12px 18px;
+  }
+}
+
+::ng-deep .p-selectbutton {
+  background-color: transparent !important;
+}
+::ng-deep .p-selectbutton .p-button {
+  margin-right: 40px !important;
+  margin-bottom: 10px !important;
+  background: #FFFFFF;
+  border: 1px solid #00AE8E !important;
+  border-radius: 100px !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 500 !important;
+  font-size: 14px;
+  color: #00AE8E;
+}
+
+::ng-deep .p-selectbutton .p-button.p-highlight {
+  background: #00AE8E !important;
+}
+
+::ng-deep .p-tag.p-tag-rounded {
+  padding: 8px 32px;
+  background: #00AE8E !important;
+  color: #FFFF;
+  margin: 5px 5px 5px 0;
+}
+
+.to-label { width: 60px; }
+.day-label { width: 100px; }
+
+@media screen and (max-width: 576px) {
+  .create-profile-container {
+    width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+
+    .form-container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+
+  .to-label { width: 40px; }
+  .day-label { width: 100%; }
+}

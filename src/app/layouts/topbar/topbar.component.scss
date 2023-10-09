@@ -1,0 +1,41 @@
+// header css
+
+.header-border-line {
+  border: 1.8px solid #acacac;
+  .navbar-item-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: #565656;
+    margin: 0px 15px;
+    display: block;
+  }
+  .notification-count{
+    width: 18px;
+    height: 18px;
+    font-size: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+@media only screen and (max-width: 992px) {
+.navbar-mobile-view{
+  position: absolute;
+  top: 90%;
+  left: 0px;
+  background: white;
+  z-index: 9999;
+}
+.navbar-toggler{
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+}

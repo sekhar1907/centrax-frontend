@@ -1,0 +1,73 @@
+:host ::ng-deep {
+    .p-dialog-header {
+        width: 696px;
+        height: 76px;
+        background-color: rgba(226, 222, 227, 1);
+        padding-top: 30px;
+        padding-left: 40px;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.07);
+
+    }
+    .p-dialog-header-close{
+    }
+    .p-dialog-header-icon{
+        // width: 13px !important;
+        // height: 29px !important;
+        font-family: Roboto;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 29px;
+        letter-spacing: 0.04em;
+        text-align: center;
+        margin-top:-35px !important;
+    }
+    .mk-modal-header {
+        font-family: Roboto;
+        font-size: 18px;
+        color: #54545480;
+        background-color: rgba(226, 222, 227, 1);
+        font-weight: 600;
+        line-height: 27px;
+        letter-spacing: 0.04em;
+    }
+    .p-dialog-content {
+        overflow-x: hidden;
+        background-color: rgba(206, 204, 207, 1);
+        padding: 0px;
+    }
+    .p-dialog {
+        width: 696px;
+        border-radius: 6px;
+        box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.12);
+        background-color: #F1EDF3;
+    }
+    .p-dialog-titlebar{
+        width: 696px;
+        height: 76px;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.07);
+    }
+
+}
+.header-icon-wrapper {
+    padding: 25px 10px;
+}
+.user-setting-icon {
+    color: #4CC2AF;
+    font-size: 44px;
+    margin-left: 40px;
+    margin-top: 124px;
+}
+.user-setting-text {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+}
+.body-wrapper-dailog {
+    min-height: 607px;
+}
+.popup-menu {
+  background-color: transparent;
+}

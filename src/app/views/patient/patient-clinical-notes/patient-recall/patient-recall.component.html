@@ -1,0 +1,606 @@
+<div class="py-3 h-100 clinical-notes-container p-bg p-padding">
+  <div class="d-flex form-title p_subjective mt-3 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Recall</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7">
+      <div class="form-section-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-lg-8 print-w-50 mb-4">
+                <app-form-input-field appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Hygiene Provider'"
+                  [control]="recallFormGroup.get('hygieneProvider')"
+                ></app-form-input-field>
+              </div>
+              <div class="col-lg-8 print-w-50 mb-4">
+                <app-form-input-field appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Exam Provider'"
+                  [control]="recallFormGroup.get('examProvider')"
+                ></app-form-input-field>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3">
+              <div class="col-md-8 col-lg-7 pe-5 print-w-50">
+                <div class="w-100">
+                  <app-form-textarea-field
+                    [labelText]="'Medications:'"
+                    [rows]="3"
+                    [control]="recallFormGroup.get('medication')"
+                  ></app-form-textarea-field>
+                </div>
+              </div>
+              <div
+                class="col-md-4 col-lg-5 d-flex align-items-center print-w-50"
+              >
+                <app-form-checkbox-field
+                  [labelText]="'PARQ'"
+                  [control]="recallFormGroup.get('parq')"
+                ></app-form-checkbox-field>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-8 col-lg-7 pe-5 print-w-50">
+                <div class="w-100">
+                  <app-form-textarea-field
+                    [labelText]="'Medical HX:'"
+                    [rows]="3"
+                    [control]="recallFormGroup.get('healthHxCheck')"
+                  ></app-form-textarea-field>
+                </div>
+              </div>
+              <div
+                class="col-md-4 col-lg-5 print-w-50 px-0 d-flex flex-column justify-content-center"
+              >
+                <div class="mb-3">
+                  <app-form-checkbox-field
+                    [labelText]="'Health HX Checked'"
+                    [control]="recallFormGroup.get('healthHxCheck')"
+                  ></app-form-checkbox-field>
+                </div>
+                <div>
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'BP'"
+                    [control]="recallFormGroup.get('bp')"
+                  ></app-form-input-field>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-8 col-lg-7 print-w-50 pe-5">
+                <div class="w-100">
+                  <app-form-textarea-field
+                    [labelText]="'Intra/Extraoral:'"
+                    [rows]="3"
+                    [control]="recallFormGroup.get('IntraOrExtraoral')"
+                  ></app-form-textarea-field>
+                </div>
+              </div>
+              <div
+                class="col-md-4 col-lg-5 print-w-50 d-flex flex-column justify-content-end"
+              >
+                <div>
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Pulse'"
+                    [control]="recallFormGroup.get('pulse')"
+                  ></app-form-input-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section-container">
+        <label class="fc-accent-text text-center mb-3">Oral Condition</label>
+        <div class="row mb-4">
+          <div class="col-md-6 print-w-50">
+            <app-form-input-field appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'Oral Cancer Screen'"
+              [control]="recallFormGroup.get('oralCancerScreen')"
+            ></app-form-input-field>
+          </div>
+          <div class="col-md-6 print-w-50">
+            <app-form-input-field appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'Oral Hygiene'"
+              [control]="recallFormGroup.get('oralHygiene')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-md-6 print-w-50">
+            <div class="row mb-4 d-flex justify-content-center">
+              <div class="col-10">
+                <div class="mb-2"><label>Plaque/Stain</label></div>
+                <app-form-radio-field
+                  [items]="HMLRadioItems"
+                  [control]="recallFormGroup.get('stain')"
+                  inputIDPrefix="plaqueStain"
+                ></app-form-radio-field>
+              </div>
+            </div>
+            <div class="row mb-4 d-flex justify-content-center">
+              <div class="col-10">
+                <div class="mb-2"><label>Sub. Calc.</label></div>
+                <app-form-radio-field
+                  [items]="HMLRadioItems"
+                  [control]="recallFormGroup.get('subGlac')"
+                  inputIDPrefix="subCalc"
+                ></app-form-radio-field>
+              </div>
+            </div>
+            <div class="row mb-4 d-flex justify-content-center">
+              <div class="col-10">
+                <div class="mb-2"><label>Supra. Calc.</label></div>
+                <app-form-radio-field
+                  [items]="HMLRadioItems"
+                  [control]="recallFormGroup.get('supraClac')"
+                  inputIDPrefix="supraCalc"
+                ></app-form-radio-field>
+              </div>
+            </div>
+            <div class="row mb-4 d-flex justify-content-center">
+              <div class="col-10">
+                <div class="mb-2"><label>Bleeding</label></div>
+                <app-form-radio-field
+                  [items]="HMLRadioItems"
+                  [control]="recallFormGroup.get('bleeding')"
+                  inputIDPrefix="bleeding"
+                ></app-form-radio-field>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 print-w-50">
+            <div class="row mb-4 d-flex justify-content-center">
+              <div class="col-10">
+                <div class="mb-2"><label>Perio Case Type</label></div>
+                <app-form-radio-field
+                  [items]="PerioCaseTypeRadioItems"
+                  [control]="recallFormGroup.get('prioCase')"
+                  [isVertical]="true"
+                  inputIDPrefix="perioCaseType"
+                ></app-form-radio-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <!-- print Code -->
+          <div class="col-12 d-none-print print-show print-m-t">
+            <div class="row">
+              <div class="col-4">
+                <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                  PATIENT REGISTRATION FORMS
+                </h6>
+              </div>
+              <div
+                class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+              >
+                <h6
+                  class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+                >
+                  <i>powerd by</i>
+                </h6>
+                <img
+                  class="centrax-size text-center d-none-print print-show"
+                  src="/assets/centrax-logo.svg"
+                  alt="CENTRAX"
+                />
+              </div>
+              <div class="col-4 text-end d-none-print print-show">
+                <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="print-show d-none-print">
+              <app-form-header-info
+                [providerName]="'Dr. Jane Doe'"
+                [practiceName]="'Astra Practice Partners'"
+                [practicePhoneNumber]="'(555) 555-5555'"
+                [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+                [patientName]="'Mickey Mouse'"
+                [patientBirthdate]="'04/26/1936'"
+                [entryDate]="'02/20/2020'"
+              >
+              </app-form-header-info>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 print-w-50">
+            <div class="row print-m-p-t">
+              <div
+                class="col-md-4 print-w-25 px-0 px-lg-1 d-flex align-items-center"
+              >
+                <label
+                  >Perio Screening <br />
+                  and Recording</label
+                >
+              </div>
+              <div class="col-md-8 print-w-75">
+                <div class="row">
+                  <div class="col-md-4 print-w-25">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt1')"
+                    ></app-form-input-field>
+                  </div>
+                  <div class="col-md-4 print-w-25">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt2')"
+                    ></app-form-input-field>
+                  </div>
+                  <div class="col-md-4 print-w-25">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt3')"
+                    ></app-form-input-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-4">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt4')"
+                    ></app-form-input-field>
+                  </div>
+                  <div class="col-md-4">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt5')"
+                    ></app-form-input-field>
+                  </div>
+                  <div class="col-md-4">
+                    <app-form-input-field appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [noLabel]="true"
+                      [control]="recallFormGroup.get('perioScreeningTxt6')"
+                    ></app-form-input-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 print-w-50 print-m-p-t">
+            <div class="mb-4">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Recall Interval'"
+                [control]="recallFormGroup.get('recallInterval')"
+              ></app-form-input-field>
+            </div>
+            <div class="mb-4">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Due'"
+                [control]="recallFormGroup.get('due')"
+              ></app-form-input-field>
+            </div>
+            <div class="mb-4">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Time'"
+                [control]="recallFormGroup.get('time')"
+              ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="form-subsection-container pb-5">
+        <h3 class="fw-mediumi fs-5 fc-accent-text">TX Completed Today:</h3>
+
+        <div class="row">
+          <div class="print-w-50">
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Exam Type'"
+                [control]="recallFormGroup.get('examType')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Cleaning Type'"
+                [control]="recallFormGroup.get('cleaningType')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Periapical X-ray'"
+                [control]="recallFormGroup.get('periapicalXray')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Bitewing X-ray'"
+                [control]="recallFormGroup.get('bitewingXray')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Other X-ray'"
+                [control]="recallFormGroup.get('otherXray')"
+              ></app-form-input-field>
+            </div>
+          </div>
+          <div class="print-w-50">
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Fluoride'"
+                [control]="recallFormGroup.get('fluroide')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12 mb-5">
+              <app-form-input-field appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'Periodontal Probe'"
+                [control]="recallFormGroup.get('periodontalProbe')"
+              ></app-form-input-field>
+            </div>
+            <div class="col-12">
+              <app-form-textarea-field
+                [labelText]="'Other Treatment'"
+                [rows]="3"
+                [control]="recallFormGroup.get('otherTreatment')"
+              >
+              </app-form-textarea-field>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="fw-mediumi fs-5 fc-accent-text mt-5">
+          Oral Hygiene Instructions
+        </h3>
+        <div class="row">
+          <app-form-textarea-field
+          [noLabel]="true"
+            [rows]="5"
+            [control]="recallFormGroup.get('oralHygieneInstruction')"
+          >
+          </app-form-textarea-field>
+        </div>
+
+        <div class="row">
+          <!-- print Code -->
+          <div class="col-12 d-none-print print-show print-m-t">
+            <div class="row">
+              <div class="col-4">
+                <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                  PATIENT REGISTRATION FORMS
+                </h6>
+              </div>
+              <div
+                class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+              >
+                <h6
+                  class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+                >
+                  <i>powerd by</i>
+                </h6>
+                <img
+                  class="centrax-size text-center d-none-print print-show"
+                  src="/assets/centrax-logo.svg"
+                  alt="CENTRAX"
+                />
+              </div>
+              <div class="col-4 text-end d-none-print print-show">
+                <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="print-show d-none-print">
+              <app-form-header-info
+                [providerName]="'Dr. Jane Doe'"
+                [practiceName]="'Astra Practice Partners'"
+                [practicePhoneNumber]="'(555) 555-5555'"
+                [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+                [patientName]="'Mickey Mouse'"
+                [patientBirthdate]="'04/26/1936'"
+                [entryDate]="'02/20/2020'"
+              >
+              </app-form-header-info>
+            </div>
+          </div>
+        </div>
+        <h3 class="fw-mediumi fs-5 fc-accent-text mt-5">Treatment Notes:</h3>
+        <div class="row">
+          <app-form-textarea-field
+          [noLabel]="true"
+          [rows]="5"
+            [control]="recallFormGroup.get('treatmentNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex form-title mt-3 print-mp pt-md-5 mb-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Exam</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container print-mp">
+    <div class="row">
+      <div class="col-lg-8 print-w-75">
+        <app-form-input-field appearance="appearance-1"
+          [className]="'mobile-view-input'"
+          [labelText]="'Chief Complaint'"
+          [control]="recallFormGroup.get('cheifComplaint')"
+        ></app-form-input-field>
+      </div>
+    </div>
+
+    <h3 class="fw-mediumi fs-5 fc-accent-text print-mp mt-md-5 mt-3 mb-3">Soft Tissue Examination</h3>
+
+    <div class="row print-m-p-t">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-lg-7 print-w-50">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Lips'"
+                    [control]="recallFormGroup.get('lips')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Buccal Mucosa'"
+                    [control]="recallFormGroup.get('buccal')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Vestibules'"
+                    [control]="recallFormGroup.get('vestibules')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Tongue'"
+                    [control]="recallFormGroup.get('tongue')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Floor of Mouth'"
+                    [control]="recallFormGroup.get('floorOfMouth')"
+                  ></app-form-input-field>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Palate Hard/Soft'"
+                    [control]="recallFormGroup.get('palate')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Gingiva'"
+                    [control]="recallFormGroup.get('gingiva')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Torus'"
+                    [control]="recallFormGroup.get('torus')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'TMJ Pain'"
+                    [control]="recallFormGroup.get('tmjPain')"
+                  ></app-form-input-field>
+                </div>
+                <div class="mb-4">
+                  <app-form-input-field appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Crepitus'"
+                    [control]="recallFormGroup.get('crepitus')"
+                  ></app-form-input-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 print-w-50">
+            <div class="col-lg-12 print-w-50">
+              <div class="mb-4">
+                <app-form-input-field appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Snap/popping'"
+                  [control]="recallFormGroup.get('snap')"
+                ></app-form-input-field>
+              </div>
+              <div class="mb-4">
+                <app-form-input-field appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Deviate'"
+                  [control]="recallFormGroup.get('deviate')"
+                ></app-form-input-field>
+              </div>
+              <div class="mb-4">
+                <app-form-input-field appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Max opening'"
+                  [control]="recallFormGroup.get('maxOpening')"
+                ></app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                <!-- print Code -->
+                <div class="col-12 d-none-print print-show mt-1">
+                  <div class="row">
+                    <div class="col-4">
+                      <h6 class="fw-mediumi fs-5 d-none-print print-show">
+                        PATIENT REGISTRATION FORMS
+                      </h6>
+                    </div>
+                    <div
+                      class="col-4 text-center d-flex justify-content-center flex-column p-center-logo"
+                    >
+                      <h6
+                        class="fw-mediumi fs-5 d-inline-block d-none-print print-show"
+                      >
+                        <i>powerd by</i>
+                      </h6>
+                      <img
+                        class="centrax-size text-center d-none-print print-show"
+                        src="/assets/centrax-logo.svg"
+                        alt="CENTRAX"
+                      />
+                    </div>
+                    <div class="col-4 text-end d-none-print print-show">
+                      <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  </div>
+</div>

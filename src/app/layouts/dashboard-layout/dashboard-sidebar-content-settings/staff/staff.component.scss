@@ -1,0 +1,198 @@
+.content-wrapper {
+    // background-color: #E2E2E2;
+    // border-radius: 6px;
+    // min-height: 100vh;
+    // margin-bottom: 25px;
+    width: 468px;
+    height: 458px;
+    padding-top: 35px;
+    border-radius: 0px;
+    background: rgba(226, 226, 226, 1);
+
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+.content-wrapper .btn-holder {
+    justify-content: flex-end;
+    display: flex;
+    margin-bottom: 25px;
+    margin-right: 35px;
+}
+
+.top-header {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    border-radius: 6px;
+    padding: 10px 15px;
+    
+    background-color: #F4EFC2;
+}
+
+.staff-list {
+    list-style-type:none;
+}
+.staff-list a {
+    color: #4B4E51;
+    line-height: 1.6rem;
+    line-height: 2rem;
+}
+.overlay-data-wrapper {
+    z-index: 999;
+    position: absolute;
+    width: 431px;
+    height: 458px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(86, 86, 86, 1);
+}
+
+.hide-overlay-data {
+    transform: translateX(500px);
+    transition: all 1s;
+}
+.show-overlay-data {
+    transform: translateX(0px);
+    transition: all 1s;
+}
+
+div.box-arrow-border {
+    color: rgba(61, 85, 103, 1);
+    background-color: rgba(248, 248, 248, 1);
+    position: absolute;
+    top: 229px;
+    left: -8px;
+    border-radius: 50%;
+    padding: 4px 10px;
+}
+.avatar-image {
+    margin-top: -30px;
+    margin-right: 8px;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #058565;
+}
+.profile-title {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.profile-description, .text-info-1 {
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 500;
+    // line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+hr {
+    // width: 345px;
+    background: rgba(121, 130, 138, 0.26);
+    border: 0.5px solid rgba(121, 130, 138, 0.26)
+
+}
+.hire-date {
+    // width: 70px;
+    height: 18px;
+    border: 0.4px solid rgba(0, 174, 142, 0.5);
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    background: rgba(241, 240, 240, 1);
+}
+.npi-text, .dea-text, .license-number {
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgba(86, 86, 86, 1);
+
+}
+.npi-input, .dea-input, .license-number-input, .title-input {
+    width: 101px;
+    height: 18px;
+    border-radius: 1px;
+    border: 0.4px solid rgba(0, 174, 142, 0.5);
+    background-color: rgba(241, 240, 240, 1);
+}
+.km-form-input {
+    width: 100px;
+    height: 18px;
+    border-radius: 1px;
+    border: 0.4px solid #00AE8E80;
+    background-color: #F1F0F0;
+}
+.btn-save {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    width: 81px;
+    height: 35px;
+    border-radius: 3px;
+    color: rgba(87, 87, 87, 1);
+    background-color: rgba(224, 224, 221, 1);
+    border: none;
+}
+.chevran-icon i {
+    font-family: Font Awesome 5 Pro;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(61, 85, 103, 1);
+
+
+}
+
+.permissions {
+    width: 75px;
+    height: 18px;
+    border-radius: 1px;
+
+    border: 0.4px solid rgba(0, 174, 142, 0.5);
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgba(86, 86, 86, 1);
+    background-color: rgba(241, 240, 240, 1);
+
+
+
+
+}
+::ng-deep {
+    .p-overlaypanel .p-overlaypanel-content {
+        padding: 0px;
+    }
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block;
+  -webkit-appearance: button;
+  appearance:unset;
+//   display: none;
+//   -webkit-appearance: none;
+//   appearance: none;
+}

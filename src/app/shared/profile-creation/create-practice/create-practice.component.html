@@ -1,0 +1,75 @@
+<div class="create-profile-container">
+  <div class="text-center mb-5 pb-5">
+    <h1 class="fs-3 mb-3">Profile Creation</h1>
+    <p class="fs-6">Step 1</p>
+  </div>
+  <form class="needs-validation" novalidate class="w-100 px-md-5 px-2" [formGroup]="createProfileFormGroup" (ngSubmit)="onCreateProfile()">
+    <div class="form-container py-5 px-md-5 px-2 mt-5">
+      <div class="row my-5 mx-0 mx-md-2">
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Practice Name"
+            [noLabel]="false"
+            [control]="form['name']"
+            [isInValid]="formsubmit && form['name'].errors">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-dropdown-field
+            appearance="flat"
+            [control]="form['specialty']"
+            [dropdownItems]="specialtyOptions$ | async"
+            labelText="Specialty *"
+            layout="flex-column"
+            [isInValid]="formsubmit && form['specialty'].errors"
+            valueField="id"
+            textField="label">
+          </app-form-dropdown-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Address"
+            [noLabel]="false"
+            [control]="form['address']"
+            [isInValid]="formsubmit && form['address'].errors">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-masked-input-field
+          appearance="appearance-1"
+            [control]="form['phone']"
+            [isInvalid]="formsubmit && form['phone'].errors"
+            [isHorizontal]="false"
+            mask="(999) 999-999"
+            slotChar="(000) 000-000"
+            placeholder="Phone">
+          </app-form-masked-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Email"
+            [noLabel]="false"
+            [control]="form['email']"
+            [isInValid]="formsubmit && form['email'].errors">
+          </app-form-input-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary" style="width: 260px; font-size: 15px;" type="submit">Save and Next</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="createProfileFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>
+

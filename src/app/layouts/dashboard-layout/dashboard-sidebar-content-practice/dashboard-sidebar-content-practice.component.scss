@@ -1,0 +1,17 @@
+.popup-menu {
+  min-height: auto;
+  top: 50%;
+}
+
+.payment-links a {
+text-align: left;
+color: #FFF;
+text-decoration: none !important;
+padding: 0.5rem 1rem;
+font-size: 1.25rem;
+border-radius: 10px;
+}
+
+.payment-links a:hover {
+background: #405464;
+}

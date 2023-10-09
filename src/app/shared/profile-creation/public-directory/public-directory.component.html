@@ -1,0 +1,407 @@
+<div class="create-profile-container">
+  <form
+    class="needs-validation"
+    novalidate
+    class="w-100"
+    [formGroup]="publicDirectoryFormGroup"
+    (ngSubmit)="onSavePublicDirectory()"
+  >
+    <div class="text-center mb-5 pb-5">
+      <h1 class="fs-3 mb-3">Profile Creation</h1>
+      <p class="fs-6">Step 3: Public Directory</p>
+    </div>
+
+    <div class="form-container py-5 px-5 mt-5">
+      <div class="row w-100 mt-5">
+        <div class="col-12 col-xl-4 mb-4 mb-md-0">
+          <label class="fw-medium w-100 mb-1" for="">Profile Photo*</label>
+          <div class="d-flex align-items-center flex-wrap mb-2" *ngIf="profilePhotoDisplay">
+            <img class="object-fit-contain" [src]="profilePhotoDisplay" width="60" height="60">
+          </div>
+          <div class="w-100  align-items-center mb-4 text-danger" [ngClass]="profilePhotoDisplay ? 'd-none' : 'd-flex'">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="fw-bold ms-2 fs-8"> No Profile Photo</span>
+          </div>
+          <div class="w-100  align-items-center mb-4 text-danger" [ngClass]="fileSizeLarge ? 'd-flex' : 'd-none'">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="fw-bold ms-2 fs-8"> File too large (2mb max)</span>
+          </div>
+          <input type="file" class="d-none" accept="image/png, image/gif, image/jpeg" (change)="onProfilePhotoSelected($event)" #profilePhotoUpload>
+          <a class="fw-medium w-100 text-primary cursor-pointer" (click)="profilePhotoUpload?.click()">Add</a>
+        </div>
+        <div class="col-12 col-xl-8">
+          <label class="fw-medium w-100 mb-1" for="">Office Photos</label>
+          <div class="d-flex align-items-center flex-wrap mb-2" *ngIf="officePhotosDisplay?.length">
+            <img *ngFor="let photo of officePhotosDisplay" class="me-1 object-fit-contain" [src]="photo" width="60" height="60">
+          </div>
+          <input type="file" class="d-none" accept="image/png, image/gif, image/jpeg" multiple (change)="onOfficePhotosSelected($event)" #officePhotosUpload>
+          <a class="fw-medium w-100 text-primary cursor-pointer" (click)="officePhotosUpload.click()">Add</a>
+        </div>
+      </div>
+
+      <div class="row w-100 mt-5 pt-3">
+        <div class="col-12 col-md-6">
+          <h5 class="fs-6 fw-medium">Dentist Name</h5>
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="First*"
+              [noLabel]="false"
+              [control]="form['firstname']"
+              [isInValid]="formsubmit && form['firstname'].errors"
+            >
+            </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-6">
+          <h5 class="fs-6 fw-medium">&nbsp;</h5>
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Last*"
+              [noLabel]="false"
+              [control]="form['lastname']"
+              [isInValid]="formsubmit && form['lastname'].errors"
+            >
+            </app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row w-100 mt-3 pt-3">
+        <div class="col-12 mt-3">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="NPI*"
+            [noLabel]="false"
+            [control]="form['npi']"
+            [isInValid]="formsubmit && form['npi'].errors"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row w-100 mt-5 pt-3">
+        <div class="col-12">
+          <h5 class="fs-6 fw-medium">Dental Education</h5>
+        </div>
+        <div class="col-12 mt-3">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Name of Dental School*"
+            [noLabel]="false"
+            [control]="form['dentalSchool']"
+            [isInValid]="formsubmit && form['dentalSchool'].errors"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+
+      <div class="row w-100 mt-5 pt-3">
+        <div class="col-12">
+          <h5 class="fs-6 fw-medium">Website and Social Media</h5>
+        </div>
+        <div class="col-12 mt-3 d-flex align-items-center">
+          <i class="fa-solid fa-earth-americas me-3 fs-5"></i>
+          <div class="flex-grow-1">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Website"
+              [noLabel]="false"
+              [control]="form['website']"
+              [isInValid]="formsubmit && form['website'].errors"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5 d-flex align-items-center">
+          <i class="fa-solid fa-rss me-3 fs-5"></i>
+          <div class="flex-grow-1">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Blog"
+              [noLabel]="false"
+              [control]="form['blog']"
+              [isInValid]="formsubmit && form['blog'].errors"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5 d-flex align-items-center">
+          <i class="fa-brands fa-facebook me-3 fs-5"></i>
+          <div class="flex-grow-1">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Facebook"
+              [noLabel]="false"
+              [control]="form['facebook']"
+              [isInValid]="formsubmit && form['facebook'].errors"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+
+        <div class="col-12 mt-5 d-flex align-items-center">
+          <i class="fa-brands fa-twitter me-3 fs-5"></i>
+          <div class="flex-grow-1">
+            <app-form-input-field
+              appearance="appearance-2"
+              placeholder="Twitter"
+              [noLabel]="false"
+              [control]="form['twitter']"
+              [isInValid]="formsubmit && form['twitter'].errors"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center my-5 py-5">
+      <h1 class="fs-3 mb-3">Dentist and Practice Details</h1>
+      <p class="fs-6">Complete the following to help us better match you with potential patients</p>
+    </div>
+
+    <div class="form-container py-5 px-5 mt-5">
+      <label class="w-100 fw-bold" for="">About</label>
+      <div class="col-12">
+        <textarea formControlName="about" name="" id="" class="w-100" rows="6" placeholder="...."></textarea>
+      </div>
+    </div>
+
+    <div class="form-container py-5 px-5 mt-5">
+      <div class="col-12">
+        <label class="w-100 fw-medium mb-4" for="" [ngClass]="{'text-danger': formsubmit && form['acceptingNewPatients'].errors}">Is this dental practice accepting new patients?</label>
+        <p-selectButton [options]="acceptingNewPatientsOpts" formControlName="acceptingNewPatients" optionLabel="label" optionValue="value"></p-selectButton>
+      </div>
+    </div>
+
+    <div class="form-container py-5 px-5 mt-5">
+      <div class="col-12">
+        <label class="w-100 fw-medium mb-4" for="" [ngClass]="{'text-danger': formsubmit && form['dentistGender'].errors}">Dentist Gender</label>
+        <p-selectButton [options]="dentistGenderOpts" formControlName="dentistGender" optionLabel="label" optionValue="value"></p-selectButton>
+      </div>
+    </div>
+
+    <h5 class="pt-5 mb-3 d-flex justify-content-between">
+      <span>
+      Online Appointment Requests:
+      </span>
+      <p-inputSwitch styleClass="me-5"  formControlName="acceptingAppointmentRequestSwitch"></p-inputSwitch>
+    </h5>
+    <div class="form-container">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between">
+          <label class="fw-medium" for="">Accepting Appointment Requests</label>
+        </div>
+        <p-selectButton [options]="acceptingNewPatientsOpts" formControlName="acceptingApptRequests" optionLabel="label" optionValue="value"></p-selectButton>
+      </div>
+    </div>
+
+    <div class="form-container py-5 px-5 mt-5">
+      <p class="fw-medium">Receive SMS text message notifications (includes appointment requests and nearby member requests). Message and data rates apply.</p>
+      <div class="col-12">
+
+        <app-form-masked-input-field
+        appearance="appearance-1"
+          placeholder="Mobile Phone Number"
+          [control]="form['mobileNumber']"
+          [isInvalid]="formsubmit && form['mobileNumber'].errors"
+          [isHorizontal]="false"
+          mask="(999) 999-999"
+          slotChar="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+      <div class="col-12 mt-5 d-flex align-items-center">
+        <button class="btn btn-primary px-3 py-2" style="width: 120px">Add Phone</button>
+        <p class="fw-medium ms-3 mb-0">Your SMS setup will be completed after your profile has been approved.</p>
+      </div>
+    </div>
+
+    <h5 class="pt-5 mb-3">Practice Information:</h5>
+    <div class="form-container" formGroupName="weeklySchedule">
+      <label class="fw-medium w-100 text-start" for="">Hours of operation for your office:</label>
+      <div class="col-12">
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="mon">
+          <label class="mb-0 fw-medium mw-100 day-label" for="">Monday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="tue">
+          <label class="mb-0 fw-medium day-label" for="">Tuesday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="wed">
+          <label class="mb-0 fw-medium day-label" for="">Wednesday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="thu">
+          <label class="mb-0 fw-medium day-label" for="">Thursday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="fri">
+          <label class="mb-0 fw-medium day-label" for="">Friday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="sat">
+          <label class="mb-0 fw-medium day-label" for="">Saturday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+        <div class="d-flex align-items-center mt-4 flex-wrap flex-md-nowrap" formGroupName="sun">
+          <label class="mb-0 fw-medium day-label" for="">Sunday</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="from" optionValue="value"></p-dropdown>
+          <label class="mb-0 fw-medium text-center to-label" for="">to</label>
+          <p-dropdown [options]="timeOpts" optionLabel="label" formControlName="to" optionValue="value"></p-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container mt-5 pt-5">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between">
+          <label class="fw-medium" for="">Which of the following apply to your practice?</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12 mb-3 mb-md-0">
+            <p-checkbox [binary]="true" inputId="childFr" formControlName="childFriendly"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="childFr">Child Friendly</label>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="handicap" formControlName="handicapAccess"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="handicap">Handicap Access</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12 mb-3 mb-md-0">
+            <p-checkbox [binary]="true" inputId="eveWeeknd" formControlName="eveningsAndWeekends"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="eveWeeknd">Evenings & Weekends</label>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="senior" formControlName="seniorFriendly"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium fw-medium" for="senior">Senior Friendly</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12 mb-3 mb-md-0">
+            <p-checkbox [binary]="true" inputId="accptMdcd" formControlName="acceptsMedicaid"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="accptMdcd">Accepts Medicaid</label>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="hollistic" formControlName="holisticDentistry"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="hollistic">Holistic Dentistry</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-container mt-5 pt-5">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between">
+          <label class="fw-medium" for="">Select the languages which are spoken at your practice: (Select all that apply)</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5">
+        <label for="" class="w-100 fw-medium">Language</label>
+        <p-multiSelect styleClass="w-100" [options]="languagesOpts" formControlName="languages" optionLabel="label"></p-multiSelect>
+      </div>
+
+      <div class="col-12 my-4">
+        <ng-container *ngFor="let language of form['languages'].value">
+          <p-tag [value]="language.label" [rounded]="true"></p-tag>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="form-container mt-5 pt-5">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between">
+          <label class="fw-medium" for="">Tools used by your practice to reduce patient anxiety?</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-4">
+        <p class="fst-italic mb-0 text-start">Select all that apply</p>
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12 mb-3 mb-md-0">
+            <p-checkbox [binary]="true" inputId="sedation" formControlName="sedation"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="sedation">Sedation</label>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="consciousSed" formControlName="consiousSedation"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="consciousSed">Conscious Sedation</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12 mb-3 mb-md-0">
+            <p-checkbox [binary]="true" inputId="therapyAnimals" formControlName="therapyAnimals"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="therapyAnimals">Therapy Animals</label>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="pretreatment" formControlName="preTreatmentSessions"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium fw-medium" for="pretreatment">Pre - Treatment Sessions</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="distraction" formControlName="distraction"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="distraction">Distraction*</label>
+
+            <p class="w-100 fst-italic fs-8 mt-4">*Including: movies/television, music, video games, etc.</p>
+          </div>
+          <div class="col-xl-6 col-12">
+            <p-checkbox [binary]="true" inputId="behavior" formControlName="BehaviorManagement"></p-checkbox>
+            <label class="mb-0 ms-3 fw-medium" for="behavior">Behavior Management*</label>
+            <p class="w-100 fst-italic fs-8 mt-4">*Including:  iatrosedative techniques, enhancing patient control (tell-show-do), relaxation techniques (deep breathing, muscle relaxation), positive reinforcement, etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mt-5 pt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="button"
+          (click)="onSkip()"
+        >
+          Skip for now
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="publicDirectoryFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

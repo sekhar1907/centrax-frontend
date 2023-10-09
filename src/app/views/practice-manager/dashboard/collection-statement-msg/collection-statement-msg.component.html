@@ -1,0 +1,164 @@
+<div class="main-wrapper">
+  <form
+    novalidate
+    [formGroup]="collectionStatementMsgFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid main-wrapper-section-1500">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="color-575757cc page-heading mb-0 pb-0">
+            Collection Messages
+          </h1>
+          <p class="page-heading-subtitle p-0 m-0">Statement Messages</p>
+        </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="col-12">
+          <p class="fs-1-2 text-center fw-medium fc-565656 font-roboto">
+            <b>Payment Mesages</b> Enter the payment messages for the account
+            statement.
+          </p>
+        </div>
+        <div class="col-12 my-2 form-horizontal mb-5">
+          <div class="form-group">
+            <div class="row mb-5">
+              <div class="col-md-5 text-md-end my-md-2">
+                <label
+                  for="fullname"
+                  class="form-label me-md-2 fc-565656 font-roboto fw-medium"
+                >
+                  Insurance
+                </label>
+              </div>
+              <div class="col-md-7 my-2">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-area-box form-control"
+                  id="fullname"
+                  [formControl]="form['insurance']"
+                />
+              </div>
+              <div class="col-md-5 text-md-end my-md-2">
+                <label
+                  for="fullname"
+                  class="form-label me-md-2 fc-565656 font-roboto fw-medium"
+                >
+                  Non-insurance
+                </label>
+              </div>
+              <div class="col-md-7 my-2">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-area-box form-control"
+                  id="fullname"
+                  [formControl]="form['nonInsurance']"
+                />
+              </div>
+              <div class="col-md-5 text-md-end my-md-2">
+                <label
+                  for="fullname"
+                  class="form-label me-md-2 fc-565656 font-roboto fw-medium"
+                >
+                  Financial Arragnement
+                </label>
+              </div>
+              <div class="col-md-7 my-2">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-area-box form-control"
+                  id="fullname"
+                  [formControl]="form['financialArrangment']"
+                />
+              </div>
+              <div class="col-md-5 text-md-end my-md-2">
+                <label
+                  for="fullname"
+                  class="form-label me-md-2 fc-565656 font-roboto fw-medium"
+                >
+                  Quick Statement
+                </label>
+              </div>
+              <div class="col-md-7 my-2">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-area-box form-control"
+                  id="fullname"
+                  [formControl]="form['quickStatement']"
+                />
+              </div>
+              <div class="col-md-5 text-md-end my-md-2">
+                <label
+                  for="fullname"
+                  class="form-label me-md-2 fc-565656 font-roboto fw-medium"
+                >
+                  Finance Charge/Rebill
+                </label>
+              </div>
+              <div class="col-md-7 my-2">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-area-box form-control"
+                  id="fullname"
+                  [formControl]="form['financeCharge']"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/practice-billing"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center">
+          <button
+            routerLink="/practice-manager/collection-messages-non-insurance"
+            class="theme-btn py-2 mx-3"
+          >
+            Back
+          </button>
+          <button type="submit" class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section> -->
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items add-staff-footer"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fw-normali fs-1-2"
+            routerLink="/practice-manager/practice-billing"
+          >
+            Save for later
+          </span>
+        </div>
+        <div
+          class="col d-flex justify-content-end align-item-center practice-footer-responsive"
+        >
+          <button
+            class="theme-btn fs-1-2 py-2 mx-3"
+            routerLink="/practice-manager/collection-messages-non-insurance"
+          >
+            Back
+          </button>
+          <button class="theme-btn py-2 fs-1-2" type="submit">Next</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

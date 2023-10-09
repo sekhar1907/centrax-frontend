@@ -1,0 +1,85 @@
+.complete-profile-container {
+  width: 650px;
+
+  .img-container {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #D7D7D7;
+    border: 1px solid #707F8B;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+
+    div {
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}
+
+
+::ng-deep .p-dataview.p-dataview-list .p-dataview-content>.p-grid>div {
+  border: 1px solid #707F8B;
+  border: 1px solid #707F8B;
+  cursor: pointer;
+}
+
+::ng-deep .p-dataview.p-dataview-list .p-dataview-content>.p-grid>div:nth-child(n+2) {
+  margin-top: -1px;
+}
+
+::ng-deep .p-dataview.p-dataview-list .p-dataview-content>.p-grid>div:hover {
+  background: rgba(64, 84, 100, 0.2);
+}
+
+::ng-deep .p-dataview .p-paginator-bottom {
+  margin-top: 30px;
+  border: 0;
+}
+
+::ng-deep .p-dataview .p-paginator-element,
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  background: #FFFFFF;
+  border: 1px solid #D7D7D7;
+  margin: 0;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #00AE8D;
+  border: 1px solid #00AE8E;
+  color: #FFFFFF;
+  margin: 0;
+  border-radius: 0;
+}
+
+::ng-deep .p-dataview .p-paginator-element.p-paginator-prev,
+::ng-deep .p-dataview .p-paginator-element.p-paginator-next {
+  color: #00AE8E !important;
+}
+
+::ng-deep .p-dataview .p-paginator-element.p-paginator-first {
+  border-radius: 5px 0px 0px 5px;
+  color: #00AE8E;
+}
+
+::ng-deep .p-dataview .p-paginator-element.p-paginator-last {
+  border-radius: 0px 5px 5px 0px;
+  color: #00AE8E;
+}
+
+@media screen and (max-width: 576px) {
+  .complete-profile-container {
+    width: 100% !important;
+    width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}

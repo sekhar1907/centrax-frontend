@@ -1,0 +1,48 @@
+<div class="provider-login-container py-5 px-5">
+  <h1 class="fs-3">Provider login</h1>
+  <form class="needs-validation login-responsive w-100 px-5" novalidate  [formGroup]="loginFormGroup" (ngSubmit)="onLogin()">
+    <div class="row mt-5 mx-5 login-mobile">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Email"
+          inputType="email"
+          id="email"
+          name="email"
+          [isRequired]="true"
+          [control]="loginFormGroup?.get('email')"
+          [isInValid]="formsubmit && form['email'].errors">
+        </app-form-input-field>
+
+        <p-checkbox class="mt-3" [binary]="true" inputId="remember"></p-checkbox>
+        <label class="mb-0 ms-2" for="remember">Remember me</label>
+      </div>
+    </div>
+    <div class="row mt-5 mx-5 login-mobile">
+      <div class="col-12">
+        <app-form-input-field
+          appearance="appearance-2"
+          placeholder="Password"
+          [isRequired]="true"
+          inputType="password"
+          id="password"
+          name="password"
+          [control]="loginFormGroup?.get('password')"
+          [isInValid]="formsubmit && form['password'].errors">
+        </app-form-input-field>
+        <a class="btn btn-link fw-bold" [routerLink]="['/auth/forgot-password']">Forgot Password?</a>
+      </div>
+    </div>
+    <div class="row mt-5 mx-5 login-mobile-btn">
+      <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="submit" id="loginBtn">Sign In</button>
+        <a class="btn btn-link fw-bold mt-2" [routerLink]="['/auth/register']">Create Account</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <form-validation-message [submitted]="formsubmit" [formGroup]="loginFormGroup"></form-validation-message>
+      </div>
+    </div>
+  </form>
+</div>

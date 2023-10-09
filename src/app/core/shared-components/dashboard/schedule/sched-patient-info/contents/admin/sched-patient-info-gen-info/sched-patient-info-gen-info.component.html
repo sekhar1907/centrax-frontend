@@ -1,0 +1,171 @@
+<div class="px-3 h-100">
+  <div class="form-group-container">
+    <i class="fa fa-edit edit-button fs-5"></i>
+    <div class="row d-flex justify-content-between mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Name"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('name')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-masked-input-field
+        appearance="appearance-6"
+          labelText="DOB"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('dob')"
+          mask="99/99/9999"
+          slotChar="mm/dd/yyyy"
+          placeholder="00/00/0000">
+        </app-form-masked-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-masked-input-field
+        appearance="appearance-6"
+          labelText="Phone"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('phone')"
+          mask="(999) 999-999"
+          slotChar="(999) 999-999"
+          placeholder="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between mb-5">
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Email"
+        appearance="appearance-6"
+        inputType="email"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('email')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-masked-input-field
+        appearance="appearance-6"
+          labelText="Alternative Phone"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('altPhone')"
+          mask="(999) 999-999"
+          slotChar="(999) 999-999"
+          placeholder="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Marital Status"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('maritalStatus')">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between">
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Street Address"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('address')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="City"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('city')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="row d-flex justify-content-between">
+          <div class="col-5">
+            <app-form-input-field
+            labelText="State"
+            appearance="appearance-6"
+              [floatingLabel]="true"
+              [control]="generalInfoForm?.get('state')">
+            </app-form-input-field>
+          </div>
+          <div class="col-6">
+            <app-form-input-field
+            labelText="Zip"
+            appearance="appearance-6"
+              [floatingLabel]="true"
+              [control]="generalInfoForm?.get('zip')">
+            </app-form-input-field>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group-container">
+    <i class="fa fa-edit edit-button fs-5"></i>
+    <div class="row d-flex justify-content-between">
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Sex assigned at birth"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('sex')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Pronouns"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('pronouns')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Gender Identity"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('gender')">
+        </app-form-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group-container">
+    <i class="fa fa-edit edit-button fs-5"></i>
+    <div class="row d-flex justify-content-between">
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Emergency Contact"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('emergencyContact')">
+        </app-form-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-masked-input-field
+        appearance="appearance-6"
+          labelText="Alternative Phone"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('emergencyContactPhone')"
+          mask="(999) 999-999"
+          slotChar="(999) 999-999"
+          placeholder="(000) 000-000">
+        </app-form-masked-input-field>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <app-form-input-field
+        labelText="Relationship"
+        appearance="appearance-6"
+          [floatingLabel]="true"
+          [control]="generalInfoForm?.get('emergencyContactRelationship')">
+        </app-form-input-field>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+export const SPECIALTIES = [
+  { label: 'General Practice', value: '00' },
+  { label: 'Dentist', value: '01' },
+  { label: 'Dental Hygienist', value: '05' },
+  { label: 'Dental Assistant', value: '06' },
+  { label: 'Oral Surgery', value: '10' },
+  { label: 'Endodontics', value: '15' },
+  { label: 'Orthodontics', value: '20' },
+  { label: 'Pediatric Dentistry', value: '30' },
+  { label: 'Periodontics', value: '40' },
+  { label: 'Prosthodontics', value: '50' },
+  { label: 'Dental Lab Technician', value: '55' },
+  { label: 'Oral Pathology', value: '60' },
+  { label: 'Oral Radiology', value: '65' },
+  { label: 'Dental Public Health', value: '70' },
+  { label: 'Dental School Faculty', value: '80' },
+  { label: 'Dentist', value: '90' },
+];

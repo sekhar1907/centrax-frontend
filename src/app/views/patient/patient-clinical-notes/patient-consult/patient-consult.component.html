@@ -1,0 +1,1655 @@
+<div class="py-3 h-100 p-bg p-padding clinical-notes-container ">
+  <div class="d-flex form-title p_subjective mt-3 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container p-margin-top">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Subjective Hx</h2>
+    </div>
+  </div>
+  <!-- patient info start -->
+  <div class="form-section-container mt-3 mt-md-0">
+    <div class="row">
+      <div class="col-md-4 p_subject_main">
+        <app-form-input-field
+        [className]="'mobile-view-input p_subject_parent'"
+          appearance="appearance-1"
+          [labelText]="'Tx Provider'"
+          [control]="consultFormGroup.get('txProvider')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-4 p_subject_main">
+        <app-form-input-field
+        [className]="'mobile-view-input p_subject_parent'"
+          appearance="appearance-1"
+          [labelText]="'Tx Assistant'"
+          [control]="consultFormGroup.get('txAssistant')"
+        ></app-form-input-field>
+      </div>
+      <div class="col-md-4 p_subject_main">
+        <app-form-input-field
+        [className]="'mobile-view-input p_subject_parent'"
+          appearance="appearance-1"
+          [labelText]="'Referring dentist'"
+          [control]="consultFormGroup.get('refferingDentist')"
+        ></app-form-input-field>
+      </div>
+    </div>
+  </div>
+  <!-- patient info start -->
+
+  <div class="form-section-container">
+
+    <div class="row mt-5">
+      <div class="col-12 col-lg-5 col-md-12 col-sm-12">
+        <div class="row mb-4">
+          <div class="col">
+            <div class="d-flex form-title mb-3 mb-md-0">
+              <div class="title-container">
+                <h3 class="fw-mediumi fs-5">Chief Complaint</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 col-md-6">
+            <div class="mb-3">
+              <app-form-checkbox-field
+                labelText="no symptoms"
+                [control]="consultFormGroup.get('noSymptoms')"
+              ></app-form-checkbox-field>
+            </div>
+            <div class="mb-3">
+              <app-form-checkbox-field
+                [labelText]="'sensitive to cold'"
+                [control]="consultFormGroup.get('sensitivityToCold')"
+              ></app-form-checkbox-field>
+            </div>
+            <div class="mb-3">
+              <app-form-checkbox-field
+                [labelText]="'sensitive to heat'"
+                [control]="consultFormGroup.get('sensitivityToHeat')"
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-md-6">
+            <div class="mb-3 swell_text">
+              <app-form-checkbox-field
+                [labelText]="'swelling'"
+                [control]="consultFormGroup.get('swelling')"
+              ></app-form-checkbox-field>
+            </div>
+            <div title="sensitive to pressure/biting" class="mb-3 txt-overflew">
+              <app-form-checkbox-field
+                [labelText]="'sensitive to pressure/biting'"
+                [control]="
+                  consultFormGroup.get('sensitivityToPressure')
+                "
+              ></app-form-checkbox-field>
+            </div>
+            <div class="mb-3">
+              <app-form-checkbox-field
+                [labelText]="'need to have RCT finished'"
+                [control]="
+                  consultFormGroup.get('rctFinished')
+                "
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+          <div class="col-12 mt-md-5 mt-4 d-flex align-items-lg-start flex-column flex-md-row p_location_parent">
+            <label for="" class="mb-3 mb-md-0">Location</label>
+            <span
+              class="d-flex flex-md-row ms-0 ms-md-4 ms-lg-0 flex-column p_location_view align-items-lg-start mt-2 mt-md-0 mt-lg-0 justify-content-md-between"
+            >
+              <app-form-checkbox-field
+                [classList]="'mx-md-3 p_margin_location'"
+                [labelText]="'UR'"
+                [control]="consultFormGroup.get('locationUr')"
+              ></app-form-checkbox-field>
+              <app-form-checkbox-field
+                [classList]="'mx-md-4 p_margin_location'"
+                [labelText]="'UL'"
+                [control]="consultFormGroup.get('locationUl')"
+              ></app-form-checkbox-field>
+              <app-form-checkbox-field
+                [classList]="'mx-md-4 p_margin_location'"
+                [labelText]="'LR'"
+                [control]="consultFormGroup.get('locationLr')"
+              ></app-form-checkbox-field>
+              <app-form-checkbox-field
+                [classList]="'mx-md-4 p_margin_location'"
+                [labelText]="'LL'"
+                [control]="consultFormGroup.get('locationLL')"
+              ></app-form-checkbox-field>
+            </span>
+          </div>
+          <div class="col-12 mt-md-5 mt-3">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'Notes'"
+              [control]="consultFormGroup.get('chiefNotes')"
+            >
+            </app-form-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 col-md-12 col-sm-12">
+        <div class="form-subsection-container">
+          <div class="row">
+            <div class="col-12">
+              <div class="row mb-5">
+                <div class="col-md-2 p_view">
+                  <app-form-input-field
+                  appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'BP:'"
+                    [control]="consultFormGroup.get('bp')"
+                  >
+                  </app-form-input-field>
+                </div>
+                <div class="col-md-3 p_view">
+                  <app-form-input-field
+                  appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Pulse:'"
+                    [control]="consultFormGroup.get('pulse')"
+                  >
+                  </app-form-input-field>
+                </div>
+                <div class="col-md-3 p_view">
+                  <app-form-input-field
+                  appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'Temp:'"
+                    [control]="consultFormGroup.get('temp')"
+                  >
+                  </app-form-input-field>
+                </div>
+                <div class="col-md-4 p_view_new">
+                  <app-form-input-field
+                  appearance="appearance-1"
+                    [className]="'mobile-view-input'"
+                    [labelText]="'ALLERGIES:'"
+                    [control]="consultFormGroup.get('allergies')"
+                  >
+                  </app-form-input-field>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-2 mt-md-0">
+              <app-form-input-field
+              appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [labelText]="'DETAILS:'"
+                [control]="consultFormGroup.get('details')"
+              >
+              </app-form-input-field>
+            </div>
+          </div>
+          <div class="row mt-md-5 mt-3 p-margin-top">
+            <div class="d-flex form-title">
+              <div class="title-container p-dental-lt-s">
+                <h3 class="fw-mediumi fs-5">Dental Hx</h3>
+              </div>
+            </div>
+            <div class="col-12 mt-2 p-margin-top mt-md-5">
+              <div class="row">
+                <div class="col-12 col-lg-6 p_dental_hx col-md-6">
+                  <div class="mb-5">
+                    <app-form-input-field
+                    appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [labelText]="'Dental Care:'"
+                      [control]="consultFormGroup.get('dentalCare')"
+                    >
+                    </app-form-input-field>
+                  </div>
+                  <div>
+                    <app-form-input-field
+                    appearance="appearance-1"
+                      [labelText]="'Dental phobia'"
+                      [className]="'mobile-view-input'"
+                      [control]="consultFormGroup.get('dentalPhobia')"
+                    >
+                    </app-form-input-field>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 p_dental_hx col-md-6">
+                  <div class="mb-5">
+                    <app-form-input-field
+                    appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [labelText]="'Recent Dental Work'"
+                      [control]="consultFormGroup.get('recentDentalWork')"
+                    >
+                    </app-form-input-field>
+                  </div>
+                  <div>
+                    <app-form-input-field
+                    appearance="appearance-1"
+                      [className]="'mobile-view-input'"
+                      [labelText]="'Planned Dental Work'"
+                      [control]="consultFormGroup.get('plannedDentalWork')"
+                    >
+                    </app-form-input-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  <!-- print Code -->
+            <div class="col-12 d-none-print print-show mt-5">
+              <div class="row">
+                <div class="col-4">
+                  <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+                </div>
+                <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+                    <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+                    <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+                </div>
+                <div class="col-4 text-end d-none-print print-show">
+                  <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container print_none">
+    <div class="d-flex form-title mb-5">
+      <div class="title-container">
+        <h3 class="fw-mediumi fs-5">History of Present Illness</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-lg-6 col-xl-3 col-md-6">
+        <div class="mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Past Pain Intensity'"
+            [control]="consultFormGroup.get('pastPainIntensity')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="d-flex flex-column flex-md-row mt-3 mb-5">
+          <label for="" class="me-4">Pain Quality:</label>
+          <div class="">
+            <div class="col-12 mb-3 mt-3 mt-md-0">
+              <app-form-checkbox-field
+                [labelText]="'Sharp'"
+                [control]="consultFormGroup.get('painSharp')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Dull'"
+                [control]="consultFormGroup.get('painDull')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Achy'"
+                [control]="consultFormGroup.get('painAchy')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Throbbing'"
+                [control]="consultFormGroup.get('painThrobbing')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Stabbing/shooting'"
+                [control]="consultFormGroup.get('painStabbing')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Electric/Lancing'"
+                [control]="consultFormGroup.get('painElectric')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+                [labelText]="'Pressure'"
+                [control]="consultFormGroup.get('painPressure')"
+              >
+              </app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3 col-md-6">
+        <div class="mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Present Pain Intensity'"
+            [control]="consultFormGroup.get('presentPainIntensity')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="d-flex flex-column flex-md-row mt-3">
+          <label for="" class="me-4">Pain course:</label>
+          <div>
+            <div class="col-12 mb-3 mt-3 mt-md-0">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Intermittent'"
+                [control]="consultFormGroup.get('painIntermittent')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Constant'"
+                [control]="consultFormGroup.get('painConstant')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Spontaneous'"
+                [control]="consultFormGroup.get('painSpontaneous')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Provoked'"
+                [control]="consultFormGroup.get('painProvoked')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Diurnal'"
+                [control]="consultFormGroup.get('painDiurnal')"
+              >
+              </app-form-checkbox-field>
+            </div>
+            <div class="col-12 mb-3">
+              <app-form-checkbox-field
+              appearance="appearance-1"
+                [labelText]="'Nocturnal'"
+                [control]="consultFormGroup.get('painNocturnal')"
+              >
+              </app-form-checkbox-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3 col-md-6">
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Pain Duration'"
+            [control]="consultFormGroup.get('painDuration')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'OTC analgesics help'"
+            [control]="consultFormGroup.get('painDurationOtcHelp')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Rx analgesics help'"
+            [control]="consultFormGroup.get('painDurationRxHelp')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Abx help'"
+            [control]="consultFormGroup.get('painDurationAbxHelp')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Ice water helps'"
+            [control]="consultFormGroup.get('painDurationIceWaterHelp')"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3 col-md-6">
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Hx of swelling/drainage'"
+            [control]="consultFormGroup.get('hxOfSwelling')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Hx of bruxing/clenching'"
+            [control]="consultFormGroup.get('hxOfBruxing')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Rx analgesics help'"
+            [control]="consultFormGroup.get('rxAnalgesicsHelp')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Abx help'"
+            [control]="consultFormGroup.get('abxHelp')"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Ice water helps'"
+            [control]="consultFormGroup.get('iceWaterHelp')"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <app-form-textarea-field
+        [className]="'mobile-view-column'"
+        [labelText]="'Notes:'"
+        [rows]="5"
+        [control]="consultFormGroup.get('subjectiveNotes')"
+      >
+      </app-form-textarea-field>
+    </div>
+  </div>
+
+  <div class="print-show d-none-print">
+    <app-form-header-info
+    [providerName]="'Dr. Jane Doe'"
+    [practiceName]="'Astra Practice Partners'"
+    [practicePhoneNumber]="'(555) 555-5555'"
+    [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+    [patientName]="'Mickey Mouse'"
+    [patientBirthdate]="'04/26/1936'"
+    [entryDate]="'02/20/2020'">
+  </app-form-header-info>
+  </div>
+
+  <div class="d-flex form-title mt-2 mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container p-margin-top">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Objective Hx</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-lg-5 col-md-12">
+        <div class="d-flex form-title">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5">Extra-oral Evaluation</h3>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <app-form-checkbox-field
+              [labelText]="'Extraoral exam WNL'"
+              [control]="consultFormGroup.get('extraOralExam')"
+            ></app-form-checkbox-field>
+          </div>
+        </div>
+
+        <div class="row d-flex align-items-center mt-3 mb-4">
+          <div class="col-lg-2 p-l col-md-2">
+            <app-form-checkbox-field
+              [labelText]="'L'"
+              [control]="consultFormGroup.get('extraOralSwellingL')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-2 mt-2 p-r mt-md-0 col-md-2">
+            <app-form-checkbox-field
+              [labelText]="'R'"
+              [control]="consultFormGroup.get('extraOralSwellingR')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-8 mt-4 p-swelling mt-md-0">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input '"
+              [labelText]="'Swelling'"
+              [control]="consultFormGroup.get('extraOralSwellingTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row d-flex align-items-center mb-4">
+          <div class="col-lg-2 p-l col-md-2">
+            <app-form-checkbox-field
+              [labelText]="'L'"
+              [control]="consultFormGroup.get('extraOralTMJExamL')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-2 mt-2 mt-md-0 p-r col-md-2">
+            <app-form-checkbox-field
+              [labelText]="'R'"
+              [control]="consultFormGroup.get('extraOralTMJExamR')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-8 mt-4 mt-md-0 p-swelling">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'TMJ exam'"
+              [control]="consultFormGroup.get('extraOralTMJExamTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="row d-flex align-items-center mb-4">
+          <div class="col-lg-2 p-l col-md-2">
+            <app-form-checkbox-field
+            appearance="appearance-1"
+              [labelText]="'L'"
+              [control]="consultFormGroup.get('extraOralMsOfMasticationsL')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-lg-2 mt-2 p-l mt-md-0 col-md-2">
+            <app-form-checkbox-field
+            appearance="appearance-1"
+              [labelText]="'R'"
+              [control]="consultFormGroup.get('extraOralMsOfMasticationsR')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="col-md-8 mt-4 mt-md-0 p-swelling">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'Ms of mastications'"
+              [control]="consultFormGroup.get('extraOralMsOfMasticationsTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-12">
+        <div class="form-subsection-container pb-2">
+          <div class="d-flex form-title">
+            <div class="title-container">
+              <h3 class="fw-mediumi fs-5 text-nowrap">Intra-oral Evaluation</h3>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <app-form-checkbox-field
+                [labelText]="'Intraoral exam WNL'"
+                [control]="consultFormGroup.get('intraOralExam')"
+              ></app-form-checkbox-field>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-6 p-intra col-md-6">
+              <div class="w-100 mb-4">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Sinus tract:'"
+                  [control]="consultFormGroup.get('intraOralSinus')"
+                ></app-form-input-field>
+              </div>
+              <div class="w-100 mb-4">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Missing Teeth:'"
+                  [control]="consultFormGroup.get('intraOralMissingTeeth')"
+                ></app-form-input-field>
+              </div>
+              <div class="w-100">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Caries noted on:'"
+                  [control]="consultFormGroup.get('intraOralCaries')"
+                ></app-form-input-field>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 p-intra">
+              <div class="w-100 mb-4">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Swelling'"
+                  [control]="consultFormGroup.get('intraOralSwelling')"
+                ></app-form-input-field>
+              </div>
+              <div class="w-100 mb-4">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Swelling Location'"
+                  [control]="consultFormGroup.get('intraOralSwellingLocation')"
+                ></app-form-input-field>
+              </div>
+              <div class="w-100">
+                <app-form-input-field
+                appearance="appearance-1"
+                  [className]="'mobile-view-input'"
+                  [labelText]="'Cracks noted on:'"
+                  [control]="consultFormGroup.get('intraOralCracks')"
+                ></app-form-input-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row form-section-container">
+    <div class="col-12">
+      <div class="">
+        <div class="d-flex align-items-center w-100 mb-5">
+          <div class="me-2 flex-grow-1" style="min-width: 12%;">
+            <h3 class="fw-mediumi fs-5 fc-accent-text">Testing</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Cold</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Heat</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">EPT</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Perc</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Palp</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Mob</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Prob</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Bite</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Restoration</h3>
+          </div>
+          <div class="mx-2 flex-grow-1 text-center">
+            <h3 class="fw-mediumi fs-5 fc-accent-text text-center">Other</h3>
+          </div>
+        </div>
+        <div class="d-flex align-items-center w-100 mb-5" *ngFor="let objToothTesting of objectiveToothTestingFormArray.controls; let objToothTestingIndex = index">
+          <div class="me-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [labelText]="'Tooth #'"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('number')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('cold')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('heat')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('ept')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('perc')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('palp')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('mob')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('prob')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('bite')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('restoration')"
+            ></app-form-input-field>
+          </div>
+          <div class="mx-2">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="objectiveToothTestingFormArray.controls[objToothTestingIndex].get('other')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <app-form-textarea-field
+            [className]="'mobile-view-column'"
+            [labelText]="'Notes:'"
+            [rows]="5"
+            [control]="consultFormGroup.get('objectiveNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+    </div>
+                <!-- print Code -->
+                <div class="col-12 d-none-print print-show mt-3">
+                  <div class="row">
+                    <div class="col-4">
+                      <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+                    </div>
+                    <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+                        <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+                        <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+                    </div>
+                    <div class="col-4 text-end d-none-print print-show">
+                      <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                    </div>
+                  </div>
+                </div>
+  </div>
+
+  <div class="print-show d-none-print">
+    <app-form-header-info
+    [providerName]="'Dr. Jane Doe'"
+    [practiceName]="'Astra Practice Partners'"
+    [practicePhoneNumber]="'(555) 555-5555'"
+    [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+    [patientName]="'Mickey Mouse'"
+    [patientBirthdate]="'04/26/1936'"
+    [entryDate]="'02/20/2020'">
+  </app-form-header-info>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5">
+    <div class="title-container mt-2 mt-md-0">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading">Radiographic exam</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container p-space">
+    <div class="row">
+      <div class="col-xl-4 col-lg-6 pe-md-5 p-radio">
+        <div class="d-flex form-title mb-3">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5 text-nowrap">Pulp Chamber and Canal</h3>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox p-row-pulp flex-md-row align-items-left w-100 mb-3"
+        >
+          <div class="flex-grow-1 mt-3 mt-md-0">
+            <app-form-checkbox-field
+              [labelText]="'Normal'"
+              [control]="consultFormGroup.get('pulpNormal')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpNormalTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Pulp Stones'"
+              [control]="consultFormGroup.get('pulpStones')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpStonesTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Partial Calcification'"
+              [control]="consultFormGroup.get('pulpPartialCalcification')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpPartialCalcificationTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Complete Calcification'"
+              [control]="consultFormGroup.get('pulpCompleteCalcification')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpCompleteCalcificationTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Internal Resorption'"
+              [control]="consultFormGroup.get('pulpInternalResorption')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpInternalResorptionTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'External Resorption'"
+              [control]="consultFormGroup.get('pulpExternalResorption')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpExternalResorptionTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Invasive Resorption'"
+              [control]="consultFormGroup.get('pulpInvasiveResorption')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpInvasiveResorptionTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Open Apex'"
+              [control]="consultFormGroup.get('pulpOpenApex')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpOpenApexTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Excessive root curvature'"
+              [control]="consultFormGroup.get('pulpExcessiveRootCurvature')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pulpExcessiveRootCurvatureTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 pe-md-5 p-radio">
+        <div class="d-flex form-title mb-3">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5 text-nowrap">Previous Treatment</h3>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mt-2 mt-md-0 mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1 mt-3 mt-md-0">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ GP'"
+              [control]="consultFormGroup.get('previousGp')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousGpTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ carriers'"
+              [control]="consultFormGroup.get('previousCarriers')"
+              selectPrefix="previous"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousCarriersTxt')"
+              selectPrefix="previous"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ paste'"
+              [control]="consultFormGroup.get('previousPaste')"
+              selectPrefix="previous"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousPasteTxt')"
+              selectPrefix="previous"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ Ag'"
+              [control]="consultFormGroup.get('previousAg')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousAgTxt')"
+              selectPrefix="previous"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Perforation'"
+              [control]="consultFormGroup.get('previousPerforation')"
+              selectPrefix="previous"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousPerforationTxt')"
+              selectPrefix="previous"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Underfilled'"
+              [control]="consultFormGroup.get('previousUnderfield')"
+              selectPrefix="previous"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousUnderfieldTxt')"
+              selectPrefix="previous"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Overfilled'"
+              [control]="consultFormGroup.get('previousOverfilled')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousOverfilledTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Separated Instrument'"
+              [control]="consultFormGroup.get('previousSeparatedInstrument')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousSeparatedInstrumentTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Uncleaned canals'"
+              [control]="consultFormGroup.get('previousUncleanedCanals')"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('previousUncleanedCanalsTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 pe-md-5 p-radio">
+        <div class="d-flex form-title mb-3">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5">Other</h3>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1 mt-3 mt-md-0">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ GP'"
+              [control]="consultFormGroup.get('otherGp')"
+              selectPrefix="other"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('otherGpTxt')"
+              ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ carriers'"
+              [control]="consultFormGroup.get('otherCarriers')"
+              selectPrefix="other"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('otherCarriersTxt')"
+              ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ paste'"
+              [control]="consultFormGroup.get('otherPaste')"
+              selectPrefix="other"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('otherPasteTxt')"
+              ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Obturated w/ Ag'"
+              [control]="consultFormGroup.get('otherAg')"
+              selectPrefix="other"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('otherAgTxt')"
+              ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Perforation'"
+              [control]="consultFormGroup.get('otherPerforation')"
+              selectPrefix="other"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('otherPerforationTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+
+        <div class="d-flex form-title mt-5">
+          <div class="title-container mb-3">
+            <h3 class="fw-mediumi fs-5">Perio</h3>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1 mt-3 mt-md-0">
+            <app-form-checkbox-field
+              [labelText]="'Horizontal bone loss'"
+              [control]="consultFormGroup.get('horizontalBoneLoss')"
+              selectPrefix="perio"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('horizontalBonelossTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Vertical bone loss'"
+              [control]="consultFormGroup.get('verticalBoneloss')"
+              selectPrefix="perio"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('verticalBonelossTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-md-5 pt-md-5 mt-3">
+      <div class="col-md-4 pe-3 p-radio">
+        <div class="d-flex form-title mb-3">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5">Periapical</h3>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center mb-3"
+        >
+          <div class="flex-grow-1 mt-3 mt-md-0">
+            <app-form-checkbox-field
+              [labelText]="'Normal'"
+              [control]="consultFormGroup.get('pariapicalNormal')"
+              selectPrefix="periapical"
+            ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pariapicalNormalTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Widened PDL'"
+              [control]="consultFormGroup.get('pariapicalWidenedPdl')"
+              selectPrefix="periapical"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pariapicalWidenedPdlTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Apical RL'"
+              [control]="consultFormGroup.get('pariapicalApicalRl')"
+              selectPrefix="periapical"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pariapicalApicalRlTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Lateral RL'"
+              [control]="consultFormGroup.get('pariapicalLateralRl')"
+              selectPrefix="periapical"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pariapicalLateralRlTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+        >
+          <div class="flex-grow-1">
+            <app-form-checkbox-field
+              [labelText]="'Condensing Osteitis'"
+              [control]="consultFormGroup.get('pariapicalCondensing')"
+              selectPrefix="periapical"
+              ></app-form-checkbox-field>
+          </div>
+          <div class="w-40-per">
+            <app-form-input-field
+            appearance="appearance-1"
+              [className]="'mobile-view-input'"
+              [noLabel]="true"
+              [control]="consultFormGroup.get('pariapicalCondensingTxt')"
+            ></app-form-input-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 pe-md-5 p-radio-caries">
+        <div class="d-flex form-title mb-3">
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5">Caries</h3>
+          </div>
+        </div>
+        <div class="col-12">
+          <div
+            class="d-flex flex-column mobile-view-checkbox flex-md-row align-items-md-center w-100 mb-3"
+          >
+            <div class="flex-grow-1 mt-3 mt-md-0">
+              <app-form-checkbox-field
+                [labelText]="'Caries'"
+                [control]="consultFormGroup.get('caries')"
+              selectPrefix="caries"
+              ></app-form-checkbox-field>
+            </div>
+            <div class="w-80-per w-100 w-md-75">
+              <app-form-input-field
+              appearance="appearance-1"
+                [className]="'mobile-view-input'"
+                [noLabel]="true"
+                [control]="consultFormGroup.get('cariesTxt')"
+              ></app-form-input-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 pe-3 mt-5">
+          <app-form-textarea-field
+            [className]="'mobile-view-column'"
+            [labelText]="'Notes:'"
+            [rows]="5"
+            [control]="consultFormGroup.get('radiographicNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+      </div>
+
+                      <!-- print Code -->
+                      <div class="col-12 d-none-print print-show mt-5">
+                        <div class="row">
+                          <div class="col-4">
+                            <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+                          </div>
+                          <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+                              <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+                              <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+                          </div>
+                          <div class="col-4 text-end d-none-print print-show">
+                            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+                          </div>
+                        </div>
+                      </div>
+    </div>
+  </div>
+
+  <div class="print-show d-none-print">
+    <app-form-header-info
+    [providerName]="'Dr. Jane Doe'"
+    [practiceName]="'Astra Practice Partners'"
+    [practicePhoneNumber]="'(555) 555-5555'"
+    [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+    [patientName]="'Mickey Mouse'"
+    [patientBirthdate]="'04/26/1936'"
+    [entryDate]="'02/20/2020'">
+  </app-form-header-info>
+  </div>
+  <div class="d-flex form-title mt-md-5 pt-md-5 mb-md-5 mt-3">
+    <div class="title-container p-margin-top">
+      <h2 class="fw-mediumi fs-3 patient-consult-heading text-nowrap">Diagnosis and Tx plan</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="d-flex form-title">
+          <div class="title-container p-margin-top">
+            <h3 class="fw-mediumi fs-5">Diagnosis</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row p-margin-top mb-4" *ngFor="let diagnosis of diagnosisFormArray.controls; let diagnosisIndex = index">
+        <div class="col-lg-2 col-md-3 mt-3 mt-md-0 p-diagno">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Tooth #'"
+            [control]="diagnosisFormArray.controls[diagnosisIndex].get('number')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-3 col-md-3 p-diagno-note">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="diagnosisFormArray.controls[diagnosisIndex].get('description')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-3 col-md-3 p-diagno-note">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="diagnosisFormArray.controls[diagnosisIndex].get('description2')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-4 col-md-3 p-diagno-note-more">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="diagnosisFormArray.controls[diagnosisIndex].get('description3')"
+          ></app-form-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row mb-5">
+      <div class="col-12 mb-3">
+        <div
+          class="d-flex form-title align-items-center justify-content-between"
+        >
+          <div class="title-container">
+            <h3 class="fw-mediumi fs-5 text-nowrap">Treatment Plan</h3>
+          </div>
+          <div class="title-container ms-md-0 p-prognosis" style="margin-right: 15%">
+            <h3 class="fw-mediumi fs-5 ">Prognosis</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row p-margin-top mb-4" *ngFor="let treatmentPlan of treatmentPlanFormFormArray.controls; let treatmentPlanIndex = index">
+        <div class="col-lg-2 col-md-3 mt-3 mt-md-0 p-diagno">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [labelText]="'Tooth #'"
+            [control]="treatmentPlanFormFormArray.controls[treatmentPlanIndex].get('number')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-3 col-md-3 p-diagno-note">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="treatmentPlanFormFormArray.controls[treatmentPlanIndex].get('description')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-4 col-md-3 p-diagno-note">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="treatmentPlanFormFormArray.controls[treatmentPlanIndex].get('description2')"
+          ></app-form-input-field>
+        </div>
+        <div class="col-lg-2 col-md-3 p-diagno-note-more">
+          <app-form-input-field
+          appearance="appearance-1"
+            [className]="'mobile-view-input'"
+            [noLabel]="true"
+            [control]="treatmentPlanFormFormArray.controls[treatmentPlanIndex].get('description3')"
+          ></app-form-input-field>
+        </div>
+      </div>
+    </div>
+
+      <div class="row p-margin-top ">
+        <div class="col-12 pe-md-4">
+          <app-form-textarea-field
+            [className]="'mobile-view-input mt-4 mt-md-0'"
+            [labelText]="'PARQ and other notes'"
+            [rows]="5"
+            [control]="consultFormGroup.get('parqOtherNotes')"
+          >
+          </app-form-textarea-field>
+        </div>
+
+        <div class="col-12 d-none-print print-show">
+          <div class="row p-margin-top-obj">
+            <div class="col-4">
+              <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+            </div>
+            <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+                <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+                <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+            </div>
+            <div class="col-4 text-end d-none-print print-show">
+              <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

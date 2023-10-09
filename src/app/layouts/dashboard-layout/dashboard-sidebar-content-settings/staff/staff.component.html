@@ -1,0 +1,158 @@
+<div class="d-flex flex-row-reverse position-relative" [ngClass]="showStaffDetails ? 'show-overlay-data' : 'hide-overlay-data'">
+    <div class="overlay-data-wrapper">
+        <div class="box-arrow-border cursor-pointer" (click)="toggleStaffDetailsModal({})">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <form [formGroup]="staffUpdateForm" novalidate (ngSubmit)="staffUpdateProcess()">
+            <div class="d-flex justify-content-between">
+                <div class="profile-header">
+                    <img src="./assets/images/avatar.png" class="avatar-image" />
+                    <span class="d-inline-block mt-3">
+                        <strong class="profile-title">{{ staffObject.fullname }}</strong>
+                        <p class="profile-description">Medical Staff <span class="pl-4">Dentist</span></p>
+                    </span>
+                </div>
+                <div class="pt-3 pr-4 chevran-icons">
+                    <i class="fas fa-chevron-left cursor-pointer" (click)="navigateStaffObject('prev')"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right cursor-pointer" (click)="navigateStaffObject('next')"></i>
+                </div>
+
+            </div>
+            <div class="container">
+                <hr />
+            </div>
+            <div class="text-right mt-4 mb-4">
+                <span class="p-2 cursor-pointer" (click)="toggleProfileInfo()"><i class="{{ firstSectionEdit ? 'far fa-save' :'far fa-edit' }} s-13-12"></i></span>
+            </div>
+
+            <ng-container *ngIf="firstSectionEdit; then profileInfoControls; else showProfileInfo;"></ng-container>
+            <ng-template #showProfileInfo>
+                <div class="d-flex justify-content-between pl-5 pr-5">
+                    <div class="text-info-1">{{ staffObject.birthDate | date: 'MM/dd/yyyy'}}</div>
+                    <div class="text-info-1">{{ staffObject.email }}</div>
+                    <div class="text-info-1">{{ staffObject.phone }}</div>
+                </div>
+    
+                <div class="d-flex justify-content-between pl-5 pr-5">
+                    <div class="text-info-1">{{ staffObject.address }}</div>
+                    <div class="text-info-1">{{ staffObject.city }} <span class="pl-4">OR</span></div>
+                    <div class="text-info-1">{{ staffObject.zip }} </div>
+                </div>
+            </ng-template>
+            <ng-template #profileInfoControls>
+                <div class="row no-gutters pl-4 pr-4">
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="date" class="npi-input" formControlName="birthDate" /></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="text" formControlName="email" class="license-number-input"/></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="text" formControlName="phone" class="dea-input"/></div>
+                    </div>
+                </div>
+    
+                <div class="row no-gutters pl-4 pr-4 mt-3">
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="text" formControlName="address" class="npi-input"/></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="text" formControlName="city" class="license-number-input"/></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1"><input type="text" formControlName="zip" class="dea-input"/></div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <div class="container mt-5">
+                <hr />
+            </div>
+
+            <div class="text-right mt-4 mb-2">
+                <span class="p-2 cursor-pointer" (click)="toggleDesignationInfo()"><i class="{{ secondSectionEdit ? 'far fa-save' :'far fa-edit' }} s-13-12"></i></span>
+            </div>
+            <ng-container *ngIf="secondSectionEdit; then designationInfoControls; else showDesignationInfo;"></ng-container>
+            <ng-template #showDesignationInfo>
+                <div class="row no-gutters pl-3 pr-4">
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.title }}</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.hireDate | date: 'MM/dd/yyyy' }}</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.permissions }}</div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #designationInfoControls>
+                <div class="d-flex justify-content-between pl-3 pr-5">
+                    <div class="text-info-1">Title<input type="text" formControlName="title" class="title-input d-block"/></div>
+                    <div class="text-info-1">Hire Date<input type="date" formControlName="hireDate" class="hire-date d-block"/></div>
+                    <div class="text-info-1">Permissions 
+                        <select class="permissions d-block">
+                            <option value="">moderate</option>
+                        </select>
+                    </div>
+                </div>
+            </ng-template>
+
+            <div class="container mt-2">
+                <hr />
+            </div>
+
+            <div class="text-right mt-3 mb-1">
+                <span class="p-2 cursor-pointer" (click)="toggleThirdSection()"><i class="{{ thirdSectionEdit ? 'far fa-save' :'far fa-edit' }} s-13-12"></i></span>
+            </div>
+            <ng-container *ngIf="thirdSectionEdit; then thirdSectionControls; else thirdSectionInfo;"></ng-container>
+            <ng-template #thirdSectionInfo>
+                <div class="row no-gutters pl-3 pr-4 mb-4">
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.NPI }}</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.dentalLicense }}</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">{{ staffObject.DEANumber }}</div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #thirdSectionControls>
+                <div class="row no-gutters pl-3 pr-4 mb-3">
+                    <div class="col-sm-4">
+                        <div class="text-info-1">NPI <input type="text" formControlName="NPI" class="npi-input"/></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">Dental License <input type="text" formControlName="dentalLicense" class="license-number-input"/></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-info-1">DEA Number <input type="text" formControlName="DEANumber" class="dea-input"/></div>
+                    </div>
+                </div>
+            </ng-template>
+            <div class="d-flex flex-row-reverse pt-3">
+                <button class="btn-save cursor-pointer" type="submit"
+                [disabled]="staffUpdateForm.pristine || staffUpdateForm.invalid">save</button>
+            </div>
+
+        </form>
+    </div>    
+</div>
+
+<div class="content-wrapper ml-4 mb-0">
+    <div class="d-flex justify-content-around">
+        <div class="left-wrapper">
+            <div class="top-header">Medical Staff</div>
+            <ul class="staff-list mt-3 p-2">
+                <li *ngFor="let staff of staffs; let i = index"><a [routerLink]="" class="cursor-pointer" (click)="toggleStaffDetailsModal(staff, 'staff')">{{ staff.fullname }}</a></li>
+            </ul>
+        </div>
+        <div class="right-wrapper">
+            <div class="top-header">Administrative Staff</div>
+            <ul class="staff-list mt-3 p-2 ml-4">
+                <li *ngFor="let dentatStaff of dentatStaffs; let i = index"><a [routerLink]="" class="cursor-pointer" (click)="toggleStaffDetailsModal(dentatStaff, 'dentatStaff')">{{ dentatStaff.fullname }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+.form-title>div:first-child {
+  width: 400px;
+}
+
+.form-title>div:last-child {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.form-title>div:last-child h1 {
+  margin-bottom: 0;
+  color: #747474;
+}
+
+.form-title>div:last-child,
+.form-page-container {
+  padding-left: 67px;
+}
+
+.form-page-container {
+  border-left: 2px solid #405464;
+  flex-grow: 1;
+}
+
+.patient-registration-container h1 {
+  margin-left: 80px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  app-form-side-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .patient-registration-accordion {
+    padding-bottom: 60px;
+  }
+
+  .patient-registration-accordion .mat-accordion {
+    padding: 0 24px;
+  }
+
+  .patient-registration-accordion .mat-expansion-panel {
+    box-shadow: none;
+    border-bottom: 4px solid rgba(64, 84, 100, 0.5);
+    margin-bottom: 90px;
+  }
+
+  .patient-registration-accordion .mat-expansion-panel-header {
+    padding: 0 0 0 12px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .patient-registration-accordion ::ng-deep .mat-expansion-panel-header.mat-expanded {
+    border-bottom: 4px solid rgba(64, 84, 100, 0.5);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .patient-registration-accordion .accordion-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .patient-registration-accordion .accordion-header,
+  .patient-registration-accordion .accordion-header span {
+    font-weight: 400;
+    font-size: 32.6695px;
+    line-height: 38px;
+    letter-spacing: 1.02092px;
+    color: #405464;
+  }
+}
+
+@media print {
+  * {
+    transition: none !important
+  }
+
+  app-form-side-menu,
+  app-form-steps,
+  app-form-header {
+    display: none;
+  }
+
+  .form-title>div:last-child {
+    padding: 20px 67px;
+  }
+
+  .form-page-container {
+    border-left: 0;
+    padding-left: 0;
+    display: block !important;
+  }
+
+  .patient-registration-accordion {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 576px){
+  app-patient-registration-accordion {
+    width: 100%;
+  }
+
+  .patient-registration-accordion .mat-expansion-panel {
+    margin-bottom: 85px;
+  }
+}

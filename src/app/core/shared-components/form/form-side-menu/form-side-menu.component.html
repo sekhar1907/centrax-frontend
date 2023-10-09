@@ -1,0 +1,16 @@
+<div class="side-menu-container" *ngIf="navItems?.length">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item"
+    *ngFor="let navItem of navItems; let i = index;"
+    (click)="onSelectNavItem(i)">
+      <div class="indicator" [ngClass]="{'active' : navItem.isActive}"></div>
+      <a class="nav-link text-uppercase" [ngClass]="{'active' : navItem.isActive}" aria-current="page">
+        <span>
+          <!-- <i [ngClass]="navItem.icon"></i> -->
+          <img [src]="navItem.icon" alt="">
+        </span>
+          {{navItem.stepTitle}}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,47 @@
+
+.body-wrapper {
+    width: 500px;
+    min-height: 458px !important;
+}
+.card {
+    padding: 0px;
+}
+input, select {
+    width: 193px;
+    height: 26px;
+    border-radius: 6px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 1px;
+    background: rgba(245, 245, 245, 1);
+    border: none;
+    
+}
+::placeholder, select {
+    color: #cdcdcdff;
+}
+option:not(first-child) {
+    color: #565656;
+}
+
+.search-icon-style {
+    width: 13px;
+    height: 13px;
+    margin-top: -5px !important;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #cdcdcdff !important;
+}
+
+tr td {
+    padding: 2px 5px !important;
+    font-size: 12px;
+}
+
+tr th {
+    padding: 2px 5px !important;
+    font-size: 13px;
+}

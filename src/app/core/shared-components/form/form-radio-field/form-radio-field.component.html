@@ -1,0 +1,6 @@
+<div class="w-100 d-flex {{ isVertical ? 'flex-column align-items-start justify-content-center' : 'flex-row align-items-center' }}">
+  <div *ngFor="let item of items" class="field-checkbox me-4 d-flex align-items-center {{ isVertical ? 'mb-3' : ''}}">
+    <p-radioButton [name]="inputIDPrefix" inputId="{{inputIDPrefix}}-{{item.value}}" [value]="item.value" [formControl]="control"></p-radioButton>
+    <label for="{{inputIDPrefix}}-{{item.value}}" class="ml-2 mb-0 long-text-responsive">{{ item.text }}</label>
+  </div>
+</div>

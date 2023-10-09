@@ -1,0 +1,142 @@
+::ng-deep .left-tab-menu .p-tabmenu-nav,
+::ng-deep .left-tab-menu .p-menuitem-link,
+::ng-deep .left-tab-menu .p-tabmenu-nav .p-tabmenuitem,
+::ng-deep .left-tab-menu .p-tabmenu-nav-container .p-tabmenu-nav-btn.p-link {
+  background-color: rgba(224, 224, 221, 1) !important;
+}
+
+::ng-deep .left-tab-menu .p-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+::ng-deep .left-tab-menu .p-tabmenu-nav-container .p-tabmenu-nav-next {
+  border-top-right-radius: 12px;
+}
+
+::ng-deep .left-tab-menu .p-tabmenu-nav-container .p-tabmenu-nav-prev {
+  border-top-left-radius: 12px;
+}
+
+::ng-deep .left-tab-menu .p-tabmenu-nav {
+  border-top-left-radius: 12px;
+  padding: 0 2rem !important;
+}
+
+::ng-deep .left-tab-menu .p-tabmenu-nav-content {
+  border-top-right-radius: 12px !important;
+  border-top-left-radius: 12px !important;
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem > a:has(.add-patient) {
+  border-right: 0 !important;
+  cursor: pointer !important;
+}
+
+::ng-deep .left-tab-menu .p-menuitem-link {
+  padding: 0 1rem !important;
+  border-bottom: 0 !important;
+  color: #747474 !important;
+  border-right: 1px solid #747474 !important;
+  border-radius: 0 !important;
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem:has(+ .p-highlight) > a {
+  border-right: 0 !important;
+}
+
+::ng-deep .left-tab-menu.p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+  border: 0 !important;
+}
+
+.link-color {
+  color: #747474 !important;
+}
+
+::ng-deep .p-tabmenu .p-tabmenu-nav {
+  border: 0;
+  min-height: 50px;
+}
+
+::ng-deep .right-tab-menu .p-menuitem-link,
+::ng-deep .right-tab-menu .p-tabmenu-nav .p-tabmenuitem,
+::ng-deep .right-tab-menu .p-tabmenu-nav-container .p-tabmenu-nav-btn.p-link {
+  background-color: #5F7689 !important;
+  border-radius: 0 !important;
+}
+
+::ng-deep .right-tab-menu .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background-color: #405464 !important;
+}
+
+::ng-deep .right-tab-menu .p-menuitem-link {
+  border-bottom: 0 !important;
+  padding: 0.8rem 0 !important;
+}
+
+
+::ng-deep .p-dropdown {
+  border: none !important;
+  background: none !important;
+}
+
+::ng-deep .p-dropdown .p-dropdown-label {
+  padding: 0 !important;
+}
+::ng-deep .p-dropdown .p-dropdown-trigger-icon {
+  color: #FFF !important;
+}
+
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight {
+  padding-top: 5px !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  position: relative !important; /* This is needed for the pseudo-element */
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight a {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  position: relative !important;
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight::before,
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight::after {
+    content: "";
+    z-index: 2;
+    background-color: #FFF;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: -2px;
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight::before {
+  left: -11px;
+  clip-path: url(#curveRight);
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight::after {
+  right: -11px;
+  clip-path: url(#curveLeft);
+}
+
+::ng-deep .left-tab-menu .p-tabmenuitem.p-highlight a > div {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  height: 100%;
+  background-color: #FFF;
+}
+
+svg {
+  position: absolute;
+}

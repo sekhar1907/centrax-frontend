@@ -1,0 +1,23 @@
+<div class="d-flex {{appearance}}" *ngIf="control">
+  <div class="d-flex w-100">
+    <div class="flex-grow-0 me-2" *ngIf="!noLabel">
+      <label class="fw-medium mt-3 me-3">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+      </label>
+    </div>
+    <div class="flex-grow-1">
+      <mat-form-field appearance="none">
+        <textarea
+        class="w-100"
+          ngDefaultControl
+          matInput
+          [formControl]="control"
+          [placeholder]="placeholder"
+          [rows]="rows"
+          [cols]="cols">
+        </textarea>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

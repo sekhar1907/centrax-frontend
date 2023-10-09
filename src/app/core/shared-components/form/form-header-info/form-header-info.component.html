@@ -1,0 +1,36 @@
+<div class="header-info-container p-bg">
+  <div class="practice-info-top p-bg">
+    <div class="d-flex justify-content-evenly pb-2">
+      <div class="d-flex align-items-center fs-3 mb-3 mb-xl-5">
+        <i class="fa fa-user-nurse mx-3"></i>
+        <h4 class="mb-0 fs-2 text-nowrap">{{ providerName }}</h4>
+      </div>
+
+      <div class="d-flex align-items-center align-items-lg-start fs-3 mb-3 mb-xl-5">
+        <i class="fa fa-location-pin mx-3"></i>
+        <h4 class="mb-0 fs-2 fw-bold d-flex flex-column flex-lg-row align-items-center text-center lg-text-start">
+          <div class="fs-md-4 p_text_wrap">{{ practiceName }}</div>
+          <div class="d-flex d-lg-none fw-normali mt-0 mt-xl-2 p-practice-addr fs-md-4">{{ practiceAddress }}</div>
+        </h4>
+      </div>
+
+      <div class="d-flex align-items-center align-items-lg-start fs-3">
+        <i class="fa fa-phone mx-3"></i>
+        <h4 class="mb-0 fs-2 text-nowrap">{{ practicePhoneNumber }}</h4>
+      </div>
+    </div>
+    <div class="d-none d-lg-flex justify-content-center">
+      <h4 class="mb-0 fs-2 fw-normali">{{ practiceAddress }}</h4>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex flex-column p-bg p_patient_view p_patient_margina flex-lg-row align-items-md-center justify-content-between">
+  <div>
+    <h4 class="fs-2 fw-mediumi text-center p-patient-left text-nowrap lg-text-start">Patient {{ patientName }}</h4>
+  </div>
+  <div class="d-flex flex-column flex-lg-row p_patient_view align-items-md-center justify-content-end">
+    <h4 class="me-0 me-lg-5 fs-4 fw-normal p_date_m text-center lg-text-start">Birthdate {{ patientBirthdate }}</h4>
+    <h4 class="fs-4 fw-normal text-center p_date_m lg-text-start">Entry Date: {{ entryDate }}</h4>
+  </div>
+</div>

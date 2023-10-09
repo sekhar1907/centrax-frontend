@@ -1,0 +1,48 @@
+<div class="popup-menu">
+  <div class="usermenu-padding">
+    <div class="fw-bold fs-1-5">{{ (userData$ | async)?.email }}</div>
+    <div class="status-box fs-2-0 px-3">
+      <span class="active"></span>
+      Active
+    </div>
+  </div>
+  <div class="usermenu-link-group usermenu-link-border usermenu-padding">
+    <div [ngSwitch]="currentStatus" [ngClass]="{'hide' : updateStatusActive}" (click)="toggleSetStatus()" class="update-status d-flex align-items-center px-3 py-2 fs-2-0 mb-4 cursor-pointer">
+      <ng-container *ngSwitchCase="null || undefined"><img class="me-2" src="assets/images/icons/update-status.svg" alt="" srcset="">Update your status</ng-container>
+      <ng-container *ngSwitchCase="'In a meeting'"><img class="me-2" src="assets/images/icons/meeting-icon-white.svg" alt="" srcset="">{{currentStatus}}</ng-container>
+      <ng-container *ngSwitchCase="'Lunch'"><img class="me-2" src="assets/images/icons/lunch-icon-white.svg" alt="" srcset="">{{currentStatus}}</ng-container>
+      <ng-container *ngSwitchCase="'Out Sick'"><img class="me-2" src="assets/images/icons/out-sick-icon-white.svg" alt="" srcset="">{{currentStatus}}</ng-container>
+      <ng-container *ngSwitchCase="'Vacation'"><img class="me-2" src="assets/images/icons/vacation-icon-white.svg" alt="" srcset="">{{currentStatus}}</ng-container>
+      <ng-container *ngSwitchDefault><img class="me-2" src="assets/images/icons/update-status.svg" alt="" srcset="">{{currentStatus}}</ng-container>
+    </div>
+    <div class="set-status" [ngClass]="{'show' : updateStatusActive}">
+      <dashboard-sidebar-content-set-status [currentStatus]="currentStatus" (saveStatus)="onSaveStatus($event)" (closeSetStatus)="toggleSetStatus()"></dashboard-sidebar-content-set-status>
+    </div>
+
+    <ul class="nav flex-column px-2">
+      <li class="nav-item mb-4 fs-2-0">
+        <a class="cursor-pointer">Set yourself as <b>away</b></a>
+      </li>
+      <li class="nav-item fs-2-0">
+        <a class="cursor-pointer">Pause notifications</a>
+      </li>
+    </ul>
+  </div>
+  <div class="usermenu-link-group usermenu-link-border usermenu-padding">
+    <ul class="nav flex-column px-2">
+      <li class="nav-item mb-4 fs-2-0">
+        <a class="cursor-pointer">Profile</a>
+      </li>
+      <li class="nav-item fs-2-0">
+        <a class="cursor-pointer">Preferences</a>
+      </li>
+    </ul>
+  </div>
+  <div class="usermenu-link-group usermenu-padding">
+    <ul class="nav flex-column px-2">
+      <li class="nav-item fs-2-0">
+        <a class="cursor-pointer" (click)="onLogout()">Sign out</a>
+      </li>
+    </ul>
+  </div>
+</div>

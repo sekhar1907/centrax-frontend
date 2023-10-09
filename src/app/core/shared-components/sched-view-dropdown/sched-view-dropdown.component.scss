@@ -1,0 +1,42 @@
+button {
+  background: none;
+  border: none;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-trigger {
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 5;
+}
+
+.open .dropdown-list {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}

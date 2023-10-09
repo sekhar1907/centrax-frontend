@@ -1,0 +1,42 @@
+.menuitems-container {
+  max-height: 82vh;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  background-color: #405464;
+}
+
+@media screen and (max-width: 1660px) {
+  .menuitems-container {
+    max-height: 72vh;
+  }
+}
+
+.menuitems-container::-webkit-scrollbar {
+  width: 5px
+}
+
+.menuitems-container::-webkit-scrollbar-thumb {
+    background: #081f3283;
+}
+
+.menuitems-container::-webkit-scrollbar-thumb:hover {
+    background: #40546483;
+}
+
+
+.nav .nav-link {
+  color: #FAFAF8;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.nav .nav-link:hover, .nav .nav-link.active {
+  background-color: #5F7689;
+}
+
+.link-icon {
+  width: 30px;
+  text-align: center;
+  margin-right: 30px;
+}

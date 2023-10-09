@@ -1,0 +1,52 @@
+<form [formGroup]="collectionMessagesForm" novalidate (ngSubmit)="createCollectionMessage()">
+    <div class="row no-gutters pl-4 pt-5 body-wrapper">
+        <div class="container">
+            <div class="row mb-5 mt-5">
+                <div class="col-sm-3 d-flex justify-content-center align-items-center days">
+                    60 days
+                </div>
+                <div class="col-sm-9">
+                    <textarea formControlName="days60" id="" cols="30" rows="10"></textarea>
+                    <div *ngIf="collectionMessagesForm.controls['days60'].invalid && (collectionMessagesForm.controls['days60'].dirty || collectionMessagesForm.controls['days60'].touched)" class="text-danger">
+                        <div *ngIf="collectionMessagesForm.controls['days60'].errors.required">
+                            60 days is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-3 d-flex justify-content-center align-items-center days">
+                    90 days
+                </div>
+                <div class="col-sm-9">
+                    <textarea formControlName="days90" id="" cols="30" rows="10"></textarea>
+                    <div *ngIf="collectionMessagesForm.controls['days90'].invalid && (collectionMessagesForm.controls['days90'].dirty || collectionMessagesForm.controls['days90'].touched)" class="text-danger">
+                        <div *ngIf="collectionMessagesForm.controls['days90'].errors.required">
+                            90 days is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-3 d-flex justify-content-center align-items-center days">
+                    120 days
+                </div>
+                <div class="col-sm-9">
+                    <textarea formControlName="days120" id="" cols="30" rows="10"></textarea>
+                    <div *ngIf="collectionMessagesForm.controls['days120'].invalid && (collectionMessagesForm.controls['days120'].dirty || collectionMessagesForm.controls['days120'].touched)" class="text-danger">
+                        <div *ngIf="collectionMessagesForm.controls['days120'].errors.required">
+                            120 days is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row-reverse">
+                <button class="btn-save cursor-pointer" type="submit" [disabled]="collectionMessagesForm.pristine || collectionMessagesForm.invalid" >save</button>
+            </div>
+            
+        </div>
+    </div>
+</form>

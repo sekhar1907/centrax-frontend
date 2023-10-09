@@ -1,0 +1,53 @@
+.shw{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.email-perant-box{
+  width: 720px;
+  height: 482px;
+  background: #FFFFFF;
+  border: 5px solid #405464;
+  border-radius: 9px;
+
+  @media screen and (max-width:375px) {
+    height: auto;
+    padding-bottom: 30px;
+    padding: 16px;
+
+  }
+
+  
+  .detail{
+    font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4F4F4F;
+  border-top: 1px solid #D7D7D7;
+  }
+  #floatingInput{
+    border: 0px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #565656;
+border-bottom: 1px solid #001837 !important;
+&:focus{
+  box-shadow: none;
+  outline: none;
+}
+  }
+  .add-recovery-btn{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+letter-spacing: 2px;
+color: #FFFFFF;
+background: #00AE8E;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  }
+  }

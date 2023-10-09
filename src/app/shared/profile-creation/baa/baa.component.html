@@ -1,0 +1,1139 @@
+<div class="create-profile-container">
+  <form
+    class="needs-validation"
+    novalidate
+    class="w-100"
+    [formGroup]="baaFormGroup"
+  >
+    <div class="text-center mb-5 pb-5">
+      <h1 class="fs-3 mb-3">Profile Creation</h1>
+      <p class="fs-6">Step 2: Business Agreement</p>
+    </div>
+
+    <div class="form-container py-5 px-md-5 px-2 mt-5">
+      <h1 class="fs-3 mb-5 mt-4">
+        What is a BAA (business associate agreement)?
+      </h1>
+      <p class="mt-3 fs-6 fst-italic">
+        A HIPAA business associate agreement is a legal contract between a HIPAA
+        covered entity and business associate, as defined via the US Health
+        Insurance Portability and Accountability Act of 1996. These agreements
+        safeguard ePHI (electronic protected health information), the sensitive
+        personal data and records of patients.
+      </p>
+      <p class="mt-3 fs-6">
+        If you use any outside entity to assist with your EMR, including a
+        hosting company, you must have a BAA signed with that organization. That
+        document does not clear you of your own responsibilities related to
+        HIPAA, but it does delineate the role that the hosting company takes and
+        ways in which they should be held liable for any breaches, etc.
+      </p>
+      <p class="mt-1 fs-6">
+        Covered entities are healthcare providers, plans, and data
+        clearinghouses, while business associates are any organization doing
+        business with covered entities in a manner that involves ePHI.
+      </p>
+    </div>
+
+    <div class="form-container py-5 my-5 mt-5">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Last, First Middle"
+            [noLabel]="false"
+            [control]="form['fullname']"
+            [isInValid]="formsubmit && form['fullname'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Your Position/Title"
+            [noLabel]="false"
+            [control]="form['position']"
+            [isInValid]="formsubmit && form['position'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Name of Covered Entity"
+            [noLabel]="false"
+            [control]="form['coveredEntityName']"
+            [isInValid]="formsubmit && form['coveredEntityName'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-dropdown-field
+            appearance="flat"
+            [control]="form['specialty']"
+            [dropdownItems]="specialtyOptions$ | async"
+            labelText="Specialty *"
+            layout="flex-column"
+            [isInValid]="formsubmit && form['specialty'].errors"
+            valueField="label"
+            textField="label"
+          >
+          </app-form-dropdown-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Primary office street address"
+            [noLabel]="false"
+            [control]="form['address']"
+            [isInValid]="formsubmit && form['address'].errors"
+          >
+          </app-form-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="row">
+            <div class="col-xl-5 col-12">
+              <app-form-input-field
+                appearance="appearance-2"
+                placeholder="City"
+                [noLabel]="false"
+                [control]="form['city']"
+                [isInValid]="formsubmit && form['city'].errors"
+              >
+              </app-form-input-field>
+            </div>
+            <div class="col-xl-7 col-12">
+              <div class="row">
+                <div class="col-xl-6 col-12">
+                  <app-form-input-field
+                    appearance="appearance-2"
+                    placeholder="State"
+                    [noLabel]="false"
+                    [control]="form['state']"
+                    [isInValid]="formsubmit && form['state'].errors"
+                  >
+                  </app-form-input-field>
+                </div>
+                <div class="col-xl-6 col-12">
+                  <app-form-input-field
+                    appearance="appearance-2"
+                    placeholder="Zip"
+                    [noLabel]="false"
+                    [control]="form['zip']"
+                    [isInValid]="formsubmit && form['zip'].errors"
+                  >
+                  </app-form-input-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-masked-input-field
+          appearance="appearance-1"
+            placeholder="Telephone"
+            [control]="form['telephone']"
+            [isInvalid]="formsubmit && form['telephone'].errors"
+            [isHorizontal]="false"
+            mask="(999) 999-999"
+            slotChar="(000) 000-000">
+          </app-form-masked-input-field>
+        </div>
+        <div class="col-12 mb-4">
+          <app-form-input-field
+            appearance="appearance-2"
+            placeholder="Email Adress"
+            [noLabel]="false"
+            [control]="form['email']"
+            [isInValid]="formsubmit && form['email'].errors"
+          >
+          </app-form-input-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container py-5 mt-5">
+      <div class="row w-100">
+        <div class="col-12 px-0 mb-4">
+          <label class="mb-4"
+            >Does your office comply with OSHA/CDC standards:</label
+          >
+          <div class="d-flex align-items-center mb-3 ms-2">
+            <p-radioButton
+              inputId="oshayes"
+              [value]="true"
+              formControlName="complyOSHACDC"
+            ></p-radioButton>
+            <label for="oshayes" class="mb-0 ms-4">YES</label>
+          </div>
+          <div class="d-flex align-items-center ms-2">
+            <p-radioButton
+              inputId="oshano"
+              [value]="false"
+              formControlName="complyOSHACDC"
+            ></p-radioButton>
+            <label for="oshano" class="mb-0 ms-4">NO</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container py-5 mt-5 position-relative">
+      <div class="row">
+        <div class="col-12">
+          <p-scrollPanel
+            #baaScroll
+            [style]="{
+              width: '100%',
+              height: '600px',
+              backgroundColor: 'white'
+            }"
+          >
+            <h6>BUSINESS ASSOCIATE AGREEMENT</h6>
+            <p>
+              This Business Associate Agreement (Agreement) is entered into this
+              ___ day of ________, 2020 (Effective Date), between Healthy Grid,
+              LLC and its affiliates (Business Associate) and
+              ___________________ (Covered Entity) (collectively the “Parties”).
+            </p>
+
+            <h6>RECITALS</h6>
+            <p>
+              Covered Entity is subject to the Administrative Simplification
+              requirements of the Health Insurance Portability and
+              Accountability Act of 1996 and related regulations, including the
+              Standards for Privacy of Individually Identifiable Health
+              Information and Security Standards for the Protection of
+              Electronic Protected Health Information at 45 C.F.R. Parts 160 and
+              164 (Privacy and Security Regulations). Covered Entity and
+              Business Associate are further subject to the Health Information
+              Technology for Economic and Clinical Health Act (HITECH), Title
+              XIII of Division A of the American Recovery and Reinvestment Act
+              of 2009 (ARRA) and related regulations (Omnibus Rules). The
+              Privacy and Security Regulations and Omnibus Rules will be
+              collectively referred to as the HIPAA Rules.
+            </p>
+            <p>
+              Business Associate either 1) performs certain functions for, or on
+              behalf of Covered Entity involving the creation, transmission,
+              receipt, maintenance, use or disclosure of Protected Health
+              Information (PHI); or 2) provides legal, actuarial, accounting,
+              consulting, data aggregation, management, accreditation,
+              administrative or financial services for Covered Entity involving
+              the disclosure of PHI by Covered Entity or by another business
+              associate of Covered Entity.
+            </p>
+            <p>
+              HIPAA Rules require Covered Entity to enter into an agreement with
+              Business Associate to mandate certain protections for the privacy
+              and security of PHI, and prohibit the disclosure of PHI from
+              Covered Entity to Business Associate if an agreement is not in
+              place. The parties desire to enter into this Agreement to protect
+              PHI, and to amend any agreements between them, whether oral or
+              written, with the execution of this Agreement. In consideration of
+              the mutual promises and agreements below and in order to comply
+              with all legal requirements for the protection of this
+              information, the parties agree as follows:
+            </p>
+
+            <h6 class="mt-4">ARTICLE 1. DEFINITIONS</h6>
+            <p>
+              The following terms used in the Agreement will have the same
+              meaning as those terms in the HIPAA Rules at 45 CFR 160 and 164:
+              Data Aggregation, Designated Record Set, Disclosure, Health Care
+              Operations, Individual, Notice of Privacy Practices, Protected
+              Health Information, Required by Law, Secretary, Subcontractor, and
+              Use.
+            </p>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                1.1 Breach: Breach means the unauthorized acquisition, access,
+                use or disclosure of PHI where the breach compromises the
+                security or privacy of such information.
+              </li>
+              <li>
+                1.2 Business Associate: Business Associate means a person or
+                entity providing certain functions, activities or services on
+                behalf of Covered Entity involving the use and/or disclosure of
+                PHI.
+              </li>
+              <li>
+                1.3 Covered Entity: Covered Entity means a (1) health plan; (2)
+                health care clearinghouse; or (3) health care provider that
+                transmits any health information in electronic form in
+                connection with a transaction covered by HIPAA.
+              </li>
+              <li>
+                1.4 Health Insurance Portability and Accountability Act (HIPAA):
+                HIPAA means federal legislation effective in 1996, which
+                addresses the requirements for the privacy of individually
+                identifiable health information (IIHI) and PHI. HIPAA will also,
+                where applicable, refer to the Standards for Electronic
+                Transactions (45 C.F.R. Parts 160 and 162) and the Security
+                Standards (45 C.F.R. Parts 160 and 164).
+              </li>
+              <li>
+                1.5 HIPAA Rules. HIPAA Rules means the Privacy, Security, Breach
+                Notification, and Enforcement Rules at 45 CFR Part 160 and 164.
+              </li>
+              <li>
+                1.6 HITECH Act: HITECH Act means the Health Information
+                Technology for Economic and Clinical Health Act, found in the
+                American Recovery and Reinvestment Act of 2009 at Division A,
+                title XIII and Division B, Title IV.
+              </li>
+              <li>
+                1.7 Minimum Necessary: Minimum Necessary means the disclosure of
+                only that information which is required to accomplish the
+                intended purpose of such use, disclosure or request. Where
+                practicable, the information disclosed under the Minimum
+                Necessary requirement must be restricted to the limited data set
+                as defined in 45 CFR 164.514(e)(2). This definition will be
+                amended to reflect additional guidance as issued under HITECH
+                should such guidance be provided as described in HITECH Section
+                13405 (b).
+              </li>
+              <li>
+                1.8 Privacy Rule: Privacy Rule means the Standards for Privacy
+                of IIHI at 45 CFR part 160 and part 164, subparts A and E.
+              </li>
+              <li>
+                1.9 Security Incident: Security Incident means the attempted or
+                successful unauthorized access, use, disclosure, modification,
+                or destruction of information or interference with system
+                operations in an information system.
+              </li>
+              <li>
+                1.10 Security Rule: Security Rule means the Security Standards
+                at 45 CFR part 160, and part 164, subparts A and C.
+              </li>
+              <li>
+                1.11 Unsecured PHI: Unsecured PHI means PHI that is not secured
+                through the use of a technology or methodology that renders PHI
+                unusable, unreadable, or indecipherable to unauthorized
+                individuals and is developed or endorsed by a standards
+                developing organization that is accredited by the American
+                National Standards Institute.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">ARTICLE 2. GENERAL PROVISIONS</h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                2.1 Effect. This Business Associate Agreement supplements,
+                modifies and amends any existing agreement between the parties
+                involving the disclosure of PHI by Covered Entity to Business
+                Associate, or the creation or receipt of PHI by Business
+                Associate on behalf of Covered Entity. The terms and provisions
+                of this Business Associate Agreement will supersede any
+                conflicting or inconsistent terms and provisions in any
+                agreement(s) between the parties, including all exhibits or
+                other attachments and all documents incorporated by reference.
+                Without limiting the foregoing, any limitation or exclusion of
+                damages provisions will not be applicable to this Business
+                Associate Agreement.
+              </li>
+              <li>
+                2.2 Amendment. Covered Entity and Business Associate agree to
+                amend this Agreement to the extent necessary to allow either
+                party to comply with HIPAA Rules and other applicable
+                regulations or statutes. Business Associate agrees that it will
+                fully comply with all such rules, regulations, or statutes and
+                that it will agree to amend this Agreement to incorporate any
+                material required by such rules, statutes, or regulations.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 3. OBLIGATIONS AND ACTIVITIES OF BUSINESS ASSOCIATE
+            </h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                3.1 Compliance with Security Regulations. Business Associate
+                agrees that it will comply with the Security Regulations
+                relating to Electronic PHI and will use all appropriate
+                safeguards to prevent the improper or unauthorized use or
+                disclosure of PHI. Business Associate further warrants that it
+                will implement as of the Effective Date, administrative,
+                physical and technical safeguards that reasonably apply and
+                appropriately protect the confidentiality, integrity and
+                availability of any Electronic PHI that it creates, receives,
+                maintains, or transmits on behalf of Covered Entity. Upon
+                request of Covered Entity, Business Associate will promptly
+                provide Covered Entity with information regarding such
+                compliance.
+              </li>
+              <li>
+                3.2 Compliance with Privacy Rule. Business Associate will
+                provide HIPAA compliant platforms, systems, and procedures in
+                service and support of the agreement with the Covered Entity.
+              </li>
+              <li>
+                3.3 Business Associate agrees to not use or further disclose PHI
+                other than as permitted or required by this Agreement, or as
+                required by law.
+              </li>
+              <li>
+                3.4 Business Associate agrees to report to Covered Entity any
+                unauthorized or improper use or disclosure of PHI to which it
+                becomes aware, including breaches of unsecured PHI as required
+                at 45 CFR 164.410, and any security incident of which it becomes
+                aware.
+              </li>
+              <li>
+                3.5 Business Associate agrees to make its internal practices,
+                books and records relating to the use and disclosure of PHI
+                received from, or created, or received by Business Associate on
+                behalf of Covered Entity, available to the Secretary of Health
+                and Human Services to determine Covered Entity and Business
+                Associate’s compliance with this Agreement and the HIPAA Rules.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 4. PERMITTED USES AND DISCLOSURES BY BUSINESS ASSOCIATE
+            </h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                4.1 Business Associate may only use or disclose PHI to perform
+                functions, activities, or services for or on behalf of Covered
+                Entity as specified in the Centrax Services Agreement
+                associated with this Business Associate Agreement.
+              </li>
+              <li>
+                4.2 Except as otherwise limited in this Agreement, Business
+                Associate may use or disclose PHI to perform functions,
+                activities, or services for or on behalf of Covered Entity,
+                provided the use or disclosure would not violate the Privacy
+                Rule if performed by Covered Entity.
+              </li>
+              <li>
+                4.3 Business Associate may use or disclose PHI as required by
+                law.
+              </li>
+              <li>
+                <p class="mb-1">
+                  4.4 Business Associate may use or disclose PHI:
+                </p>
+                <ul class="list-style-none mt-3" style="list-style: none">
+                  <li>
+                    (a) For the proper management and administration of Business
+                    Associate;
+                  </li>
+                  <li>
+                    (b) To carry out Business Associate’s legal
+                    responsibilities, and
+                  </li>
+                  <li>
+                    (c) As necessary for data aggregation purposes relating to
+                    the health care operations of Covered Entity as permitted by
+                    45 CFR 164.504(e)(2)(i)(B), but only as separately
+                    authorized by Covered Entity in writing.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                4.5 Business Associate acknowledges that, as between Business
+                Associate and Covered Entity, all PHI will be and remain the
+                sole property of Covered Entity, including any and all forms
+                developed by Business Associate during its fulfillment of its
+                obligations under this Agreement.
+              </li>
+              <li>
+                4.6 Business Associate agrees that, to the extent Business
+                Associate requests disclosure of PHI from Covered Entity, the
+                request is only for the minimum necessary PHI for the
+                accomplishment of Business Associate’s purpose. For any
+                disclosure or use of PHI, Business Associate will determine and
+                use the minimum necessary information only to accomplish the
+                intended purpose of the use or disclosure. This provision will
+                automatically incorporate any guidance the Secretary issues
+                pursuant to HITECH 13405 regarding what constitutes minimum
+                necessary.
+              </li>
+              <li>
+                4.7 Business Associate is not authorized to de-identify PHI
+                except as provided for in this Agreement. If provided for in
+                this Agreement de-identification must be done in accordance with
+                45 CFR 164.514 (a)-(c).
+              </li>
+              <li>
+                4.8 Business Associate must maintain and retain PHI for the term
+                of the Agreement and make the PHI available to Covered Entity as
+                set forth in this Agreement.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 5. AGENTS, CONTRACTORS, AND SUBCONTRACTORS
+            </h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                5.1 Business Associate shall ensure that any agent, contractor
+                or subcontractor to whom Business Associate provides PHI
+                received from, or created or received by Business Associate on
+                behalf of Covered Entity agrees to substantially the same terms
+                and conditions that apply through this Agreement to Business
+                Associate with respect to such information.
+              </li>
+              <li>
+                5.2 Business Associate agrees to enter into a written contract
+                with all agents, contractors or subcontractors to ensure that
+                they abide by substantially the same restrictions and conditions
+                that apply to the party when acting as a Business Associate
+                regarding PHI. Business Associate must provide a copy of such
+                contracts to Covered Entity upon request.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">ARTICLE 6. INDIVIDUAL RIGHTS</h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>6.1 Request to Access Records.</li>
+              <li>
+                6.1.1 Within five (5) business days of a request by Covered
+                Entity, Business Associate must make available to Covered Entity
+                any requested PHI to permit Covered Entity to respond to an
+                individual’s request for access to PHI for so long as such
+                information is maintained in the Designated Record Set.
+              </li>
+              <li>
+                6.1.2 If Business Associate receives a request directly from an
+                individual seeking access to or copies of PHI maintained by
+                Business Associate for or on behalf of Covered Entity, Business
+                Associate must notify Covered Entity within five (5) business
+                days and must forward the request to Covered Entity.
+                Notwithstanding the foregoing, Business Associate may directly
+                respond to such individual requests when and as directed by
+                Covered Entity. Any denials of access to the PHI requested will
+                be the responsibility of Covered Entity.
+              </li>
+              <li>
+                6.2 Availability of Protected Health Information for Amendment.
+                Within ten (10) business days of receipt of a request from
+                Covered Entity for the amendment of an individual's PHI,
+                Business Associate must provide the information to Covered
+                Entity for amendment and must incorporate any amendments in the
+                PHI as required by 45 C.F.R. §164.526. Business Associate must
+                notify contractors and subcontractors who receive PHI of the
+                amendments.
+              </li>
+              <li>
+                6.3 Accounting of Disclosures. Within ten (10) business days of
+                notice by Covered Entity to Business Associate that it has
+                received a request for an accounting of disclosures of PHI, when
+                such disclosures were made less than six (6) years prior to the
+                date on which the accounting was requested, Business Associate
+                must make available to Covered Entity such information as is in
+                Business Associate's possession and is required for Covered
+                Entity to make the accounting required by 45 C.F.R. §164.528 At
+                a minimum, Business Associate must provide Covered Entity with
+                the following information: (i) the date of the disclosure, (ii)
+                the name of the entity or person who received the PHI, and if
+                known, the address of the entity or person, (iii) a brief
+                description of the PHI disclosed, and (iv) a brief statement of
+                the purpose of such disclosure, which includes an explanation of
+                the basis for such disclosure. If the request for an accounting
+                is delivered directly to Business Associate, Business Associate
+                must within two (2) business days forward the request to Covered
+                Entity.
+              </li>
+              <li>
+                6.4 Record Keeping. Business Associate agrees to implement an
+                appropriate record-keeping process to enable it to comply with
+                the HIPAA requirements applicable to it under this Agreement and
+                the Privacy and Security Rules.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 7. PROHIBITION AGAINST SALE OR MARKETING OF PHI
+            </h6>
+            <p>
+              Except as otherwise provided in the HIPAA Rules, Business
+              Associate must not directly or indirectly receive remuneration in
+              exchange for any PHI of an individual or use or disclose PHI for
+              any purpose related directly or indirectly to any marketing or
+              marketing communication.
+            </p>
+
+            <h6 class="mt-4">
+              ARTICLE 8. REPORTING USES OR DISCLOSURES OF PHI NOT ALLOWED BY
+              THIS AGREEMENT
+            </h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                <p>
+                  8.1 Business Associate must report to Covered Entity any use
+                  or disclosure of PHI in violation of this Agreement by
+                  Business Associate, its officers, directors, employees,
+                  contractors or by a third party to which Business Associate
+                  disclosed PHI pursuant to Article 5 of this Agreement. Notice
+                  of this use or disclosure must be provided to Covered Entity
+                  in writing as soon as possible, and later than five (5)
+                  business days from the date on which Business Associate
+                  discovers or is informed of the improper use or disclosure.
+                  The notice must include:
+                </p>
+                <ul class="list-style-none mt-3" style="list-style: none">
+                  <li>
+                    A. a description of the occurrence, including the date of
+                    the breach and the date of the discovery;
+                  </li>
+                  <li>
+                    B. the name(s) of the individuals(s) whose PHI was used or
+                    disclosed;
+                  </li>
+                  <li>
+                    C. the identity(ies) of the entity(ies)/person(s) to whom
+                    the use or disclosure was made;
+                  </li>
+                  <li>
+                    D. description of the types of unsecured PHI that was
+                    disclosed;
+                  </li>
+                  <li>
+                    E. the steps taken by Business Associate to correct the
+                    unauthorized use or disclosure.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                8.2 Business Associate agrees to mitigate, to the extent
+                practical, any harmful effect that is known to Business
+                Associate resulting from any unauthorized acquisition, use or
+                disclosure of unsecured PHI caused by Business Associate’s
+                violation of the requirements of this Agreement or its failure
+                to properly secure PHI in accordance with guidelines published
+                by the Department of Health and Human Services. As part of its
+                mitigation activities, Business Associate must discontinue and
+                minimize the impact of any inappropriate use or disclosure.
+              </li>
+              <li>
+                8.3 Business Associate must take prompt and appropriate
+                corrective action to cure any deficiencies that caused the
+                unauthorized use or disclosure and to implement additional
+                actions to prevent further unauthorized disclosure.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">ARTICLE 9. REPORTING OF A SECURITY INCIDENT</h6>
+            <p>
+              Business Associate must report to Covered Entity any security
+              incident to which it becomes aware in the following time and
+              manner:
+            </p>
+            <ul class="list-style-none mt-3" style="list-style: none">
+              <li>
+                A. Any actual, successful security incident must be reported to
+                Covered Entity in writing within five (5) business days of the
+                date on which the Business Associate becomes aware of the
+                incident.
+              </li>
+              <li>
+                B. Any attempted, unsuccessful security incident to which
+                Business Associate becomes aware must be reported to Covered
+                Entity in writing, within a commercially reasonable time. Any
+                report required under this section must: (i) identify the nature
+                of the security incident; (ii) identify the PHI subject to the
+                security incident; and (iii) identify what Business Associate
+                has done or will do to mitigate and correct any adverse effect
+                of the security incident.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 10. REPORTING OF A BREACH OF UNSECURED PROTECTED HEALTH
+              INFORMATION
+            </h6>
+            <p>
+              If there is a breach of Unsecured PHI, Business Associate must
+              provide to Covered Entity:
+            </p>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                A. A report including the identification of each individual
+                whose unsecured PHI has been, or is reasonably believed by
+                Business Associate to have been, accessed, acquired, or
+                disclosed during the breach, contact information, nature/cause
+                of the breach, PHI breached and the date or period of time
+                during which the breach occurred.
+              </li>
+              <li>
+                B. The report must be provided to Covered Entity within five (5)
+                business days from the date Covered Entity discovers or should
+                have discovered the breach.
+              </li>
+              <li>
+                C. Business Associate must provide Covered Entity with any
+                available information that Covered Entity is required to include
+                in notification to the individual at the time of the report or
+                promptly thereafter as the information becomes available. Upon
+                report by Business Associate of a breach, Covered Entity will
+                notify affected individuals.
+              </li>
+            </ul>
+            <p>
+              Business Associate will be responsible for any and all costs
+              related to notification of individuals or next of kin (if the
+              individual is deceased) regarding any breach of Unsecured PHI
+              reported by Business Associate to Covered Entity.
+            </p>
+
+            <h6 class="mt-4">
+              ARTICLE 11. OBLIGATIONS AND ACTIVITIES OF COVERED ENTITY
+            </h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                11.1 Covered Entity must notify Business Associate of any
+                limitation(s) in the Covered Entity notice of privacy practices
+                in accordance with 45 CFR 164.520, to the extent that the
+                limitation may affect Business Associate's use or disclosure of
+                PHI.
+              </li>
+              <li>
+                11.2 Covered Entity must notify Business Associate of any
+                changes in, or revocation of, permission by an Individual to use
+                or disclose PHI, to the extent that such changes may affect
+                Business Associate's use or disclosure of Protected Health
+                Information.
+              </li>
+              <li>
+                11.3 Covered Entity must notify Business Associate of any
+                restriction to the use or disclosure of PHI that Covered Entity
+                has agreed to in accordance with 45 CFR 164.522, to the extent
+                that the restriction may affect Business Associate's use or
+                disclosure of PHI.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">ARTICLE 12. INDEMNIFICATION</h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                12.1 Business Associate must indemnify, defend, and hold
+                harmless Covered Entity, its respective directors, officers,
+                employees, representatives, shareholders, subsidiaries, and
+                affiliates against any and all liabilities, losses, damages,
+                penalties, fines, claims, demands, causes of action, proceedings
+                and expenses (including reasonable attorneys’ fees) asserted
+                against, or suffered or incurred by Covered Entity, to the
+                extent resulting from or arising out of (i) Business Associate’s
+                negligence, recklessness or willful misconduct, (ii) Business
+                Associate’s failure to perform any of its duties or obligations
+                under this Agreement, or (iii) Business Associate’s breach of
+                any covenant under this Agreement.
+              </li>
+              <li>
+                12.2 Covered Entity must indemnify and hold harmless Business
+                Associate, its respective directors, officers, employees,
+                representatives, shareholders, subsidiaries, and affiliates
+                against any and all liabilities, losses, damages, penalties,
+                fines, claims, demands, causes of action, proceedings and
+                expenses (including reasonable attorneys’ fees) asserted
+                against, or suffered or incurred by Business Associate, to the
+                extent resulting from or arising out of (i) Covered Entity’s
+                negligence, recklessness or willful misconduct, (ii) Covered
+                Entity’s failure to perform any of its duties or obligations
+                under this Agreement, or (iii) Covered Entity’s breach of any
+                covenant under this Agreement.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">ARTICLE 13. NOTICE OF REQUEST FOR DATA</h6>
+            <p>
+              Business Associate agrees to notify Covered Entity within five (5)
+              business days of Business Associate’s receipt of any request or
+              subpoena for PHI. To the extent that Covered Entity decides to
+              assume responsibility for challenging the validity of the request,
+              Business Associate agrees to cooperate fully with Covered Entity
+              in such challenge.
+            </p>
+
+            <h6 class="mt-4">ARTICLE 14. TERM AND TERMINATION</h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                14.1 Term. This Agreement will begin as of the Effective Date
+                set forth above and will continue until terminated as set forth
+                below.
+              </li>
+              <li>14.1 Termination for Cause.</li>
+              <li>
+                14.1.1 If Business Associate materially breaches this Agreement,
+                Covered Entity will provide Business Associate an opportunity to
+                cure the breach or end the violation. If Business Associate does
+                not cure the breach or end the violation within thirty (30) days
+                from the date of written notification from Covered Entity
+                describing the breach or violation, Covered Entity may terminate
+                this Agreement and the underlying agreement between the parties
+                as necessary to comply with federal or state laws or regulations
+                relating to the administrative simplification provisions of the
+                HIPAA Rules. If termination of this Agreement and the underlying
+                agreement between the parties is not feasible, in Covered
+                Entity’s sole discretion, Business Associate acknowledges that
+                Covered Entity may report the breach or violation to the
+                Secretary, notwithstanding any other provision of this Agreement
+                or the underlying agreement to the contrary.
+              </li>
+              <li>
+                14.1.2 At the expense of Business Associate, Covered Entity may,
+                in its sole discretion, cure any breach of Business Associate’s
+                obligation under this Agreement. Covered Entity must give
+                Business Associate notice of its election to cure any such
+                breach and Business Associate must cooperate fully in the
+                efforts by Covered Entity to cure Business Associate’s breach.
+              </li>
+              <li>
+                14.1.3 Covered Entity may terminate this Agreement immediately
+                upon written notice to Business Associate if Business Associate
+                has breached a material term of this Agreement and cure is not
+                possible.
+              </li>
+              <li>14.2 Effect of Termination</li>
+              <li>
+                14.2.1 Except as otherwise expressly provided in Section 14.2.3,
+                upon termination of this Agreement for any reason, Business
+                Associate must return or destroy all PHI received from Covered
+                Entity, or created or received by Business Associate on behalf
+                of Covered Entity.
+              </li>
+              <li>
+                14.2.2 Upon termination of the Agreement for any reason,
+                Business Associate, with respect to PHI received from Covered
+                Entity, or created, maintained, or received by Business
+                Associate on behalf of Covered Entity must:
+                <ul class="list-style-none mt-3" style="list-style: none">
+                  <li>
+                    A. Retain only that PHI which is necessary for Business
+                    Associate to continue its proper management and
+                    administration or to carry out its legal responsibilities;
+                  </li>
+                  <li>
+                    B. Return to Covered Entity, or if agreed to by Covered
+                    Entity, destroy the remaining Protected Health Information
+                    that the Business Associate still maintains in any form;
+                  </li>
+                  <li>
+                    C. Continue to use appropriate safeguards and comply with
+                    the HIPAA Rules regarding electronic PHI to prevent use or
+                    disclosure of the PHI, other than as provided for in this
+                    section for as long as Business Associate retains the PHI;
+                  </li>
+                  <li>
+                    D. Not use or disclose the PHI retained by Business
+                    Associate other than for the purposes for which the PHI was
+                    retained and subject to the same conditions set out in
+                    Subsection 14.2.2 (a); and
+                  </li>
+                  <li>
+                    E. Return to Covered Entity or if agreed to by Covered
+                    Entity, destroy the PHI retained by Business Associate when
+                    it is no longer needed by Business Associate for its proper
+                    management and administration or to carry out its legal
+                    responsibilities.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                14.2.3 If this Agreement is terminated, Business Associate must,
+                at the discretion of Covered Entity, return or destroy all PHI
+                that Business Associate still maintains in any form and may
+                retain no copies. If Business Associate determines that
+                returning or destroying the PHI is infeasible, Business
+                Associate must provide to Covered Entity notification of the
+                conditions that make return or destruction infeasible. Upon
+                mutual agreement of the parties that return or destruction of
+                PHI is infeasible, Business Associate must extend the
+                protections of this Agreement to the PHI for so long as Business
+                Associate maintains such PHI.
+              </li>
+            </ul>
+
+            <h6 class="mt-4">
+              ARTICLE 15. ELECTRONIC TRANSACTIONS AND CODE SETS
+            </h6>
+            <p>
+              To the extent that the services performed by Business Associate
+              under this Agreement involve transactions that are subject to the
+              regulations governing electronic transactions and code set issued
+              under HIPAA, Business Associate must conduct the transactions
+              consistent with the regulations, as amended from time to time.
+            </p>
+
+            <h6 class="mt-4">ARTICLE 16. INJUNCTIVE RELIEF</h6>
+            <p>
+              Business Associate agrees that Covered Entity may suffer
+              irreparable damage if Business Associate breaches this Agreement
+              and that actual damages would be difficult to quantify. Business
+              Associate therefore agrees that Covered Entity may file an action
+              for injunctive relief, without a requirement to issue a bond, to
+              enforce the terms of this Agreement against Business Associate, in
+              addition to any other remedy Covered Entity may have.
+            </p>
+
+            <h6 class="mt-4">ARTICLE 17. MISCELLANEOUS</h6>
+            <ul class="list-style-none ps-0 mt-3" style="list-style: none">
+              <li>
+                17.1 Statutory and Regulatory Reference. A reference in this
+                Agreement to a section of any statute or regulation means the
+                section as currently in effect or amended, and for which
+                compliance is required.
+              </li>
+              <li>
+                17.2 Assignment. Business Associate may not sell, assign,
+                transfer or otherwise convey any of its rights or delegate any
+                of its duties under this Agreement without prior written consent
+                of Covered Entity.
+              </li>
+              <li>
+                17.3 Survival. This Agreement will be binding upon and will
+                inure to the benefit of the Parties to this Agreement and their
+                respective permitted successors and assigns, subject to the
+                transfer restrictions and expiration or termination provisions
+                set forth in this Agreement
+              </li>
+              <li>
+                17.4 Interpretation. Any ambiguity in this Agreement will be
+                interpreted to permit compliance with the HIPAA rules.
+              </li>
+              <li>
+                17.4 Governing Law. This Agreement will be governed by and
+                construed in accordance with the laws of the State of Oregon.
+              </li>
+              <li>
+                17.5 No Agency. Nothing in this Agreement may be construed to
+                create (a) a partnership, joint venture or other joint business
+                relationship between the parties or any of their affiliates, or
+                (b) a relationship of employer and employee between the parties.
+                Business Associate is an independent contractor, not an agent,
+                to Covered Entity, and Covered Entity does not control the
+                manner or means of Business Associates’ performance under this
+                Agreement, and nothing contained in this Agreement is intended
+                to expand the scope or nature of the relationship.
+              </li>
+              <li>
+                17.6 No Third-Party Beneficiaries. Nothing in this Agreement
+                confers on any person other than Covered Entity and Business
+                Associate and their respective successors and assigns, any right
+                remedies obligations or liabilities.
+              </li>
+              <li>
+                17.7 Entire Agreement; Amendment. This Agreement represents the
+                entire understanding between Business Associate and Covered
+                Entity and there are no other representations, warranties and
+                agreements between Business Associate and Covered Entity
+                relating to the subject of this Agreement, which can only be
+                modified and renewed in writing, signed by an officer of both
+                Business Associate and Covered Entity.
+              </li>
+            </ul>
+
+            <p class="mt-5">
+              IN WITNESS WHEREOF, the Parties hereby agree that this Business
+              Associate Agreement shall be considered fully executed.
+            </p>
+
+            <div class="row mt-5">
+              <div class="col-lg-6 col-12">
+                <h6 class="text-center">COVERED ENTITY</h6>
+              </div>
+              <div class="col-lg-6 col-12">
+                <h6 class="text-center">BUSINESS ASSOCIATE</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="py-3">
+                  <div>Healthy Grid, LLC</div>
+                  <div>10505 SE 17th Ave</div>
+                  <div>Milwaukie, OR 97222</div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="py-3">
+                  <div>&nbsp;</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Signature</div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Signature</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Printed Name</div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Printed Name</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Title</div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Title</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Date</div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="border-bottom py-3">
+                  <div>&nbsp;</div>
+                </div>
+                <div class="text-center pt-2">Date</div>
+              </div>
+            </div>
+          </p-scrollPanel>
+        </div>
+      </div>
+      <div class="baa-doc-scroller">
+        <button (click)="onScrollBaa(false)"><i class="fa-solid fa-chevron-up"></i></button>
+        <button (click)="onScrollBaa(true)"><i class="fa-solid fa-chevron-down"></i></button>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="px-3 mx-5 d-flex align-items-center">
+          <p-checkbox [binary]="true" inputId="baaterms" [formControl]="baaAgreeControl"></p-checkbox>
+          <label class="mb-0 ms-4" for="baaterms">I hereby agree to the terms and conditions set forth in this Business Associate Agreement (BAA).</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5 py-5">
+      <div class="col-12">
+        <div class="px-3 mx-5 d-flex align-items-center">
+          <h4>Download your BAA</h4>
+        </div>
+
+        <div class="px-md-5 px-0 mx-md-5 mx-0 mt-5">
+          <div class="px-3 mx-md-5 mx-0 d-flex align-items-center w-100">
+            <button [disabled]="fileName" (click)="showSignatureDialog()" class="btn btn-lg btn-primary" style="width: 260px !important; font-size: 15px" type="button">
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1 text-center">Sign Document</div>
+                <div class="text-end px-2"><i class="fa-solid fa-pen-to-square"></i></div>
+              </div>
+            </button>
+            <div class="text-dark fw-bold ms-4">Sign with your phone, tablet <br> or signature pad.</div>
+            <i class="fa-solid fa-circle-check ms-auto fs-3 text-primary" *ngIf="signAgreeControl.value && signatureBase64Image"></i>
+          </div>
+        </div>
+
+        <div class="px-md-5 px-0 mx-md-5 mx-0 mt-3">
+          <div class="px-3 mx-md-5 mx-0 d-flex align-items-center w-100">
+            <button (click)="onSaveBaa(true)" [disabled]="signAgreeControl.value && signatureBase64Image" class="btn btn-lg btn-primary" style="width: 260px; font-size: 15px" type="button">
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1 text-center">Download PDF</div>
+                <div class="text-end px-2"><i class="fa-solid fa-file-arrow-down"></i></div>
+              </div>
+            </button>
+            <div class="text-dark fw-bold ms-4">Download completed document <br> to sign.</div>
+          </div>
+        </div>
+
+        <div class="px-md-5 px-0 mx-md-5 mx-0 mt-3">
+          <div class="px-3 mx-md-5 mx-0 d-flex align-items-center w-100">
+            <button [disabled]="signAgreeControl.value && signatureBase64Image" (click)="baaFileUpload.click()" class="btn btn-lg btn-primary" style="width: 260px; font-size: 15px" type="button">
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1 text-center">Upload PDF</div>
+                <div class="text-end px-2"><i class="fa-solid fa-file-arrow-up"></i></div>
+              </div>
+            </button>
+            <input type="file" class="d-none" (change)="onFileSelected($event)" #baaFileUpload>
+            <div class="text-dark fw-bold ms-4">Upload signed document.</div>
+            <i class="fa-solid fa-circle-check ms-auto fs-3 text-primary" *ngIf="fileName && baaFileUploaded"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 mx-0">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <button
+          class="btn btn-lg btn-primary"
+          style="width: 260px; font-size: 15px"
+          type="button"
+          (click)="onSaveAndNext()"
+          [disabled]="baaAgreeControl.invalid || !(baaFileUploaded || (signAgreeControl.value && signatureBase64Image))"
+        >
+          Sign and Save
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="baaFormGroup"></form-validation-message>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+      <div class="form-validation-container" *ngIf="baaAgreeControl.invalid || !(baaFileUploaded || (signAgreeControl.value && signatureBase64Image))">
+        <ul>
+          <li *ngIf="baaAgreeControl.invalid">Agree to terms and conditions</li>
+          <li *ngIf="!(baaFileUploaded || (signAgreeControl.value && signatureBase64Image))">Please sign BAA or Upload signed BAA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-dialog header="Add Signature" [(visible)]="signatureOpen" [modal]="true" [style]="{ width: '725px', height: '460px' }">
+  <ng-template pTemplate="header">
+    <div class="py-3 px-5 w-100 d-flex align-items-center justify-content-between">
+      <h5>Add Signature</h5>
+      <button (click)="onSignatureClear()" type="button" class="btn btn-text text-primary fw-bold me-5 fs-5">Clear</button>
+    </div>
+  </ng-template>
+  <div class="px-5">
+    <signature-pad #signature [options]="signaturePadOptions"></signature-pad>'
+  </div>
+  <div class="px-5 d-flex align-items-center">
+    <div class="flex-grow-1 d-flex align-items-center">
+      <p-checkbox [formControl]="signAgreeControl" [binary]="true" inputId="leagsignature"></p-checkbox>
+      <label class="mb-0 ms-4 fw-bold" for="leagsignature">I understand that this represents my legal signature.</label>
+    </div>
+    <button
+      class="btn btn-lg btn-primary"
+      style="width: 260px; font-size: 15px"
+      type="button"
+      [disabled]="signAgreeControl.invalid"
+      (click)="onSubmit()"
+    >
+    Submit and Next
+    </button>
+  </div>
+</p-dialog>

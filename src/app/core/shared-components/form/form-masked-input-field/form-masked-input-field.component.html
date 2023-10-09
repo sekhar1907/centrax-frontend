@@ -1,0 +1,43 @@
+<div class="d-flex" *ngIf="control">
+  <div class="w-100" *ngIf="!floatingLabel && !isHorizontal">
+    <div class="flex-grow-0 me-2" *ngIf="labelText">
+      <label class="mb-0 fs-7">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+      </label>
+    </div>
+    <div class="flex-grow-1">
+      <div class="row">
+        <div class="col-12">
+          <p-inputMask styleClass="{{appearance}} {{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" [mask]="mask" [formControl]="control"  [slotChar]="slotChar" [placeholder]="placeholder"></p-inputMask>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-items-center w-100" *ngIf="!floatingLabel && isHorizontal">
+    <div class="flex-grow-0 me-2">
+      <label class="fw-medium mb-0">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+      </label>
+    </div>
+    <div class="flex-grow-1">
+      <div class="row">
+        <div class="col-12">
+          <p-inputMask styleClass="{{appearance}} {{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" [mask]="mask" [formControl]="control"  [slotChar]="slotChar" [placeholder]="placeholder"></p-inputMask>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100" *ngIf="floatingLabel">
+    <span class="p-float-label {{appearance}}">
+      <p-inputMask styleClass="{{isInValid ? 'ng-invalid ng-dirty' : 'is-valid'}}" [mask]="mask" [formControl]="control"  [slotChar]="slotChar" [placeholder]="placeholder"></p-inputMask>
+      <label [htmlFor]="id">
+        {{labelText}}
+        <span *ngIf="labelTextSecondary" class="fw-normal">{{labelTextSecondary}}</span>
+        <span *ngIf="isRequired && labelText" class="fw-normal"> * </span>
+      </label>
+    </span>
+  </div>
+</div>

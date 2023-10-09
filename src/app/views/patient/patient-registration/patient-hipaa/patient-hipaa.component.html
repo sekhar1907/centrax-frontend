@@ -1,0 +1,92 @@
+<div class=" py-5 py-lg-3 h-100 accordion-content container-fluid">
+  <h2 class="fs-1 hippa-heading">Acknowledgement of Privacy Practices</h2>
+
+  <div class="form-section-container">
+    <p>
+      My signature confirms that I have been informed of my rights to privacy
+      regarding my protected health information,under the Health Insurance
+      Portability & Accountability Act of 1996 (HIPAA). I understand that this
+      information can and will be used to:
+    </p>
+    <ul>
+      <li>
+        Provide and coordinate my treatment among a number of health care
+        providers who may be involved in that treatment directly and indirectly.
+      </li>
+      <li>
+        Obtain payment from third-party payers for my health care services.
+      </li>
+      <li>
+        Conduct normal health care operations such as quality assessment and
+        improvement activities.
+      </li>
+    </ul>
+    <div class="my-3">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      I have been informed of my dental provider's Notice of Privacy Practices
+      containing a more complete description of the uses and disclosures of my
+      protected health information. I have been given the right to review and
+      receive a copy of such Notice of Privacy Practices. I understand that my
+      dental provider has the right to change the Notice of Privacy Practices
+      and that I may contact this office at the address above to obtain a
+      current copy of the Notice of Privacy Practices.
+    </p>
+    <div class="my-3">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      I understand that I may request in writing that you restrict how my
+      private information is used or disclosed to carry out treatment, payment
+      of health care operations and I understand that you are not required to
+      agree to my requested restrictions but if you do agree then you are bound
+      to abide by such restrictions.
+    </p>
+    <div class="my-3">
+      <app-form-initial-box></app-form-initial-box>
+    </div>
+  </div>
+
+  <div class="mt-5 w-100">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <app-form-input-field
+          appearance="appearance-1"
+            [labelText]="'Sign'"
+            [control]="hippaFormGroup?.get('sign')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-3">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'Date'"
+            [control]="hippaFormGroup?.get('date')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button [style.width]="'700px'" [style.padding]="'12px'" class="btn btn-primary" (click)="onSubmitPatientInfo()">
+      Next
+    </button>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="hippaFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

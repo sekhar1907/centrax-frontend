@@ -1,0 +1,205 @@
+<div class="main-wrapper">
+  <form
+    class="form"
+    novalidate
+    [formGroup]="systemPreferencesAccountFormGroup"
+    (ngSubmit)="onSave()"
+  >
+    <section class="container-fluid main-wrapper-section-1500">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h1 class="page-heading mb-0 pb-0 fc-5f6d78">System Preferences</h1>
+          <p class="p-0 m-0 page-heading-subtitle">New Account Settings</p>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-12 mt-4 d-flex justify-content-center manualSection">
+          <ul class="d-flex flex-column nav">
+            <li>
+              <div class="d-flex flex-row flex-nowrap">
+                <label
+                  for="Default"
+                  class="form-label fs-1-4 fw-normal font-roboto"
+                  >Default Provider</label
+                >
+                <select
+                  class="new-account-provider fs-1-4 fw-normal font-roboto p-2 ms-5 sc-select-box"
+                  name="time"
+                  id="Default"
+                  [formControl]="form['defaulProvider']"
+                >
+                  <option value="5">Doe, john,dds</option>
+                  <option value="10">DMD</option>
+                </select>
+              </div>
+              <div class="d-flex flex-row flex-nowrap mt-3">
+                <label
+                  for="Default"
+                  class="form-label fs-1-4 fw-normal font-roboto"
+                  >Fee Schedule</label
+                >
+                <select
+                  class="sp-new-account-Schedule fs-1-4 fw-normal font-roboto p-2 "
+                  name="time"
+                  id="Default"
+                  [formControl]="form['feeSchedule']"
+                >
+                  <option value="Basic">Basic</option>
+                  <option value="Premium">Premium</option>
+                </select>
+              </div>
+              <div class="custom_radio_new mt-4">
+                <input
+                  type="radio"
+                  id="featured-1"
+                  name="featured"
+                  [checked]="form['sendStatement'].value === true"
+                  (change)="
+                    form['sendStatement'].setValue(
+                      $event.target.checked ? true : false
+                    );
+                    form['financeCharges'].setValue(false);
+                    form['collectionMessages'].setValue(false);
+                    form['printStatementEstimates'].setValue(false)
+                  "
+                />
+                <label
+                  for="featured-1"
+                  class="font-roboto fw-medium fs-1-4 form-label"
+                >
+                  Send Statement
+                </label>
+              </div>
+              <div class="custom_radio_new">
+                <input
+                  type="radio"
+                  id="featured-2"
+                  name="featured"
+                  [checked]="form['financeCharges'].value === true"
+                  (change)="
+                    form['sendStatement'].setValue(false);
+                    form['financeCharges'].setValue(
+                      $event.target.checked ? true : false
+                    );
+                    form['collectionMessages'].setValue(false);
+                    form['printStatementEstimates'].setValue(false)
+                  "
+                />
+                <label
+                  for="featured-2"
+                  class="font-roboto fw-medium fs-1-4 form-label"
+                >
+                  Finance Charges
+                </label>
+              </div>
+              <div class="custom_radio_new">
+                <input
+                  type="radio"
+                  id="featured-3"
+                  name="featured"
+                  [checked]="form['collectionMessages'].value === true"
+                  (change)="
+                    form['sendStatement'].setValue(false);
+                    form['financeCharges'].setValue(false);
+                    form['collectionMessages'].setValue(
+                      $event.target.checked ? true : false
+                    );
+                    form['printStatementEstimates'].setValue(false)
+                  "
+                />
+                <label
+                  for="featured-3"
+                  class="font-roboto fw-medium fs-1-4 form-label"
+                  >Collection Messages
+                </label>
+              </div>
+              <div class="custom_radio_new">
+                <input
+                  type="radio"
+                  id="featured-4"
+                  name="featured"
+                  [checked]="form['printStatementEstimates'].value === true"
+                  (change)="
+                    form['sendStatement'].setValue(false);
+                    form['financeCharges'].setValue(false);
+                    form['collectionMessages'].setValue(false);
+                    form['printStatementEstimates'].setValue(
+                      $event.target.checked ? true : false
+                    )
+                  "
+                />
+                <label
+                  for="featured-4"
+                  class="font-roboto fw-medium fs-1-4 form-label"
+                  >Print Statement Estimates
+                </label>
+              </div>
+              <div
+                class="d-flex flex-row flex-nowrap fs-1-4 fw-normal font-roboto"
+              >
+                <label for="Default" class="form-label"
+                  >Hide accounts older than</label
+                >
+                <select
+                  class="sp-new-account-Schedule ms-2 p-2"
+                  name="time"
+                  id="Default"
+                  [formControl]="form['hideAccountsYearsOlderThan']"
+                >
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+                <p class="mt-2 ms-2 form-label">years</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/system-preference-recall"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center">
+          <button
+            routerLink="/practice-manager/system-preference-claims"
+            class="theme-btn py-2 mx-3"
+          >
+            Back
+          </button>
+          <button type="submit" class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section> -->
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fw-normali fs-1-2"
+            routerLink="/practice-manager/system-preference-recall"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-footer-responsive">
+          <button class="theme-btn fs-1-2 py-2 mx-3" routerLink="/practice-manager/system-preference-claims">Back</button>
+          <button
+            class="theme-btn py-2 fs-1-2"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+.popup-menu {
+  .usermenu-padding {
+    padding: 40px 14px;
+  }
+
+  .status-box {
+    background-color: #FAFAF8;
+    border-radius: 12px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: #575757;
+    margin-top: 20px;
+
+    span {
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    span.active {
+      background-color: #006E50;
+    }
+    span.away {
+      background-color: yellow;
+    }
+    span.offline {
+      background-color: #006E50;
+    }
+  }
+
+  .update-status {
+    background-color: #405464;
+    border-radius: 12px;
+  }
+
+  .usermenu-link-border {
+    border-bottom: 1px solid rgba(250, 250, 248, 0.31);
+  }
+}
+
+
+.update-status {
+  display: flex !important;
+}
+.update-status.hide {
+  display: none !important;
+}
+
+.set-status {
+  display: none !important;
+}
+
+.set-status.show {
+  display: block !important;
+}
+

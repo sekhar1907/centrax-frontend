@@ -1,0 +1,87 @@
+.sidebar-container {
+    max-height: 100vh;
+    color: #FFFF !important;
+
+  @media screen and (max-width: 1660px) {
+    .user-profile {
+      flex-direction: column;
+
+      .user-avatar {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .user-name {
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .user-name:hover, .user-name.active {
+    background-color: #5F7689;
+  }
+}
+
+
+.user-avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+
+  .profile-photo {
+    border: 1px solid #FFF;
+    border-radius: 50%;
+
+    i {
+      font-size: 44px;
+    }
+  }
+}
+
+::ng-deep .menu-item {
+  margin-bottom: 60px;
+
+  .p-panelmenu-header, .p-panelmenu-header-link {
+    background: #405464 !important;
+    color: #FFFF !important;
+    border-color: #405464 !important;
+  }
+
+  .p-panelmenu-header:hover, .p-panelmenu-header-link:hover {
+    border-color: #405464 !important;
+  }
+
+  // .p-panelmenu-header:hover, .p-panelmenu-header-link:hover, .p-panelmenu-header:hover {
+  //   border: 0 !important;
+  //   box-shadow: none !important;
+  //   outline: none !important;
+  // }
+
+  .p-panelmenu-header-link:focus {
+    box-shadow: none !important;
+  }
+
+  .p-menuitem-icon {
+    font-size: 20px;
+  }
+}
+
+::ng-deep .menu-item {
+  .p-panelmenu-content, .p-toggleable-content {
+    background: #405464 !important;
+    border: 0 !important;
+
+    .p-menuitem-link:focus {
+      box-shadow: none !important;
+    }
+
+    .p-menuitem-link:hover {
+     background: #405464 !important;
+    }
+  }
+
+  .p-menuitem-text {
+    color: #FFFF !important;
+  }
+}

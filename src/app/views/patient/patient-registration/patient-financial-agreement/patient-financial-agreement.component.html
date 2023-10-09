@@ -1,0 +1,132 @@
+<div class=" py-5 py-lg-3 h-100 accordion-content container-fluid">
+  <div class="form-section-container">
+    <p class="fw-bold">
+      We share your concerns regarding the cost of health care. We believe that
+      you, our patients, deserve the best possible care we can provide at a
+      reasonable cost. With this in mind, we would like to share some
+      information with you about our financial policy. We want you to feel
+      comfortable with us regarding your financial and insurance matters and
+      thereby prevent any misunderstandings. We hope you will consult with us if
+      you have any questions regarding our service and/or fees.
+    </p>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Patients without insurance:</span> Your
+      account is required to be paid in full at the time of service. We offer a
+      5% courtesy to our patients without insurance when you pay your bill at
+      the time of the appointment. We offer a 10% senior discount.
+    </p>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Patients with insurance:</span> Many
+      people are under the impression that if they have insurance, it is the
+      insurance company that owes the doctor and that’s actually not the case.
+    </p>
+    <p>
+      <b
+        >Here are some facts to help you better understand insurance
+        coverage:</b
+      >
+    </p>
+    <ul>
+      <li>
+        The insurance contract is between the patient and the insurance company;
+        therefore the patient is responsible for the bill regardless of
+        insurance coverage.
+      </li>
+      <li>
+        As a courtesy, we are happy to submit claims for you, however, it is the
+        responsibility of the patient (or insured) to provide our office with
+        the correct insurance company name, address, telephone number,
+        appropriate identification numbers, and the patient’s and insured birth
+        dates.
+      </li>
+      <li>
+        Some insurance companies will pay a claim based on their “usual and
+        customary” estimates and not our actual fees. We do our best to
+        calculate what your estimated portion will be for each visit and that
+        portion is due at the time of service.
+      </li>
+      <li>
+        All insurance companies have a maximum yearly amount paid on a calendar
+        or benefit year. Check your policy to see if you have a deductible and
+        if your insurance pays at a percentage or by a fixed fee schedule.
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Cancellation policy:</span> Our clinic
+      requires a 48 hour notice of any cancellations. A $50 minimum fee may be
+      charged for any cancellations after the 48 hour window to cover operating
+      expenses.
+    </p>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Payment options:</span> We accept Visa,
+      Mastercard, Amex, Discover, cash, check and CareCredit. We don’t offer
+      extended payment plans. All account balances are due within 90 days of
+      treatment.
+    </p>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Delinquent accounts:</span> Delinquent
+      accounts may be referred to our collection agency after 120 days. You are
+      responsible to pay any collection costs and reasonable attorney fees
+      incurred to effect collection on the account. Accounts assigned to
+      collections will be charged a $75.00 fee.
+    </p>
+  </div>
+
+  <div class="form-section-container">
+    <p>
+      <span class="form-text-highlight">Returned checks:</span> A $25.00 service
+      charge may be assessed for all returned checks.
+    </p>
+  </div>
+
+  <div class="mt-5 w-100">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8 reg-sign-date-section">
+          <app-form-input-field
+          appearance="appearance-1"
+            labelText="Sign"
+            [control]="financialAgreementFormGroup?.get('sign')">
+          </app-form-input-field>
+        </div>
+        <div class="col-12 col-md-3 date-responsive reg-sign-date-section">
+          <app-form-masked-input-field
+          appearance="flat"
+            [labelText]="'Date'"
+            [control]="financialAgreementFormGroup?.get('date')"
+            mask="99/99/9999"
+            slotChar="mm/dd/yyyy"
+            placeholder="00/00/0000">
+          </app-form-masked-input-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button [style.width]="'700px'" [style.padding]="'12px'" class="btn btn-primary" (click)="onSubmitPatientInfo()">
+      Next
+    </button>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <form-validation-message [submitted]="formsubmit" [formGroup]="financialAgreementFormGroup"></form-validation-message>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+label {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #405464;
+}
+
+label > span {
+  font-weight: 400;
+}
+
+input {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+::ng-deep .p-inputtext {
+  width: 100%;
+}
+
+::ng-deep .p-inputtext.flat {
+  border: 0 !important;
+  border-bottom: 2px solid #9FA9B1 !important;
+  border-radius: 0 !important;
+}
+
+  ::ng-deep input.p-inputmask {
+    border: 0 !important;
+    border-bottom: 2px solid #9FA9B1 !important;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent !important;
+  }
+
+  ::ng-deep p-inputmask label {
+    left: 0;
+    font-size: 14px;
+    color: rgba(87, 87, 87, 0.75);
+    font-weight: 400;
+  }
+
+::ng-deep .appearance-6 {
+  input {
+    border: 0;
+    border-bottom: 1px solid #D9D9D9;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  label {
+    left: 0;
+    font-size: 14px;
+    color: rgba(87, 87, 87, 0.75);
+    font-weight: 400;
+  }
+}

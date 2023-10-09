@@ -1,0 +1,14 @@
+.form-group-container {
+  border-radius: 6px;
+  background: #FAFAFA;
+  padding: 3rem 4rem 3rem 5rem;
+  margin-bottom: 4rem;
+  position: relative;
+
+  .edit-button {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    color: rgba(87, 87, 87, 0.75);
+  }
+}

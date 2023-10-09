@@ -1,0 +1,20 @@
+<div class="d-flex flex-column sidebar">
+    <ul class="nav nav-pills flex-column">
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='staff'}" (click)="changeTab('staff')">Staff</a></li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='system-preference'}" (click)="changeTab('system-preference')">System Preferences</a></li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='password'}" (click)="changeTab('password')">Password </a> </li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='practice-information'}" (click)="changeTab('practice-information')">Practice Information </a>
+        </li>
+    </ul>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='financial-setup'}" (click)="changeTab('financial-setup')">Financial Setup</a></li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='fee-schedule'}" (click)="changeTab('fee-schedule')">Fee Schedule </a> </li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='practice-billing'}" (click)="changeTab('practice-billing')">Practice Billing </a>
+        </li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='collection-messages'}" (click)="changeTab('collection-messages')">Collection Messages</a></li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='statement-options'}" (click)="changeTab('statement-options')">Statement Options</a></li>
+        <li class="cursor-pointer"> <a class="nav-link" [ngClass]="{ 'active':activeTab==='category'}" (click)="changeTab('category')">Category</a></li>
+
+    </ul>
+</div>

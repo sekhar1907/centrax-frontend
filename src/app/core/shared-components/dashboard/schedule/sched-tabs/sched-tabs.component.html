@@ -1,0 +1,75 @@
+<div class="d-flex align-items-end">
+  <div class="flex-grow-1 me-3" style="max-width: 100%;">
+    <p-tabMenu [scrollable]="true" styleClass="left-tab-menu" [model]="leftItems$ | async" [activeItem]="leftActiveItem$ | async" (activeItemChange)="onClickLeftTab($event)">
+      <ng-template pTemplate="item" let-item let-i="index" >
+        <div class="d-flex align-items-center link-color" *ngIf="item.id !== schedDashboards.ADD_PATIENT">
+          <img src="assets/images/icons/{{ item.icon }}" alt="" srcset="" />
+          <span style="white-space: nowrap;" class="ms-2 me-5">{{ item.name }}</span>
+          <span class="cursor-pointer" *ngIf="(leftItems$ | async).length !== 1" style="z-index: 1;" (click)="onCloseTab(i)">X</span>
+        </div>
+        <div class="d-flex align-items-center link-color add-patient" *ngIf="item.id === schedDashboards.ADD_PATIENT">
+         <i class="fa fa-plus"></i>
+        </div>
+      </ng-template>
+    </p-tabMenu>
+  </div>
+
+  <div>
+    <p-tabMenu [scrollable]="true" styleClass="right-tab-menu" [model]="rightItems" [activeItem]="rightActiveItem$ | async" (activeItemChange)="onClickRightTab($event)">
+      <ng-template pTemplate="item" let-item let-i="index">
+        <div class="d-flex align-items-center link-color justify-content-center" style="position: relative; width: 150px;">
+          <img *ngIf="item.id !== schedDashboards.CALENDAR" src="assets/images/icons/{{ item.icon }}" alt="" srcset="" />
+          <!-- <div *ngIf="item.id === schedDashboards.CALENDAR">
+            <sched-view-dropdown [dropdownItems]="schedViews" [viewSelected]="selectedSchedView"></sched-view-dropdown>
+          </div> -->
+          <div *ngIf="item.id === schedDashboards.CALENDAR" style="position: absolute;">
+            <p-dropdown #schedDropdown appendTo="body" [overlayOptions]="overlayOpts" scrollHeight="300px" [options]="schedViews"  [(ngModel)]="selectedSchedView" (onChange)="onSchedViewChange($event)" panelStyleClass="schedview-dropdown">
+              <ng-template pTemplate="header">
+              </ng-template>
+              <ng-template pTemplate="selectedItem" let-item>
+                <img [src]="item?.iconUrl" alt="" srcset="" />
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                    <img [src]="item.iconUrl"/>
+                </div>
+            </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </ng-template>
+    </p-tabMenu>
+  </div>
+</div>
+
+<svg width="0" height="0">
+  <defs>
+    <clipPath id="curveLeft" clipPathUnits="objectBoundingBox">
+      <path d="M 0,1
+            L 0,0
+            C 0 0, 0 1, 1 1
+            Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+<svg width="0" height="0">
+  <defs>
+    <clipPath id="curveRight" clipPathUnits="objectBoundingBox">
+      <path d="M 1,1
+              L 1,0
+              C 1 1, 0 1, 0 1
+              Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- <p-tabView [scrollable]="true" id="closableTabView">
+  <p-tabPanel header="Header I" [selected]="activeItem === i" *ngFor="let item of items; let i = index;">
+    <div class="d-flex align-items-center link-color">
+      <img src="assets/images/icons/{{ item.badge }}" alt="" srcset="" />
+      <span class="ms-2 me-5">{{ item.label }}</span>
+      <span>X</span>
+    </div>
+  </p-tabPanel>
+</p-tabView> -->

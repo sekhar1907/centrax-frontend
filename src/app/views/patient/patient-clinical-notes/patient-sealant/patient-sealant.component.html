@@ -1,0 +1,197 @@
+<div class="py-3 h-100">
+  <div class="d-flex form-title print-m-p mt-5 pt-5 mb-md-5">
+    <div class="title-container">
+      <h2 class="fw-mediumi fs-3 print-p-l patient-consult-heading">Sealant</h2>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-xl-3 col-md-6 print-w-50 col-sm-12"><app-form-input-field appearance="appearance-1" [labelText]="'Treatment Provider'" [control]="sealantFormGroup.get('treatmentProvider')"></app-form-input-field></div>
+      <div class="col-xl-3 col-md-6 print-w-50 col-sm-12"><app-form-input-field appearance="appearance-1" [labelText]="'Doctor'" [control]="sealantFormGroup.get('doctor')"></app-form-input-field></div>
+      <div class="col-xl-3 col-md-6 print-w-50 col-sm-12"><app-form-input-field appearance="appearance-1" [labelText]="'Dental Assistant'" [control]="sealantFormGroup.get('dentalAssistant')"></app-form-input-field></div>
+      <div class="col-xl-3 col-md-6 print-w-50 col-sm-12"><app-form-input-field appearance="appearance-1" [labelText]="'Hygienist'" [control]="sealantFormGroup.get('hygienist')"></app-form-input-field></div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-xl-1 print-w-10 col-md-2">
+        <label class="fc-accent-text text-center">HX:</label>
+      </div>
+      <div class="col-xl-2 print-w-20 col-md-4">
+        <div class="text-center mb-2">
+          <label>Health History Reviewed</label>
+        </div>
+        <app-form-radio-field [items]="yesNoRadio" [control]="sealantFormGroup.get('healthHistoryReviewed')"></app-form-radio-field>
+      </div>
+      <div class="col-md-6 print-w-10 d-block d-xl-none"></div>
+      <div class="col-xl-2 print-w-20 col-md-3 pl-3 d-flex align-items-center ps-0 ps-xl-5 mt-3 print-m-p mt-xl-0">
+        <app-form-checkbox-field [labelText]="'No Change'" [control]="sealantFormGroup.get('noChange')"></app-form-checkbox-field>
+      </div>
+      <div class="col-xl-7 print-row print-w-20 col-md-9 d-flex align-items-center mt-3 print-m-p mt-xl-0">
+        <div>
+          <app-form-checkbox-field [labelText]="'Change'" [control]="sealantFormGroup.get('change')"></app-form-checkbox-field>
+        </div>
+        <div class="flex-grow-1">
+          <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="sealantFormGroup.get('changeTxt')"></app-form-input-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <label>Patient presented for sealants:</label>
+      </div>
+      <div class="col-12 mt-3">
+        <app-form-checkbox-field [labelText]="'Patient/Patient\'s/guardian signed informed consent and EPO'" [control]="sealantFormGroup.get('consentAndEPO')"></app-form-checkbox-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row">
+      <div class="col-4 filling-first">
+        <label class="fc-accent-text text-center mb-4">Today's TX:</label>
+        <app-form-input-field appearance="appearance-1" [labelText]="'Sealants #'" [control]="sealantFormGroup.get('sealants')"></app-form-input-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row mb-3">
+      <div class="col-12"><label class="fc-accent-text text-center">Reason for sealant placement:</label></div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-xl-4 col-md-6 print-w-25 d-flex align-items-center">
+        <app-form-checkbox-field [labelText]="'Deep occlusal grooves'" [control]="sealantFormGroup.get('deepOclusalGrooves')"></app-form-checkbox-field>
+      </div>
+      <div class="col-xl-4 col-md-6 print-w-25 d-flex align-items-center">
+        <app-form-checkbox-field [labelText]="'Other'" [control]="sealantFormGroup.get('other')"></app-form-checkbox-field>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-xl-4 col-md-6 print-w-25 d-flex align-items-center">
+        <app-form-checkbox-field [labelText]="'Patient is high caries risk'" [control]="sealantFormGroup.get('highRisk')"></app-form-checkbox-field>
+      </div>
+      <div class="col-xl-4 col-md-6 print-w-25">
+        <app-form-input-field appearance="appearance-1" [noLabel]="true" [control]="sealantFormGroup.get('otherTxt')"></app-form-input-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 d-flex align-items-center">
+        <app-form-checkbox-field [labelText]="'To prevent occlusal caries in the future'" [control]="sealantFormGroup.get('preventOclusal')"></app-form-checkbox-field>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-none-print print-top-m print-show mt-5">
+      <div class="row my-5">
+        <div class="col-4">
+          <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+        </div>
+        <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+            <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+            <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+        </div>
+        <div class="col-4 text-end d-none-print print-show">
+          <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+     <div class="row">
+    <div class="col-12 print-top-m print-show d-none-print">
+      <app-form-header-info
+      [providerName]="'Dr. Jane Doe'"
+      [practiceName]="'Astra Practice Partners'"
+      [practicePhoneNumber]="'(555) 555-5555'"
+      [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+      [patientName]="'Mickey Mouse'"
+      [patientBirthdate]="'04/26/1936'"
+      [entryDate]="'02/20/2020'">
+    </app-form-header-info>
+    </div>
+  </div>
+    <div class="row mb-3 print-m-top">
+      <div class="col-12"><label class="fc-accent-text text-center">Procedure:</label></div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-xl-4 print-w-50 col-md-12">
+        <app-form-checkbox-field [labelText]="'37% phosphoric Acid Etch'" [control]="sealantFormGroup.get('etch')"></app-form-checkbox-field>
+      </div>
+      <div class="col-xl-4 print-w-50 col-md-12 mt-3 mt-xl-0">
+        <app-form-checkbox-field [labelText]="'Flossed'" [control]="sealantFormGroup.get('flossed')"></app-form-checkbox-field>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-xl-4 print-w-50 col-md-12">
+        <app-form-checkbox-field [labelText]="'UltraSeal XT Plus'" [control]="sealantFormGroup.get('ultraseal')"></app-form-checkbox-field>
+      </div>
+      <div class="col-xl-4 print-w-50 col-md-12 mt-3 mt-xl-0">
+        <app-form-checkbox-field [labelText]="'Patient\'s bite checked and adjusted to Dr. and patient Preference'" [control]="sealantFormGroup.get('biteCheck')"></app-form-checkbox-field>
+      </div>
+    </div>
+    <div class="row mt-4 mb-5">
+      <div class="col-xl-8 col-md-12">
+        <app-form-textarea-field
+          [labelText]="'Notes:'"
+          [rows]="5"
+          [control]="sealantFormGroup.get('notes')">
+        </app-form-textarea-field>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-xl-3 col-md-4 print-w-50 ">
+        <div class="mb-3"><label for="">OHI Reviewed:</label></div>
+        <div class="col-6 filling-first"><app-form-radio-field [items]="yesNoRadio" [control]="sealantFormGroup.get('ohiReviewed')"></app-form-radio-field></div>
+      </div>
+      <div class="col-xl-3 col-md-4 print-w-50 extre_textarea ">
+        <div class="mb-3"><label for="">PARQ Addressed:</label></div>
+        <div class="col-6 filling-first"><app-form-radio-field [items]="yesNoRadio" [control]="sealantFormGroup.get('parqAddressed')"></app-form-radio-field></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section-container">
+    <div class="row mb-3">
+      <div class="col-12"><label class="fc-accent-text text-center">Next Appt.</label></div>
+    </div>
+    <div class="row print-w-50 d-flex flex-column print-row">
+      <div class="col-xl-4 col-md-8 print-w-50  col-sm-12 mb-4">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Hygiene:'" [control]="sealantFormGroup.get('nextApptHygiene')"></app-form-input-field>
+      </div>
+      <div class="col-xl-4 col-md-8 print-w-50 col-sm-12 mb-5">
+        <app-form-input-field appearance="appearance-1" [labelText]="'Doctor:'" [control]="sealantFormGroup.get('nextApptDoctor')"></app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-xl-8 col-md-12">
+        <app-form-textarea-field
+          [labelText]="'Social History:'"
+          [rows]="5"
+          [control]="sealantFormGroup.get('socialHistory')">
+        </app-form-textarea-field>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-12 d-none-print print-show mt-5">
+        <div class="row my-5">
+          <div class="col-4">
+            <h6 class="fw-mediumi fs-5 d-none-print print-show">PATIENT REGISTRATION FORMS</h6>
+          </div>
+          <div class="col-4 text-center d-flex justify-content-center flex-column p-center-logo">
+              <h6 class="fw-mediumi fs-5 d-inline-block d-none-print print-show"><i>powerd by</i></h6>
+              <img class="centrax-size text-center d-none-print print-show" src="/assets/centrax-logo.svg" alt="CENTRAX" />
+          </div>
+          <div class="col-4 text-end d-none-print print-show">
+            <h6 class="fw-mediumi fs-5">Continue on next page</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

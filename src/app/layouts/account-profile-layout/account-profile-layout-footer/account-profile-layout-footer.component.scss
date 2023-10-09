@@ -1,0 +1,40 @@
+.footer-container {
+  height: 177px;
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  border-top: 2px solid #ACACAC;
+
+  .links-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-container {
+    border-left: 3px solid #4DAA8F;
+    height: 100%;
+    width: 25%;
+  }
+
+  a {
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    height: auto !important;
+
+    img {
+      margin-bottom: 50px;
+    }
+
+    .logo-container {
+      border: 0;
+    }
+  }
+}

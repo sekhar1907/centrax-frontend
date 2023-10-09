@@ -1,0 +1,76 @@
+label {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #405464;
+}
+
+label > span {
+  font-weight: 400;
+}
+
+input {
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: auto !important;
+}
+
+input:read-only {
+  cursor: no-drop;
+}
+
+.appearance-1 {
+  input {
+    border: 0;
+    border-bottom: 2px solid #9FA9B1;
+    border-radius: 0;
+  }
+}
+
+.appearance-2 {
+  input {
+    border: 0;
+    border-bottom: 2px solid #9FA9B1;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent !important;
+  }
+}
+
+.appearance-3 {
+  input {
+    border: 0;
+    border: 1px solid #9FA9B1;
+    border-radius: 0;
+  }
+}
+
+.appearance-4 {
+  input {
+    border-radius: 3px;
+    border: 0.8px solid #575757;
+    background-color: transparent;
+  }
+}
+
+.appearance-6 {
+  input {
+    border: 0;
+    border-bottom: 1px solid #D9D9D9;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  label {
+    left: 0;
+    font-size: 14px;
+    color: rgba(87, 87, 87, 0.75);
+    font-weight: 400;
+  }
+}

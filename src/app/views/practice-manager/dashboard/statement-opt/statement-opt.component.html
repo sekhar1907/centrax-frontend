@@ -1,0 +1,315 @@
+<div class="main-wrapper">
+  <form novalidate [formGroup]="statementOptFormGroup" (ngSubmit)="onSave()">
+    <section class="container-fluid main-wrapper-section-1500">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h1 class="page-heading mb-0 pb-0 fc-5f6d78cc">Statement Options</h1>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="child-wrapper col-12 my-2 form-horizontal">
+          <div class="ms-md-12">
+            <div class="offset-md-2 col-md-10 text-left text-md-start">
+              <div class="row">
+                <div class="col-md-5">
+                  <p class="form-label font-roboto fc-565656 fs-1-4">
+                    Payment Grace Period
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex flex-row align-items-end">
+                    <select
+                      class="w-70 text-end h-30 ms-md-0 ms-2 fs-1-4 new-account-Schedule"
+                      [formControl]="form['paymentGracePerios']"
+                    >
+                      <option [value]="0">0</option>
+                      <option [value]="10">10</option>
+                    </select>
+                    <span class="form-label font-roboto fc-565656 fs-1-4 ms-2"
+                      >days</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <p class="form-label font-roboto fc-565656 fs-1-4 my-4">
+                    Account Balance Write-Off Amount
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="number"
+                    placeholder="$0.00"
+                    class="w-70 text-end my-3 me-md-0 mr-30 h-30 fs-1-4 new-account-Schedule"
+                    [formControl]="form['accountBalanceAmount']"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <p class="form-label font-roboto fc-565656 fs-1-4">
+                    Default Payment Due Date
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex flex-row align-items-end">
+                    <input
+                      type="number"
+                      placeholder="0"
+                      class="w-70 text-end h-30 me-md-0 me-3 fs-1-4 new-account-Schedule"
+                      [formControl]="form['defaultPaymentDueDate']"
+                    />
+                    <img
+                      src="assets/images/write-img.png"
+                      class="mt-2 ms-md-2"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-6 col-lg-5">
+                  <p class="form-label font-roboto fc-565656 fs-1-4">
+                    Highlight printed statement message?
+                  </p>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-row">
+                  <span class="custom_radio">
+                    <input
+                      type="radio"
+                      id="featured-1"
+                      name="highlightPrintedStatement"
+                      [checked]="
+                        form['highlightPrintedStatement'].value === true
+                      "
+                      (change)="
+                        form['highlightPrintedStatement'].setValue(
+                          $event.target.checked
+                        )
+                      "
+                    />
+                    <label
+                      for="featured-1"
+                      class="form-label font-roboto fc-565656 fw-normal fs-1-4"
+                    >
+                      Yes
+                    </label>
+                  </span>
+                  <span class="custom_radio ms-md-3">
+                    <input
+                      type="radio"
+                      id="featured-2"
+                      name="highlightPrintedStatement"
+                      [checked]="
+                        form['highlightPrintedStatement'].value === false
+                      "
+                      (change)="
+                        form['highlightPrintedStatement'].setValue(
+                          !$event.target.checked
+                        )
+                      "
+                    />
+                    <label
+                      for="featured-2"
+                      class="form-label font-roboto fc-565656 fw-normal fs-1-4"
+                    >
+                      No
+                    </label>
+                  </span>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 col-lg-5">
+                  <p class="form-label font-roboto fc-565656 fs-1-4">
+                    Print estimated portions due on statements?
+                  </p>
+                </div>
+                <div class="col-6 col-lg-4 d-flex flex-row">
+                  <span class="custom_radio">
+                    <input
+                      type="radio"
+                      id="featured-3"
+                      name="printEstimateedPortion"
+                      [checked]="form['printEstimateedPortion'].value === true"
+                      (change)="
+                        form['printEstimateedPortion'].setValue(
+                          $event.target.checked
+                        )
+                      "
+                    />
+                    <label
+                      for="featured-3"
+                      class="form-label font-roboto fc-565656 fw-normal fs-1-4"
+                    >
+                      Yes
+                    </label>
+                  </span>
+                  <span class="custom_radio ms-md-3">
+                    <input
+                      type="radio"
+                      id="featured-4"
+                      name="printEstimateedPortion"
+                      [checked]="form['printEstimateedPortion'].value === false"
+                      (change)="
+                        form['printEstimateedPortion'].setValue(
+                          !$event.target.checked
+                        )
+                      "
+                    />
+                    <label
+                      for="featured-4"
+                      class="form-label font-roboto fc-565656 fw-normal fs-1-4"
+                    >
+                      No
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row " style="margin: 0 auto">
+          <div class="offset-md-2 col-md-8 mt-4 manualSection">
+            <p class="form-label font-roboto fc-565656 fw-medium fs-1-4">
+              Accepted credit cards on statement
+            </p>
+
+            <!-- <table class="w-75"> -->
+            <table class="">
+              <tr class="statment-card-sec">
+                <td class="checkbox-div">
+                  <label class="main-checkbox ms-3">
+                    <input
+                      type="checkbox"
+                      id="mastercard"
+                      name="mastercard"
+                      [formControl]="statementOptFormGroup.get('cardsCheck').get('mastercard')"
+                    />
+                  </label>
+                </td>
+                <td>
+                  <p class="form-label font-roboto fc-565656 fw-normal fs-1-4">
+                    Mastercard
+                  </p>
+                </td>
+                <td class="checkbox-div">
+                  <label class="main-checkbox ms-3">
+                    <input
+                      type="checkbox"
+                      id="visa"
+                      name="visa"
+                      [formControl]="statementOptFormGroup.get('cardsCheck').get('visa')"
+                    />
+                  </label>
+                </td>
+                <td>
+                  <p class="form-label font-roboto fc-565656 fw-normal fs-1-4">
+                    Visa
+                  </p>
+                </td>
+              </tr>
+              <tr class="statment-card-sec">
+                <td class="checkbox-div">
+                  <label class="main-checkbox ms-3">
+                    <input
+                      type="checkbox"
+                      id="discover"
+                      name="discover"
+                      [formControl]="statementOptFormGroup.get('cardsCheck').get('discover')"
+                    />
+                  </label>
+                </td>
+                <td>
+                  <p class="form-label font-roboto fc-565656 fw-normal fs-1-4">
+                    Discover
+                  </p>
+                </td>
+                <td class="checkbox-div">
+                  <label class="main-checkbox ms-3">
+                    <input
+                      type="checkbox"
+                      id="americanExpress"
+                      name="americanExpress"
+                      [formControl]="statementOptFormGroup.get('cardsCheck').get('americanExpress')"
+                    />
+                  </label>
+                </td>
+                <td>
+                  <p class="form-label font-roboto fc-565656 fw-normal fs-1-4">
+                    American Express
+                  </p>
+                </td>
+              </tr>
+              <tr class="pt-0">
+                <td>
+                  <p
+                    class="form-label font-roboto fc-565656 fw-normal ps-0 fs-1-4 mt-2"
+                  >
+                    Other
+                  </p>
+                </td>
+                <td>
+                  <input
+                  type="text"
+                  placeholder="CareCredit"
+                  class="care-credit-input"
+                  id="acceptedCard"
+                  [formControl]="statementOptFormGroup.get('otherCard')"
+                />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/fee-schedule"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center">
+          <button
+            routerLink="/practice-manager/financial-setup"
+            class="theme-btn py-2 mx-3"
+          >
+            Back
+          </button>
+          <button type="submit" class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section> -->
+    <section class="container-fluid">
+      <div
+        class="row footer-bg p-4 position-absolute bottom-0 w-100 footer-items"
+      >
+        <div class="col d-flex align-self-center practice-footer-responsive">
+          <span
+            class="footer-save-btn fw-normali fs-1-2"
+            routerLink="/practice-manager/fee-schedule"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-footer-responsive">
+          <button class="theme-btn fs-1-2 py-2 mx-3"  routerLink="/practice-manager/financial-setup">Back</button>
+          <button
+            class="theme-btn py-2 fs-1-2"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

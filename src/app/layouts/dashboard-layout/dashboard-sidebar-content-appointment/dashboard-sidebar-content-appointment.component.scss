@@ -1,0 +1,33 @@
+.popup-menu {
+  min-height: 470px;
+  top: 30%;
+  left: 35%;
+  border-radius: 12px;
+  background: #FFF;
+  box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.25);
+  padding: 0 !important;
+  overflow: hidden;
+  color: #575757 !important;
+  width: 400px;
+  max-height: unset;
+
+  .appointment-header {
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: end;
+    height: 38px;
+    align-items: center;
+    color: black;
+    padding: 0 1rem;
+  }
+
+  // .appt-content-container {
+  //   max-height: 454px;
+  //   overflow-y: auto;
+  //   overflow-x: hidden;
+  // }
+}
+
+::ng-deep .p-autocomplete input {
+  width: 100%;
+}

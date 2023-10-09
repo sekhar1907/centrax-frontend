@@ -1,0 +1,97 @@
+<div class="main-wrapper">
+  <section class="container-fluid main-wrapper-section">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <h1 class="page-heading mb-0 pb-0">Add Staff</h1>
+        <p class="p-0 m-0 page-heading-subtitle">Dentists and Hygenists</p>
+        <p class="mt-5 text-center uplod-drag-drop">Upload or drag & drop</p>
+      </div>
+      <div class="col-12 mt-2 d-flex justify-content-center align-item-center">
+        <ngx-dropzone
+          [multiple]="false"
+          accept=".csv"
+          class="drop-zone-parent d-flex flex-column"
+          (change)="onSelect($event)"
+        >
+          <ngx-dropzone-label class="mt-3"
+            ><img class="img-fluid" src="assets/images/Drop-Upload.png" />
+          </ngx-dropzone-label>
+          <ngx-dropzone-label class="drop-zone-info"
+            ><span class="">CSV, PDF or SVG smaller than 10MB</span>
+          </ngx-dropzone-label>
+          <ngx-dropzone-label
+            ><span class="drag-drop-desc"
+              >Drag and drop your image here <b>or</b></span
+            >
+          </ngx-dropzone-label>
+          <ngx-dropzone-label>
+            <span class="drop-zone-choose-btn py-2"> Choose file </span>
+          </ngx-dropzone-label>
+          <ngx-dropzone-preview
+            *ngFor="let f of files"
+            [removable]="true"
+            (removed)="onRemove(f)"
+          >
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-preview>
+        </ngx-dropzone>
+      </div>
+    </div>
+
+    <!-- </section>
+  <section class="container mt-4"> -->
+    <div class="row mt-3 manualSection">
+      <div class="col-12">
+        <span class="d-flex flex-row justify-content-center align-item-center">
+          <hr class="d-inline" style="width: 156px" />
+          <span class="mx-3 mt-1 bottom-or">or</span>
+          <hr clas="d-inline" style="width: 156px" />
+        </span>
+      </div>
+      <div class="col-12 d-flex justify-content-center align-item-center">
+        <!-- <span class="cursor-pointer enter-manually-btn small px-3 py-2  fw-semi-bold">
+                  Enter Manually
+              </span> -->
+        <div class="row">
+          <div class="col-12 d-flex flex-row wrap-nowrap">
+            <img
+              class="img-fluid enter-btn-parent"
+              *ngIf="urlfile"
+              [src]="urlfile"
+            />
+          </div>
+          <div class="col-12 text-center">
+            <div class="mt-4">
+              <a
+                class="cursor-pointer position-relative enter-manually-btn small py-2 fw-semi-bold"
+                routerLink="/practice-manager/add-staff-list"
+              >
+                Enter Manually
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid">
+    <div class="row footer-bg p-4 position-absolute bottom-0 w-100 add-staff-footer">
+      <div class="col d-flex align-self-center">
+        <span
+          class="footer-save-btn"
+          routerLink="/practice-manager/add-staff-list"
+        >
+          Save for later
+        </span>
+      </div>
+      <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+        <!-- <button class="theme-btn px-5 py-2 mx-4">
+          Save
+        </button> -->
+        <button (click)="onCreateStaffs()" class="theme-btn py-2 ">
+          Next
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

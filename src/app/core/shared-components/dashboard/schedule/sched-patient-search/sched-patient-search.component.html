@@ -1,0 +1,87 @@
+<div class="p-5 h-100">
+  <div class="m-5">
+    <div class="patient-search-container">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <div class="px-5 mx-5">
+            <h6>Search by</h6>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="patientSearchFormGroup" (ngSubmit)="onSearchPatient()">
+        <div class="row">
+          <div class="col-lg-12 mt-5">
+            <div class="px-5 mx-5">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex align-items-center mb-5">
+                    <label [style.min-width]="'80px'" class="mb-0 fs-6 text-right fw-medium" for=""> Patient ID </label>
+                    <div class="flex-grow-1 ps-5">
+                      <app-form-input-field
+                        [control]="patientSearchFormGroup.get('patientId')"
+                        appearance="appearance-4"
+                      >
+                      </app-form-input-field>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center mb-5">
+                    <label [style.min-width]="'80px'" class="mb-0 fs-6 text-right fw-medium" for=""> Name </label>
+                    <div class="flex-grow-1 ps-5">
+                      <app-form-input-field
+                        [control]="patientSearchFormGroup.get('name')"
+                        appearance="appearance-4"
+                      >
+                      </app-form-input-field>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center mb-5">
+                    <label [style.min-width]="'80px'" class="mb-0 fs-6 text-right fw-medium" for=""> DOB </label>
+                    <div class="flex-grow-1 ps-5">
+                      <app-form-input-field
+                        [control]="patientSearchFormGroup.get('dob')"
+                        appearance="appearance-4"
+                      >
+                      </app-form-input-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center mt-3 mb-5">
+                <div [style.min-width]="'80px'"></div>
+                <div>
+                  <button class="btn btn-xs ms-5" type="submit">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row my-5 pb-5">
+        <div class="col-12">
+          <div class="mx-5 px-5">
+            <p-table [value]="patients$ | async">
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>Patient ID</th>
+                      <th>Name</th>
+                      <th>DOB</th>
+                      <th></th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-patient>
+                  <tr>
+                      <td>{{patient.patientId}}</td>
+                      <td>{{patient.firstName}} {{patient.lastName}}</td>
+                      <td>{{patient.dob | date: 'MM/dd/yyyy'}}</td>
+                      <td class="text-end">
+                        <p-button (click)="onSelectPatient(patient)" label="Select" styleClass="p-button-outlined p-button-secondary me-2"></p-button>
+                      </td>
+                  </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

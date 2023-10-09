@@ -1,0 +1,149 @@
+<div class="main-wrapper">
+  <form novalidate [formGroup]="financialSetupFormGroup" (ngSubmit)="onSave()">
+    <section class="container-fluid main-wrapper-section-1500">
+      <div class="row">
+        <div class="col-12 my-5">
+          <h1 class="page-heading mb-0 pb-0 fc-5f6d78cc">Financial Setup</h1>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="child-wrapper col-12 my-2 form-horizontal">
+          <div class="ms-md-12">
+            <div class="offset-md-3 col-md-6 text-left text-md-start">
+              <p class="fs-1-4 font-roboto form-label">Financial Charge</p>
+              <span class="custom_radio">
+                <input
+                  type="radio"
+                  id="featured-1"
+                  name="featured"
+                  [checked]="form['financialCharge'].value === true"
+                  (change)="
+                    form['financialCharge'].setValue($event.target.checked)
+                  "
+                />
+                <label
+                  for="featured-1"
+                  class="font-roboto fw-normal fs-1-4 form-label line-height-18"
+                >
+                  Interest
+                </label>
+              </span>
+              <span class="custom_radio">
+                <input
+                  type="radio"
+                  id="featured-2"
+                  name="featured"
+                  [checked]="form['financialCharge'].value === false"
+                  (change)="
+                    form['financialCharge'].setValue(!$event.target.checked)
+                  "
+                />
+                <label
+                  for="featured-2"
+                  class="font-roboto fw-normal fs-1-4 form-label line-height-18"
+                >
+                  Rebill Fee
+                </label>
+              </span>
+            </div>
+            <div class="offset-md-3 mt-5 col-md-7 text-left text-md-start manualSection">
+              <div class="row">
+                <div class="col-6 col-lg-6">
+                  <p class="font-roboto fc-565656 fs-1-4 form-label">
+                    Annual Interest Precent
+                  </p>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <input
+                    type="number"
+                    placeholder="0"
+                    class="w-70 text-end h-30 new-account-Schedule"
+                    [formControl]="form['annualInterestPercent']"
+                    [ngClass]="{
+                      'is-invalid':
+                        formsubmit && form['annualInterestPercent'].errors
+                    }"
+                  />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 col-lg-6">
+                  <p class="font-roboto fc-565656 fs-1-4 form-label">
+                    Minimum Finance Charge
+                  </p>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <input
+                    type="number"
+                    placeholder="$0.00"
+                    class="w-70 text-end h-30 new-account-Schedule"
+                    [formControl]="form['minimumFinanceCharge']"
+                    [ngClass]="{
+                      'is-invalid':
+                        formsubmit && form['minimumFinanceCharge'].errors
+                    }"
+                  />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 col-lg-6">
+                  <p class="font-roboto fc-565656 fs-1-4 form-label">
+                    Rebill Fee Amount
+                  </p>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <input
+                    type="number"
+                    placeholder="0"
+                    class="w-70 text-end h-30 new-account-Schedule"
+                    [formControl]="form['rebillFreeAmount']"
+                    [ngClass]="{
+                      'is-invalid':
+                        formsubmit && form['rebillFreeAmount'].errors
+                    }"
+                  />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 col-lg-6">
+                  <p class="font-roboto fc-565656 fs-1-4 form-label">
+                    Minimum Balance to Incur Fees
+                  </p>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <input
+                    type="number"
+                    placeholder="$0.00"
+                    class="w-70 text-end h-30 new-account-Schedule"
+                    [formControl]="form['minimumBalanceToIncur']"
+                    [ngClass]="{
+                      'is-invalid':
+                        formsubmit && form['minimumBalanceToIncur'].errors
+                    }"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid">
+      <div class="row footer-bg p-4 position-absolute bottom-0 w-100">
+        <div class="col d-flex align-self-center">
+          <span
+            class="footer-save-btn"
+            routerLink="/practice-manager/statement-options"
+          >
+            Save for later
+          </span>
+        </div>
+        <div class="col d-flex justify-content-end align-item-center practice-info-btn">
+          <button type="submit" class="theme-btn py-2">Next</button>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="popup-menu">
+  <p-dialog header="Header" [(visible)]="visible">
+    <ng-template pTemplate="header">
+        <h6 class="mk-modal-header">Software Preferences</h6>
+    </ng-template>
+    <div class="body-wrapper-dailog">
+        <section class="header-icon-wrapper">
+            <span class="user-setting-icon">
+                <img src="./assets/images/user-settings-icon.png"/>
+            </span>
+            <span class="user-setting-text">
+                Karmen Andrews
+            </span>
+        </section>
+        <div class="d-flex">
+            <app-sidebar></app-sidebar>
+
+            <ng-container *ngIf="activeTab=='staff'">
+                <app-staff [medicalStaffs]="medicalStaffs" [administrativeStaffs]="administrativeStaffs" (reFreshConfigData)="fetchConfigData($event)"></app-staff>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='system-preference'">
+                <app-system-preferences [systemPreference]="systemPreference" (reFreshConfigData)="fetchConfigData($event)"></app-system-preferences>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='password'">
+                <app-password></app-password>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='practice-information'">
+                <app-practice-information [practice]="practice" (reFreshConfigData)="fetchConfigData($event)"></app-practice-information>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='financial-setup'">
+                <app-financial-setup class="flex-grow-1" [financialSetup]="financialSetup" (reFreshConfigData)="fetchConfigData($event)"></app-financial-setup>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='fee-schedule'">
+                <app-fee-schedule></app-fee-schedule>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='practice-billing'">
+                <app-practice-billing></app-practice-billing>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='collection-messages'">
+                <app-collection-messages class="flex-grow-1" [collectionMessage]="collectionMessage" (reFreshConfigData)="fetchConfigData($event)"></app-collection-messages>
+            </ng-container>
+            <ng-container *ngIf="activeTab=='statement-options'">
+                <app-statement-options class="flex-grow-1" [statementOption]="statementOption" (reFreshConfigData)="fetchConfigData($event)"></app-statement-options>
+            </ng-container>
+
+            <ng-container *ngIf="activeTab=='category'">
+                <app-category class="flex-grow-1"></app-category>
+            </ng-container>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </div>
+  </p-dialog>
+</div>

@@ -1,0 +1,83 @@
+<div class="menuitems-container d-flex flex-column px-3">
+  <ul class="nav flex-column mb-5 pb-5">
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer"
+      (click)="onClickMenuItem(menuItemKeys.NOTIFICATIONS)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.NOTIFICATIONS}">
+        <div class="link-icon">
+          <img src="assets/images/icons/notifcation.svg" alt="" srcset="">
+        </div>
+        Notifications
+      </a>
+    </li>
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.TODO)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.TODO}">
+        <div class="link-icon">
+          <img src="assets/images/icons/todo-list.svg" alt="" srcset="">
+        </div>
+        To-do list
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.MESSAGES)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.MESSAGES}">
+        <div class="link-icon">
+          <img src="assets/images/icons/messages.svg" alt="" srcset="">
+        </div>
+        Messages
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav flex-column py-5 mb-5">
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.PAYMENT)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.PAYMENT}">
+        <div class="link-icon">
+          <img src="assets/images/icons/payment.svg" alt="" srcset="">
+        </div>
+        Payment
+      </a>
+    </li>
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.NEW_PATIENT)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.NEW_PATIENT}">
+        <div class="link-icon">
+          <img src="assets/images/icons/new-patient.svg" alt="" srcset="">
+        </div>
+        New Patient
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.PRACTICE)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.PRACTICE}">
+        <div class="link-icon">
+          <img src="assets/images/icons/practice.svg" alt="" srcset="">
+        </div>
+        Practice
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav flex-column pt-5">
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.SETTINGS)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.SETTINGS}">
+        <div class="link-icon">
+          <img src="assets/images/icons/settings.svg" alt="" srcset="">
+        </div>
+        Settings
+      </a>
+    </li>
+    <li class="nav-item mb-4">
+      <a class="nav-link nav-sidebar-link d-flex align-items-center cursor-pointer" (click)="onClickMenuItem(menuItemKeys.FAQ)"
+      [ngClass]="{'active' : (this.sidebarPopupOpen$ | async)?.id === menuItemKeys.FAQ}">
+        <div class="link-icon">
+          <img src="assets/images/icons/faq.svg" alt="" srcset="">
+        </div>
+        FAQ
+      </a>
+    </li>
+  </ul>
+</div>

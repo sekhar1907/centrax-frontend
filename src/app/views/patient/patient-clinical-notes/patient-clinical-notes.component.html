@@ -1,0 +1,14 @@
+<app-form-header [title]="headerTitle" [isUpperCase]="true" notSticky="true"> </app-form-header>
+
+<div class="clinical-notes-container ps-xl-5 p-bg ps-mx-0 pe-xl-3">
+  <app-form-header-info
+    [providerName]="'Dr. Jane Doe'"
+    [practiceName]="'Astra Practice Partners'"
+    [practicePhoneNumber]="'(555) 555-5555'"
+    [practiceAddress]="'1234 SE 33rd ST Portland, OR 97202'"
+    [patientName]="patient?.patientName"
+    [patientBirthdate]="patient?.patient?.dob"
+    [entryDate]="entryDate$ | async">
+  </app-form-header-info>
+  <router-outlet></router-outlet>
+</div>

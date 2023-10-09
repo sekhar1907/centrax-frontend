@@ -1,0 +1,48 @@
+<div class="provider-login-container py-5 px-5">
+  <h1 class="fs-3 mb-4">Have an onboarding link?</h1>
+  <p class="fs-6 mb-4">Copy the link below to skip steps in claiming your profile (link can be found in the onboarding email or letters sent to your practice).</p>
+
+  <form class="needs-validation" novalidate  class="w-100 px-md-5 px-0" [formGroup]="onboardingLinkFormGroup" (ngSubmit)="onClaimLink()">
+    <div class="row mx-md-5 mx-0 pb-2">
+      <div class="col-12">
+        <app-form-input-field appearance="appearance-3" [noLabel]="true" placeholder="Onboarding Link" [control]="onboardingLinkForm['onboardingLink']"
+        [isInValid]="onboardingSubmit && onboardingLinkForm['onboardingLink'].errors">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-5 mx-5">
+      <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="provider-login-container py-5 px-5 mt-5">
+  <h1 class="fs-3 mb-4">Find your profile</h1>
+  <p class="fs-6 mb-4">Conduct a search below to claim another profile</p>
+
+  <form class="needs-validation" novalidate class="w-100 px-md-5 px-0" [formGroup]="manualClaimFormGroup" (ngSubmit)="onManualClaim()">
+    <div class="row mx-5 pb-2">
+      <div class="col-5 px-0">
+        <app-form-dropdown-field appearance="flat" [control]="manualClaimForm['type']" [dropdownItems]="searchTypeOptions"
+        [isInValid]="manualClaimSubmit && manualClaimForm['searchType'].errors">
+        </app-form-dropdown-field>
+      </div>
+      <div class="col-7 px-0">
+        <app-form-input-field appearance="appearance-3" [noLabel]="true" placeholder="E.g. Stan Smith" [control]="manualClaimForm['keyword']"
+        [isInValid]="manualClaimSubmit && manualClaimForm['keyword'].errors">
+        </app-form-input-field>
+      </div>
+    </div>
+
+    <div class="row mt-5 mx-5">
+      <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+        <button class="btn btn-lg btn-primary fs-5" style="width: 260px;" type="submit">Search</button>
+        <a class="btn btn-link fw-bold mt-2 text-primary">Find your provider ID</a>
+      </div>
+    </div>
+  </form>
+</div>
+

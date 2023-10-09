@@ -1,0 +1,11 @@
+<div class="dropdown-container ms-3 {{appearance}}" [ngClass]="{'open': isDropdownOpen, 'closed': !isDropdownOpen}">
+  <button (click)="toggleDropdown()" class="dropdown-trigger d-flex align-items-center">
+    <img class="me-3" src="assets/images/icons/{{viewSelected.iconUrl}}"/>
+    <img src="assets/images/icons/chevron-down.svg"/>
+  </button>
+  <div class="dropdown-list">
+    <div (click)="onSelectDropdown(item)" *ngFor="let item of dropdownItems" class="dropdown-item">
+      <img src="assets/images/icons/{{item.iconUrl}}" />
+    </div>
+  </div>
+</div>

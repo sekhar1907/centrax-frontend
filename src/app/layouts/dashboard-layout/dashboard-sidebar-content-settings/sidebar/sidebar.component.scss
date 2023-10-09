@@ -1,0 +1,30 @@
+.sidebar {
+    width: 148px;
+    height: 458px;
+    // margin-top: 184px;
+    padding: 20px 10px 20px 10px;
+    margin-left: 15px;
+    border-radius: 6px;
+    background :rgba(217, 217, 217, 1);
+}
+.nav-link {
+    border-radius: 5px;
+    color: #545454;
+    padding: 5px 3px;
+    width: 128px;
+    height: 24px;
+    border-radius: 6px;
+
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+}
+.nav-link:hover{
+    background-color: #8CB0CD !important;
+}
+.active {
+    color: #545454 !important;
+    background-color: #8CB0CD !important;
+}

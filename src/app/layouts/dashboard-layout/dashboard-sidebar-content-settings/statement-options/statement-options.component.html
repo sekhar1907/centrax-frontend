@@ -1,0 +1,55 @@
+<form [formGroup]="statementOptionsForm" novalidate (ngSubmit)="createStatementOptions()">
+
+<div class="row no-gutters pb-8">
+    <div class="container pr-3 pl-5">
+        <p><strong>Payment Mesages</strong> Enter the payment messages for the account statement.</p>
+        <div class="row no-gutters mt-5 mb-3">
+            <div class="col-sm-4">
+                <p class="label-text">Insurance</p>
+            </div>
+            <div class="col-sm-8">
+                <p><input type="text" formControlName="insurance"></p>
+            </div>
+        </div>
+
+        <div class="row no-gutters mb-3">
+            <div class="col-sm-4">
+                <p class="label-text">Non-insurance</p>
+            </div>
+            <div class="col-sm-8">
+                <p><input type="text" formControlName="nonInsurance"></p>
+            </div>
+        </div>
+
+        <div class="row no-gutters mb-3">
+            <div class="col-sm-4">
+                <p class="label-text">Financial Arrangement</p>
+            </div>
+            <div class="col-sm-8">
+                <p><input type="text" formControlName="financialArrangment"></p>
+            </div>
+        </div>
+
+        <div class="row no-gutters mb-3">
+            <div class="col-sm-4">
+                <p class="label-text">Quick Statement</p>
+            </div>
+            <div class="col-sm-8">
+                <p><input type="text" formControlName="quickStatement"></p>
+            </div>
+        </div>
+
+        <div class="row no-gutters mb-3">
+            <div class="col-sm-4">
+                <p class="label-text">Finance Charge/Rebill</p>
+            </div>
+            <div class="col-sm-8">
+                <p><input type="text" formControlName="financeCharge"></p>
+            </div>
+        </div>
+        <div class="d-flex flex-row-reverse mt-5 pt-5">
+            <button class="btn-save cursor-pointer" type="submit" [disabled]="statementOptionsForm.pristine || statementOptionsForm.invalid" >save</button>
+        </div>
+    </div>
+</div>
+</form>
