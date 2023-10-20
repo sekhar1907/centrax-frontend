@@ -77,5 +77,5 @@ function appInitializer(store: Store, localStore: LocalStoreService) {
     ScheduleService
   ],
   bootstrap: [AppComponent]
-})
+});
 export class AppModule { }
