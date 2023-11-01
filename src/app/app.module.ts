@@ -79,4 +79,5 @@ function appInitializer(store: Store, localStore: LocalStoreService) {
   bootstrap: [AppComponent]
 });
 export class AppModule {
+  
 }
