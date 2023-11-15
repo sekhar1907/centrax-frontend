@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'centrax-app-dev';
 
   constructor(private primengConfig: PrimeNGConfig) {}
-
   ngOnInit() {
       this.primengConfig.ripple = true;
   }
